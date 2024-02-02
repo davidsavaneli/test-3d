@@ -7,8 +7,7 @@ import 'assets/css/styles.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
   const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-    console.log('ds')
+    console.log('scrolling ...')
   })
 
   useEffect(() => {
