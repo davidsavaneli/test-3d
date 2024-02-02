@@ -1480,10 +1480,10 @@ for-each@^0.3.3:
   dependencies:
     is-callable "^1.1.3"
 
-framer-motion@^10.16.5:
-  version "10.16.9"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.16.9.tgz#350ab8e81bc8e6ddd0cb9f998057965431fd9494"
-  integrity sha512-tcLz4X7PplYu6f4KHmclZFhHe8bFhCqfIG0z0Ssb+xi6OTfYeAb8BuVD235PMvypwi232VQ68KYlu3pfMKwPzA==
+framer-motion@^11.0.3:
+  version "11.0.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.0.3.tgz#b2a87e7ae166a9e27da33da9cfb50a0db5f94fa7"
+  integrity sha512-6x2poQpIWBdbZwLd73w6cKZ1I9IEPIU94C6/Swp1Zt3LJ+sB5bPe1E2wC6EH5hSISXNkMJ4afH7AdwS7MrtkWw==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
@@ -2385,7 +2385,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@18.2.0, react-dom@^18.2.0:
+react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -2413,7 +2413,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@18.2.0, react@^18.2.0:
+react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -2588,15 +2588,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-smooth-horizontal-scroll-slider@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/smooth-horizontal-scroll-slider/-/smooth-horizontal-scroll-slider-1.0.0.tgz#6b0c6bb130fab75c582d9dde20dc26153f0be1e8"
-  integrity sha512-bF1PWEENLqi5+kc5517qgGguU5hTYZ9TGHFnCu4pZyh1uXQhUZhLqZWs7/uN2/NI46nc1FDRUorKCsUvOrHDOw==
-  dependencies:
-    clsx "^2.0.0"
-    framer-motion "^10.16.5"
-    react "^18.2.0"
-    react-dom "^18.2.0"
+smooth-horizontal-scroll-slider@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/smooth-horizontal-scroll-slider/-/smooth-horizontal-scroll-slider-1.0.1.tgz#d36e6f1b2b80496b122b840721bda3c91e6a11b1"
+  integrity sha512-wE+tQY/jAQli1Lw82nsJAF5t8gagDBcTCB14Ep+D1JD1m3NAfGVkUfaq24KwQi75i3OmeI0ob2uH6jSLARChvw==
 
 source-map-js@^1.0.2:
   version "1.0.2"
