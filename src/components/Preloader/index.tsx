@@ -4,11 +4,7 @@ import animations from './animations'
 
 import styles from './styles.module.css'
 
-export type PreloaderProps = {
-  children?: React.ReactNode
-}
-
-const Preloader = ({ children }: PreloaderProps) => {
+const Preloader = () => {
   return (
     <motion.div className={styles.preloader} variants={animations.layout} initial='hidden' animate='enter' exit='exit'>
       Preloader ...
@@ -16,4 +12,4 @@ const Preloader = ({ children }: PreloaderProps) => {
   )
 }
 
-export default memo<PreloaderProps>(Preloader)
+export default memo(Preloader)

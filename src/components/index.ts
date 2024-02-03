@@ -5,6 +5,5 @@ export { default as SmoothScroll } from './SmoothScroll'
 export type { SmoothScrollProps } from './SmoothScroll'
 
 export { default as Preloader } from './Preloader'
-// export type { PreloaderProps } from './Preloader'
 
 export { default as Example } from './Example'
