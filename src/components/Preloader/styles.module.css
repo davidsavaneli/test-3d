@@ -11,3 +11,56 @@
   justify-content: center;
   font-size: 30px;
 }
+
+.logoWrapper {
+  transform: scale(0.8);
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  margin: 0 5px;
+}
+
+.image.logoSmall,
+.image.logoT,
+.image.logoH,
+.image.logoY {
+  height: 140px;
+}
+
+.image.logoE,
+.image.logoC,
+.image.logoZ {
+  height: 112px;
+}
+
+.image.logoCopy{
+  height: 36px;
+  margin-left: -6px;
+}
+
+.image.logoSmall {
+  margin-right: 30px;
+}
+
+.image.logoT {
+  margin-right: -20px;
+}
+
+.image.logoY {
+  top: 28px;
+}
+
+.image img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+}
