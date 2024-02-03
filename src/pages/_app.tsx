@@ -1,35 +1,23 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { SmoothScroll } from 'components'
+import { useViewportHeight } from 'hooks'
 
 import 'assets/css/styles.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
-  const lenis = useLenis(({ scroll }) => {
-    console.log('scrolling ...')
-  })
-
-  useEffect(() => {
-    const setWindowHeight = () =>
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01 - 0.01}px`)
-    setWindowHeight()
-    window.addEventListener('resize', setWindowHeight)
-
-    return () => {
-      window.removeEventListener('resize', setWindowHeight)
-    }
-  })
+  useViewportHeight()
 
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />
   return (
-    <ReactLenis root>
-      <AnimatePresence mode='wait'>
-        <main key={router.route}>
+    <AnimatePresence mode='wait'>
+      <main key={router.route}>
+        <SmoothScroll root={true}>
           <Component {...pageProps} />
-        </main>
-      </AnimatePresence>
-    </ReactLenis>
+        </SmoothScroll>
+      </main>
+    </AnimatePresence>
   )
 }
 
