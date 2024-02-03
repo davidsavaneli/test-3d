@@ -23,6 +23,10 @@ const App = ({ Component, router, pageProps }: AppProps) => {
     };
   }, []);
 
+  setTimeout(() => {
+    document.body.classList.remove('preload');
+  }, 100);
+
   useViewportHeight();
 
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />;

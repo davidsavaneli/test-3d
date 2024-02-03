@@ -10,11 +10,9 @@ export type PreloaderProps = {
 
 const Preloader = ({ children }: PreloaderProps) => {
   return (
-    <div className={styles.test}>
-      <motion.div variants={animations.layout} initial='hidden' animate='enter' exit='exit'>
-        Preloader ...
-      </motion.div>
-    </div>
+    <motion.div className={styles.preloader} variants={animations.layout} initial='hidden' animate='enter' exit='exit'>
+      Preloader ...
+    </motion.div>
   )
 }
 
