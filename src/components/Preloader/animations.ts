@@ -31,7 +31,7 @@ const animations: animationTypes = {
     animate: {
       x: '390px',
       transition: {
-        duration: 1.5,
+        duration: 1.6,
         delay: 1.32,
         type: 'spring',
         bounce: 0,
