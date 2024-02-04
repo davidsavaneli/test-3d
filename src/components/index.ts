@@ -12,3 +12,5 @@ export { default as Preloader } from './Preloader'
 export { default as Example } from './Example'
 
 export { default as Header } from './Header'
+
+export { default as Cursor } from './Cursor'

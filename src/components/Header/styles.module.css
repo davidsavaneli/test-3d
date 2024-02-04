@@ -2,6 +2,7 @@
   position: sticky;
   top: 0;
   padding: 30px 0;
+  background-image: linear-gradient(var(--colorBg) 16%, var(--colorBg-070) 71%, transparent);
 }
 
 .logoWrapper {

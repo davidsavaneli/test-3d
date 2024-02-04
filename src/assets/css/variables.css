@@ -1,3 +1,4 @@
 :root {
-  --colorBg: #121315;
+  --colorBg: rgb(18, 19, 21);
+  --colorBg-070: rgba(18, 19, 21, .7);
 }
