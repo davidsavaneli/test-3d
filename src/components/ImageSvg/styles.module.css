@@ -1,0 +1,13 @@
+.image {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.image.fullWidth {
+  width: 100% !important;
+}
+
+.image.fullHeight {
+  width: 100% !important;
+}

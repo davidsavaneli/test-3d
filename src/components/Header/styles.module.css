@@ -1,0 +1,20 @@
+.header {
+  position: sticky;
+  top: 0;
+  padding: 30px 0;
+}
+
+.logoWrapper {
+  overflow: hidden;
+}
+
+.logo {
+  width: 170px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(166, 169, 176, 0.2);
+  border-radius: 50%;
+}

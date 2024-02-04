@@ -4,6 +4,8 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import animations from './animations'
 
+import styles from './styles.module.css'
+
 import logoSmall from 'assets/images/logo-small.svg'
 import logoT from 'assets/images/logo-t.svg'
 import logoE from 'assets/images/logo-e.svg'
@@ -12,8 +14,6 @@ import logoH from 'assets/images/logo-h.svg'
 import logoZ from 'assets/images/logo-z.svg'
 import logoY from 'assets/images/logo-y.svg'
 import logoCopy from 'assets/images/logo-copy.svg'
-
-import styles from './styles.module.css'
 
 const Preloader = () => {
   return (
@@ -25,7 +25,8 @@ const Preloader = () => {
       exit='exit'
     >
       <div className={styles.logoWrapper}>
-        <motion.div className={styles.logo} variants={animations.logoVariant} exit='exit' initial='initial'>
+        <motion.div className={styles.logoOverlay} variants={animations.logoOverlayVariant} initial='initial' animate='animate'></motion.div>
+        <motion.div className={styles.logo} variants={animations.logoVariant} exit='exit'>
           <motion.div
             className={clsx(styles.image, styles.logoSmall)}
             variants={animations.logoSmallVariant}

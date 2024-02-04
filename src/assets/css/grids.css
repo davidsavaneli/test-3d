@@ -1,12 +1,12 @@
 .container {
-  max-width: 1820px;
-  padding-right: 15px;
-  padding-left: 15px;
+  max-width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (max-width: 1919.98px) {
+/* @media (max-width: 1919.98px) {
   .container {
     max-width: 1620px;
   }
@@ -34,12 +34,7 @@
   .container {
     max-width: 100%;
   }
-}
-
-.container {
-  padding-left: 0;
-  padding-right: 0;
-}
+} */
 
 .row {
   display: -ms-flexbox;

@@ -4,6 +4,11 @@ export type { AnimationLayoutProps } from './AnimationLayout'
 export { default as SmoothScroll } from './SmoothScroll'
 export type { SmoothScrollProps } from './SmoothScroll'
 
+export { default as ImageSvg } from './ImageSvg';
+export type { ComponentProps as ImageSvgProps } from './ImageSvg';
+
 export { default as Preloader } from './Preloader'
 
 export { default as Example } from './Example'
+
+export { default as Header } from './Header'

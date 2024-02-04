@@ -2,6 +2,7 @@ import { Variants } from 'framer-motion'
 
 type animationTypes = {
   preloaderVariant: Variants
+  logoOverlayVariant: Variants
   logoVariant: Variants
   logoSmallVariant: Variants
   logoTVariant: Variants
@@ -17,7 +18,20 @@ const animations: animationTypes = {
   preloaderVariant: {
     hidden: { opacity: 1, transition: { duration: 0.3 } },
     enter: { opacity: 1, transition: { duration: 0.3 } },
-    exit: { opacity: 0, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.2 } },
+  },
+  logoOverlayVariant: {
+    initial: {
+      opacity: 1
+    },
+    animate: {
+      opacity: 0,
+      transition: {
+        delay: 0,
+        duration: 1.6,
+        type: 'spring'
+      }
+    }
   },
   logoVariant: {
     exit: {

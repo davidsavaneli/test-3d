@@ -5,14 +5,26 @@
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background-color: #0a0a0a;
+  background-color: var(--colorBg);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .logoWrapper {
-  transform: scale(0.8);
+  position: relative;
+  transform: scale(0.4);
+}
+
+.logoOverlay {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background-color: var(--colorBg);
+  z-index: 1;
 }
 
 .logo {
