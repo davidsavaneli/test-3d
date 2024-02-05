@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion'
 import { Preloader, SmoothScroll, Header } from 'components'
 import { useViewportHeight } from 'hooks'
 
+import { Cursor } from 'react-creative-cursor'
+
 import 'assets/css/styles.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
@@ -35,6 +37,13 @@ const App = ({ Component, router, pageProps }: AppProps) => {
           <Preloader />
         ) : (
           <main key={router.route}>
+            <Cursor
+              isGelly={true}
+              animationDuration={1}
+              cursorSize={24}
+              cursorBackgrounColor='#fff'
+              cursorInnerColor='#000'
+            />
             <SmoothScroll root={true}>
               <Component {...pageProps} />
             </SmoothScroll>
