@@ -4,8 +4,11 @@ import styles from './styles.module.css'
 
 const View = () => {
   return (
-    <div className={styles.app}>
-      <Link href='./' className={styles.link}>Home</Link>
+    <div className='container'>
+      <br /><br /><br />
+      <Link href='./' className={styles.link}>
+        Home Page
+      </Link>
     </div>
   )
 }
