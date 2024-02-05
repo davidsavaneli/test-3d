@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { Preloader, SmoothScroll, Header, Cursor } from 'components'
+import { Preloader, SmoothScroll, Header } from 'components'
 import { useViewportHeight } from 'hooks'
 
 import 'assets/css/styles.css'
@@ -29,7 +29,6 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <Cursor />
       <Header />
       <AnimatePresence mode='wait'>
         {showPreloader ? (
