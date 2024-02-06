@@ -7,7 +7,6 @@ import { useViewportHeight } from 'hooks'
 import { Cursor } from 'react-creative-cursor'
 import { IFluidAnimationProps } from '@usertive/react-fluid-animation'; // Import the types
 
-
 const DynamicAnimation = dynamic(() => import('@usertive/react-fluid-animation'))
 
 import 'assets/css/styles.css'

@@ -8,13 +8,7 @@
   border-radius: 100%;
   contain: layout style size;
   transform: translate(-50%, -50%);
-
   mix-blend-mode: difference;
-  /* background-color: #fff !important; */
-}
-
-[data-cursor-text] {
-  /* isolation: isolate !important; */
 }
 
 .c-cursor__inner {
@@ -39,7 +33,6 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  /* color: #000 !important; */
 }
 
 .c-cursor__img {
@@ -105,5 +98,4 @@
 [data-cursor-magnetic] textarea {
   pointer-events: painted;
   transform: translate(0, 0) !important;
-  
 }
