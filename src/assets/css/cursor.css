@@ -8,8 +8,13 @@
   border-radius: 100%;
   contain: layout style size;
   transform: translate(-50%, -50%);
+
+  mix-blend-mode: difference;
   /* background-color: #fff !important; */
-  /* mix-blend-mode: exclusion; */
+}
+
+[data-cursor-text] {
+  /* isolation: isolate !important; */
 }
 
 .c-cursor__inner {
@@ -100,8 +105,5 @@
 [data-cursor-magnetic] textarea {
   pointer-events: painted;
   transform: translate(0, 0) !important;
+  
 }
-
-/* [data-cursor-exclusion] {
-  mix-blend-mode: normal !important;
-} */

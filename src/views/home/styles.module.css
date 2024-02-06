@@ -1,3 +1,28 @@
 .link {
     color: #fff !important;
 }
+
+.test {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background: rgba(166, 169, 176, 0.2);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height .3s;
+}
+
+.test:hover {
+    height: 80px;
+}
+
+.test2 {
+    width: 2px;
+    height: 2px;
+    margin-left: -1px;
+    margin-top: -1px;
+    bottom: 0; 
+    background-color: transparent
+}

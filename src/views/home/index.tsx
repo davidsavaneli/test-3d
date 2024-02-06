@@ -1,10 +1,21 @@
 import React from 'react'
 import Link from 'next/link'
+import { Button } from 'components'
 import styles from './styles.module.css'
 
 const View = () => {
   return (
     <div className='container'>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Button label="View More"></Button>
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />
@@ -68,6 +79,24 @@ const View = () => {
         <div data-cursor-text='React' data-cursor-size='100px'>
           <h1 id='stick-title'>React.js</h1>
         </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* <div data-cursor-magnetic className={styles.test}>cxcx</div> */}
+
+      <div data-cursor-magnetic data-cursor-stick='#stick-title2' data-cursor-size='80px' className={styles.test}>
+        <div className={styles.test2} id='stick-title2'></div>
+      </div>
+
+      <br /><br />
+
+      <div data-cursor-magnetic data-cursor-size='80px' data-cursor-text='React' className={styles.test}>
+        <div className={styles.test2} id='stick-titlee' style={{ textAlign: 'center' }}></div>
       </div>
 
       <div style={{ height: '300px', border: '1px solid #', backgroundColor: 'transparent' }}></div>

@@ -15,7 +15,13 @@ const Header = () => {
         <div className='row'>
           <div className='col-6 d-flex align-items-center'>
             <div className={styles.logoWrapper}>
-              <motion.div className={styles.logo} variants={animations.logoVariant} initial='initial' animate='animate' data-cursor-exclusion>
+              <motion.div
+                className={styles.logo}
+                variants={animations.logoVariant}
+                initial='initial'
+                animate='animate'
+                data-cursor-exclusion
+              >
                 <ImageSvg src={logo} alt='' fullWidth />
               </motion.div>
             </div>
