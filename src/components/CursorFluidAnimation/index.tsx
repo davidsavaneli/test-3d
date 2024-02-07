@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect, memo, RefObject } from 'react'
+import React, { useRef, useEffect, memo } from 'react'
 import styles from './styles.module.css'
 
 const FluidAnimation = () => {
