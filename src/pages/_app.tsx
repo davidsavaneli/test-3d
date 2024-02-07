@@ -16,7 +16,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
     const handleBeforeUnload = () => setShowPreloader(true)
     window.addEventListener('beforeunload', handleBeforeUnload)
 
-    const timeoutId = setTimeout(() => setShowPreloader(false), 3000)
+    const timeoutId = setTimeout(() => setShowPreloader(false), 500)
 
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
@@ -30,8 +30,8 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      {/* <CursorFluidAnimation /> */}
-      <CursorFluidAnimationJs />
+      <CursorFluidAnimation />
+      {/* <CursorFluidAnimationJs /> */}
       <Header />
       <AnimatePresence mode='wait'>
         {showPreloader ? (
