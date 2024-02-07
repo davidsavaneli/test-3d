@@ -34,6 +34,7 @@
     "react-creative-cursor": "^1.2.7",
     "react-dom": "18.2.0",
     "smooth-horizontal-scroll-slider": "^1.0.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "webgl-fluid": "^0.3.7"
   }
 }

@@ -1,45 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { Preloader, SmoothScroll, Header } from 'components'
+import { Preloader, SmoothScroll, Header, CursorFluidAnimation, CursorFluidAnimationJs } from 'components'
 import { useViewportHeight } from 'hooks'
 import { Cursor } from 'react-creative-cursor'
-import { IFluidAnimationProps } from '@usertive/react-fluid-animation'; // Import the types
-
-const DynamicAnimation = dynamic(() => import('@usertive/react-fluid-animation'))
 
 import 'assets/css/styles.css'
 
-interface CustomFluidAnimationProps extends IFluidAnimationProps {
-  textureDownsample?: number;
-  densityDissipation?: number;
-  velocityDissipation?: number;
-  pressureDissipation?: number;
-  pressureIterations?: number;
-  curl?: number;
-  splatRadius?: number;
-  colorsPool?: string[];
-}
-
 const App = ({ Component, router, pageProps }: AppProps) => {
-  const dynamicAnimationConfig: CustomFluidAnimationProps = {
-    textureDownsample: 0,
-    densityDissipation: 0.96,
-    velocityDissipation: 0.99,
-    pressureDissipation: 0.8,
-    pressureIterations: 25,
-    curl: 0,
-    splatRadius: 0.001,
-    colorsPool: ['#fff'],
-  };
-
-  const [isAfterHydration, setIsAfterHydration] = useState<boolean>(false)
-
-  useEffect(() => {
-    if (!isAfterHydration) setIsAfterHydration(true)
-  }, [isAfterHydration, setIsAfterHydration])
-
   const [showPreloader, setShowPreloader] = useState<boolean>(true)
 
   useEffect(() => {
@@ -62,9 +30,8 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <div style={{ position: 'fixed', width: '100%', height: '100%' }}>
-        {isAfterHydration ? <DynamicAnimation config={dynamicAnimationConfig} /> : null}
-      </div>
+      {/* <CursorFluidAnimation /> */}
+      <CursorFluidAnimationJs />
       <Header />
       <AnimatePresence mode='wait'>
         {showPreloader ? (
