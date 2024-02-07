@@ -12,14 +12,14 @@ const View = () => {
       <br />
       <br />
       <br />
-      <Button label="View More"></Button>
+      <Button label='View More'></Button>
       <br />
       <br />
       <br />
       <br />
       <br />
       <br />
-      <Link href='./about' className={styles.link}>
+      <Link href='./about' className={styles.link} style={{ position: 'relative' }}>
         About Page
       </Link>
       <br />
@@ -93,7 +93,8 @@ const View = () => {
         <div className={styles.test2} id='stick-title2'></div>
       </div>
 
-      <br /><br />
+      <br />
+      <br />
 
       <div data-cursor-magnetic data-cursor-size='80px' data-cursor-text='React' className={styles.test}>
         <div className={styles.test2} id='stick-titlee' style={{ textAlign: 'center' }}></div>

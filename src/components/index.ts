@@ -17,5 +17,4 @@ export { default as Example } from './Example'
 export { default as Header } from './Header'
 
 export { default as CursorFluidAnimation } from './CursorFluidAnimation'
-export { default as CursorFluidAnimationJs } from './CursorFluidAnimationJs'
 

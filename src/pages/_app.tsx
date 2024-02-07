@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { Preloader, SmoothScroll, Header, CursorFluidAnimation, CursorFluidAnimationJs } from 'components'
+import { Preloader, SmoothScroll, Header, CursorFluidAnimation } from 'components'
 import { useViewportHeight } from 'hooks'
 import { Cursor } from 'react-creative-cursor'
 
@@ -31,13 +31,12 @@ const App = ({ Component, router, pageProps }: AppProps) => {
   return (
     <React.Fragment>
       <CursorFluidAnimation />
-      {/* <CursorFluidAnimationJs /> */}
       <Header />
       <AnimatePresence mode='wait'>
         {showPreloader ? (
           <Preloader />
         ) : (
-          <main key={router.route}>
+          <main key={router.route} id="main-container">
             <Cursor
               isGelly={true}
               animationDuration={0.5}

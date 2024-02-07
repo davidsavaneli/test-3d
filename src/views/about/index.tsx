@@ -6,7 +6,7 @@ const View = () => {
   return (
     <div className='container'>
       <br /><br /><br />
-      <Link href='./' className={styles.link}>
+      <Link href='./' className={styles.link} style={{ position: 'relative' }}>
         Home Page
       </Link>
     </div>
