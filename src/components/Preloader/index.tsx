@@ -17,15 +17,14 @@ import logoCopy from 'assets/images/logo-copy.svg'
 
 const Preloader = () => {
   return (
-    <motion.div
-      className={styles.preloader}
-      variants={animations.preloaderVariant}
-      initial='hidden'
-      animate='enter'
-      exit='exit'
-    >
+    <motion.div className={styles.preloader}>
       <div className={styles.logoWrapper}>
-        <motion.div className={styles.logoOverlay} variants={animations.logoOverlayVariant} initial='initial' animate='animate'></motion.div>
+        <motion.div
+          className={styles.logoOverlay}
+          variants={animations.logoOverlayVariant}
+          initial='initial'
+          animate='animate'
+        ></motion.div>
         <motion.div className={styles.logo} variants={animations.logoVariant} exit='exit'>
           <motion.div
             className={clsx(styles.image, styles.logoSmall)}

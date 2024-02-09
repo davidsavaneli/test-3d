@@ -13,7 +13,7 @@ const animations: animationTypes = {
     animate: {
       x: '0',
       transition: {
-        delay: 3.2,
+        delay: 3.8,
         duration: 1.2,
         type: 'spring',
         bounce: 0
@@ -29,7 +29,7 @@ const animations: animationTypes = {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 3.6,
+        delay: 4.2,
         duration: 0.8,
         type: 'spring',
         damping: 8

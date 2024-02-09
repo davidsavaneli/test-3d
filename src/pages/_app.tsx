@@ -16,7 +16,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
     const handleBeforeUnload = () => setShowPreloader(true)
     window.addEventListener('beforeunload', handleBeforeUnload)
 
-    const timeoutId = setTimeout(() => setShowPreloader(false), 500)
+    const timeoutId = setTimeout(() => setShowPreloader(false), 2500)
 
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
