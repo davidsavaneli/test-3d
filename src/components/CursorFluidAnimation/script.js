@@ -1256,9 +1256,9 @@ export default function (el, config) {
   })
 
   setTimeout(() => {
-    canvas.addEventListener('mousemove', (e) => {
-      let posX = scaleByPixelRatio(e.offsetX)
-      let posY = scaleByPixelRatio(e.offsetY)
+    document.addEventListener('mousemove', (e) => {
+      let posX = scaleByPixelRatio(e.clientX)
+      let posY = scaleByPixelRatio(e.clientY)
       updatePointerMoveData(pointers[0], posX, posY)
     })
   }, 500)
@@ -1319,7 +1319,6 @@ export default function (el, config) {
   }
 
   function updatePointerMoveData(pointer, posX, posY) {
-    console.log(pointer, 'pointer')
     if (config.TRIGGER === 'click') {
       pointer.moved = pointer.down
     }
