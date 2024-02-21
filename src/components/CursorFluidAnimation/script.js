@@ -1267,25 +1267,25 @@ export default function (el, config) {
     updatePointerUpData(pointers[0])
   })
 
-  canvas.addEventListener('touchstart', (e) => {
+  document.addEventListener('touchstart', (e) => {
     e.preventDefault()
     const touches = e.targetTouches
     while (touches.length >= pointers.length) pointers.push(new pointerPrototype())
     for (let i = 0; i < touches.length; i++) {
-      let posX = scaleByPixelRatio(touches[i].pageX)
-      let posY = scaleByPixelRatio(touches[i].pageY)
+      let posX = scaleByPixelRatio(touches[i].clientX)
+      let posY = scaleByPixelRatio(touches[i].clientY)
       updatePointerDownData(pointers[i + 1], touches[i].identifier, posX, posY)
     }
   })
 
-  canvas.addEventListener(
+  document.addEventListener(
     'touchmove',
     (e) => {
       e.preventDefault()
       const touches = e.targetTouches
       for (let i = 0; i < touches.length; i++) {
-        let posX = scaleByPixelRatio(touches[i].pageX)
-        let posY = scaleByPixelRatio(touches[i].pageY)
+        let posX = scaleByPixelRatio(touches[i].clientX)
+        let posY = scaleByPixelRatio(touches[i].clientY)
         updatePointerMoveData(pointers[i + 1], posX, posY)
       }
     },
