@@ -14,7 +14,9 @@ const AnimationLayout = ({ children }: AnimationLayoutProps) => {
   return (
     <React.Fragment>
       <SVG width={width} height={height} />
-      <motion.div variants={animations.layout} initial='hidden' animate='enter' exit='exit'>{children}</motion.div>
+      <motion.div variants={animations.layout} initial='hidden' animate='enter' exit='exit'>
+        {children}
+      </motion.div>
     </React.Fragment>
   )
 }

@@ -10,7 +10,7 @@ const View = () => {
       <br />
       <br />
       <br />
-      <Link scroll={false} href='./about' className={styles.link} style={{ position: 'relative' }}>
+      <Link scroll={false} href='./about' className={styles.link}>
         About Page
       </Link>
       <br />

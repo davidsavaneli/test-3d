@@ -15,7 +15,7 @@ export default function Document() {
             }
             
             body.preload {
-              background-color: #0a0a0a;
+              background-color: #000;
             }
           `}
         </style>
