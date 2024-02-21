@@ -1,5 +1,4 @@
 import React, { memo } from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ImageSvg } from 'components'
 import animations from './animations'

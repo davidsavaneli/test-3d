@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import { Preloader, SmoothScroll, Header, CursorFluidAnimation } from 'components'
-import { useViewportHeight } from 'hooks'
-import { Cursor } from 'react-creative-cursor'
+import { useViewportHeight, useScrollToTop } from 'hooks'
 
 import 'assets/css/styles.css'
 
@@ -26,6 +25,10 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   useViewportHeight()
 
+  useEffect(() => {
+    useScrollToTop()
+  }, [router.route])
+
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />
 
   return (
@@ -36,15 +39,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
         {showPreloader ? (
           <Preloader />
         ) : (
-          <main key={router.route} id="main-container">
-            <Cursor
-              isGelly={true}
-              animationDuration={0.5}
-              cursorSize={24}
-              cursorBackgrounColor='#fff'
-              cursorInnerColor='#000'
-              magneticAnimationAmount={0.4}
-            />
+          <main key={router.route} id='main'>
             <SmoothScroll root={true}>
               <Component {...pageProps} />
             </SmoothScroll>
