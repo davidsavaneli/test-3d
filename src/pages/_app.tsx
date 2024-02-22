@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import { Preloader, SmoothScroll, Header, CursorFluidAnimation } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
+import { MouseProvider } from 'contexts'
 
 import 'assets/css/styles.css'
 
@@ -15,19 +16,21 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <CursorFluidAnimation />
-      <Header />
-      <AnimatePresence mode='wait'>
-        {showPreloader ? (
-          <Preloader />
-        ) : (
-          <main key={router.route} id='main'>
-            <SmoothScroll root={true}>
-              <Component {...pageProps} />
-            </SmoothScroll>
-          </main>
-        )}
-      </AnimatePresence>
+      <MouseProvider>
+        <CursorFluidAnimation />
+        <Header />
+        <AnimatePresence mode='wait'>
+          {showPreloader ? (
+            <Preloader />
+          ) : (
+            <main key={router.route} id='main'>
+              <SmoothScroll root={true}>
+                <Component {...pageProps} />
+              </SmoothScroll>
+            </main>
+          )}
+        </AnimatePresence>
+      </MouseProvider>
     </React.Fragment>
   )
 }
