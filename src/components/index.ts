@@ -2,6 +2,8 @@ export { default as CursorLayout } from './CursorLayout'
 
 export { default as AnimationLayout } from './AnimationLayout'
 
+export { default as MagneticLayout } from './MagneticLayout'
+
 export { default as SmoothScroll } from './SmoothScroll'
 
 export { default as ImageSvg } from './ImageSvg'
