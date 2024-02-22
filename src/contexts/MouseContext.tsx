@@ -1,12 +1,11 @@
-// MouseContext.tsx
-
 import React, { createContext, useState, useContext, ReactNode } from 'react'
 
 type MouseStatus = 'default' | 'text' | 'circle'
 
 type MouseContextType = {
-  mouseStatus: MouseStatus // Define mouseStatus here
-  onMouseOver: (mouseStatus: MouseStatus) => void
+  mouseStatus: MouseStatus
+  additionalText: string | undefined
+  onMouseOver: (mouseStatus: MouseStatus, additionalText?: string) => void
   onMouseOut: (mouseStatus: MouseStatus) => void
 }
 
@@ -26,17 +25,22 @@ type MouseProviderProps = {
 
 export const MouseProvider = ({ children }: MouseProviderProps) => {
   const [mouseStatus, setMouseStatus] = useState<MouseStatus>('default')
+  const [additionalText, setAdditionalText] = useState<string | undefined>(undefined)
 
-  const onMouseOver = (newStatus: MouseStatus) => {
+  const onMouseOver = (newStatus: MouseStatus, text?: string) => {
     setMouseStatus(newStatus)
+    setAdditionalText(text)
+    console.log(text)
   }
 
   const onMouseOut = (newStatus: MouseStatus) => {
-    setMouseStatus(newStatus)
+    setMouseStatus('default')
+    setAdditionalText(undefined)
   }
 
   const contextValue: MouseContextType = {
     mouseStatus,
+    additionalText,
     onMouseOver,
     onMouseOut,
   }

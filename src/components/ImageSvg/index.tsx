@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 
 import logo from 'assets/images/logo.svg'
 
-export type ComponentProps = ImageProps & {
+type ComponentProps = ImageProps & {
   fullWidth?: boolean
   fullHeight?: boolean
 }

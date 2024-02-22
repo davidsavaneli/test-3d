@@ -30,7 +30,7 @@ const View = () => {
         scroll={false}
         href='./about'
         className={styles.link}
-        onMouseOver={() => onMouseOver('text')}
+        onMouseOver={() => onMouseOver('text', 'Drag')}
         onMouseOut={() => onMouseOut('default')}
         onClick={() => onMouseOut('default')}
       >

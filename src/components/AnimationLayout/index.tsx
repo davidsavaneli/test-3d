@@ -4,7 +4,7 @@ import { useWindowSize } from 'hooks'
 import animations from './animations'
 import styles from './styles.module.css'
 
-export type AnimationLayoutProps = {
+type AnimationLayoutProps = {
   children: React.ReactNode
 }
 
