@@ -1,7 +1,7 @@
 // Cursor.tsx
 
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useMouseContext } from 'contexts'
@@ -10,7 +10,27 @@ import styles from './styles.module.css'
 const Cursor = () => {
   const { mouseStatus } = useMouseContext()
 
-  const cursorSize = 15
+  const [cursorSize, setCursorSize] = useState<number>(1)
+
+  useEffect(() => {
+    switch (mouseStatus) {
+      case 'default':
+        setCursorSize(1)
+        break
+      case 'text':
+        setCursorSize(2)
+        break
+      case 'circle':
+        setCursorSize(3)
+        break
+      default:
+        setCursorSize(1)
+    }
+
+    console.log(mouseStatus)
+  }, [mouseStatus])
+
+  // const cursorSize = 15
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
@@ -38,21 +58,19 @@ const Cursor = () => {
   }, [])
 
   return (
-    <div className={styles.cursorContainer}>
-      <motion.div
-        style={{
-          x: smoothMouse.x,
-          y: smoothMouse.y,
-          width: cursorSize,
-          height: cursorSize,
-        }}
-        className={clsx(styles.cursor, {
-          [styles.default]: mouseStatus === 'default',
-          [styles.text]: mouseStatus === 'text',
-          [styles.circle]: mouseStatus === 'circle',
-        })}
-      ></motion.div>
-    </div>
+    <motion.div
+      style={{
+        x: smoothMouse.x,
+        y: smoothMouse.y,
+      }}
+      className={clsx(styles.cursorWrap, {
+        [styles.default]: mouseStatus === 'default',
+        [styles.text]: mouseStatus === 'text',
+        [styles.circle]: mouseStatus === 'circle',
+      })}
+    >
+      <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>
+    </motion.div>
   )
 }
 
