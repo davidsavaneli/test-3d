@@ -19,6 +19,7 @@ const View = () => {
         className={styles.link}
         onMouseOver={() => onMouseOver('default')}
         onMouseOut={() => onMouseOut('default')}
+        onClick={() => onMouseOut('default')}
       >
         About Page
       </Link>
@@ -31,6 +32,7 @@ const View = () => {
         className={styles.link}
         onMouseOver={() => onMouseOver('text')}
         onMouseOut={() => onMouseOut('default')}
+        onClick={() => onMouseOut('default')}
       >
         About Page 2
       </Link>
@@ -43,6 +45,7 @@ const View = () => {
         className={styles.link}
         onMouseOver={() => onMouseOver('circle')}
         onMouseOut={() => onMouseOut('default')}
+        onClick={() => onMouseOut('default')}
       >
         About Page 3
       </Link>
