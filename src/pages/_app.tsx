@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { Preloader, SmoothScroll, Header, CursorFluidAnimation } from 'components'
+import { Preloader, SmoothScroll, Cursor, CursorFluidAnimation, Header } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { MouseProvider } from 'contexts'
 
@@ -17,6 +17,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
   return (
     <React.Fragment>
       <MouseProvider>
+        <Cursor />
         <CursorFluidAnimation />
         <Header />
         <AnimatePresence mode='wait'>
