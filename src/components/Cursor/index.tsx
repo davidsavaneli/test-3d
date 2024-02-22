@@ -17,14 +17,14 @@ const Cursor = ({ additionalText }: CursorType) => {
 
   useEffect(() => {
     switch (mouseStatus) {
-      case 'default':
-        setCursorSize(1)
+      case 'primary':
+        setCursorSize(3.6)
+        break
+      case 'secondary':
+        setCursorSize(3.6)
         break
       case 'text':
-        setCursorSize(3)
-        break
-      case 'circle':
-        setCursorSize(2)
+        setCursorSize(3.6)
         break
       default:
         setCursorSize(1)
@@ -61,10 +61,9 @@ const Cursor = ({ additionalText }: CursorType) => {
         y: smoothMouse.y,
       }}
       className={clsx(styles.cursorWrap, {
-        [styles.default]: mouseStatus === 'default',
+        [styles.primary]: mouseStatus === 'primary',
+        [styles.secondary]: mouseStatus === 'secondary',
         [styles.text]: mouseStatus === 'text',
-        [styles.circle]: mouseStatus === 'circle',
-        [styles.disableBlendMode]: additionalText,
       })}
     >
       <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>

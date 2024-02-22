@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { motion } from 'framer-motion'
-import { ImageSvg } from 'components'
+import { ImageSvg, MagneticLayout } from 'components'
 import animations from './animations'
 
 import styles from './styles.module.css'
@@ -26,12 +26,14 @@ const Header = () => {
             </div>
           </div>
           <div className='col-6 d-flex align-items-center justify-content-end'>
-            <motion.div
-              className={styles.btn}
-              variants={animations.btnVariant}
-              initial='initial'
-              animate='animate'
-            ></motion.div>
+            <MagneticLayout>
+              <motion.div
+                className={styles.btn}
+                variants={animations.btnVariant}
+                initial='initial'
+                animate='animate'
+              ></motion.div>
+            </MagneticLayout>
           </div>
         </div>
       </div>

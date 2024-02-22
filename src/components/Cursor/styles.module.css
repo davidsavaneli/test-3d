@@ -7,7 +7,15 @@
   pointer-events: none;
 }
 
-.cursorWrap.disableBlendMode {
+.cursorWrap.primary {
+  mix-blend-mode: difference;
+}
+
+.cursorWrap.secondary {
+  mix-blend-mode: inherit;
+}
+
+.cursorWrap.text {
   mix-blend-mode: inherit;
 }
 
@@ -20,7 +28,21 @@
   background-color: #fff;
   border-radius: 50%;
   pointer-events: none;
-  transition: transform 0.3s;
+  transition: all 0.3s;
+}
+
+.cursorWrap.primary .cursor {
+  background-color: #c5fcfc;
+  filter: blur(2px)
+}
+
+.cursorWrap.secondary .cursor {
+  background-color: #fff;
+}
+
+.cursorWrap.text .cursor {
+  background-color: #c5fcfc;
+  filter: blur(2px)
 }
 
 .additionalText {

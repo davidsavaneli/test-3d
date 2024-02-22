@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react'
 
-type MouseStatus = 'default' | 'text' | 'circle'
+type MouseStatus = 'default' | 'primary' | 'secondary' | 'text'
 
 type MouseContextType = {
   mouseStatus: MouseStatus
@@ -27,13 +27,12 @@ export const MouseProvider = ({ children }: MouseProviderProps) => {
   const [mouseStatus, setMouseStatus] = useState<MouseStatus>('default')
   const [additionalText, setAdditionalText] = useState<string | undefined>(undefined)
 
-  const onMouseOver = (newStatus: MouseStatus, text?: string) => {
+  const onMouseOver = (newStatus: MouseStatus, additionalText?: string) => {
     setMouseStatus(newStatus)
-    setAdditionalText(text)
-    console.log(text)
+    setAdditionalText(additionalText)
   }
 
-  const onMouseOut = (newStatus: MouseStatus) => {
+  const onMouseOut = () => {
     setMouseStatus('default')
     setAdditionalText(undefined)
   }

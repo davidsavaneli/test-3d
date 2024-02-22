@@ -34,7 +34,7 @@ const View = () => {
           scroll={false}
           href='./about'
           className={styles.link}
-          onMouseOver={() => onMouseOver('text', 'Drag')}
+          onMouseOver={() => onMouseOver('primary')}
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
@@ -49,11 +49,26 @@ const View = () => {
           scroll={false}
           href='./about'
           className={styles.link}
-          onMouseOver={() => onMouseOver('circle')}
+          onMouseOver={() => onMouseOver('secondary')}
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
           About Page 3
+        </Link>
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
+      <MagneticLayout>
+        <Link
+          scroll={false}
+          href='./about'
+          className={styles.link}
+          onMouseOver={() => onMouseOver('text', 'View More')}
+          onMouseOut={() => onMouseOut('default')}
+          onClick={() => onMouseOut('default')}
+        >
+          About Page 4
         </Link>
       </MagneticLayout>
       <br />
