@@ -18,7 +18,7 @@ const Cursor = ({ additionalText }: CursorType) => {
   useEffect(() => {
     switch (mouseStatus) {
       case 'small':
-        setCursorSize(3)
+        setCursorSize(4)
         break
       case 'medium':
         setCursorSize(6)
@@ -27,7 +27,7 @@ const Cursor = ({ additionalText }: CursorType) => {
         setCursorSize(8)
         break
       case 'smallText':
-        setCursorSize(3)
+        setCursorSize(4)
         break
       case 'mediumText':
         setCursorSize(6)
@@ -77,12 +77,6 @@ const Cursor = ({ additionalText }: CursorType) => {
           [styles.smallText]: mouseStatus === 'smallText',
           [styles.mediumText]: mouseStatus === 'mediumText',
           [styles.largeText]: mouseStatus === 'largeText',
-          [styles.smallFilled]: mouseStatus === 'smallFilled',
-          [styles.mediumFilled]: mouseStatus === 'mediumFilled',
-          [styles.largeFilled]: mouseStatus === 'largeFilled',
-          [styles.smallFilledText]: mouseStatus === 'smallFilledText',
-          [styles.mediumFilledText]: mouseStatus === 'mediumFilledText',
-          [styles.largeFilledText]: mouseStatus === 'largeFilledText',
         })}
       >
         <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>

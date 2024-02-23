@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  color: #fff;
+  color: var(--colorWhite);
   background-color: var(--colorBg);
   font-family: var(--fontMedium);
   font-weight: 100 !important;

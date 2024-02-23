@@ -1,5 +1,5 @@
 :root {
-  --colorBg: rgb(18, 19, 21);
+  --colorBg: #121315;
   --colorBg-070: rgba(18, 19, 21, 0.7);
   --colorBg-090: rgba(18, 19, 21, 0.9);
 
@@ -9,5 +9,7 @@
   --fontBold: 'Syne-Bold';
   --fontUppercase: 'MonumentExtended-Regular';
 
-  --colorPrimary: #fff;
+  --colorBlack: #121315;
+  --colorWhite: #fff;
+  --colorPrimary: #c5fcfc;
 }
