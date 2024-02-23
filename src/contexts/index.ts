@@ -1,1 +1,1 @@
-export { MouseProvider, useMouseContext } from './MouseContext'
+export { CursorProvider, useCursorContext } from './CursorContext'

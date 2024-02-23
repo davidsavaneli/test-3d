@@ -2,43 +2,31 @@
 import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { motion, useMotionValue } from 'framer-motion'
-import { useMouseContext } from 'contexts'
+import { useCursorContext } from 'contexts'
 import animations from './animations'
 import styles from './styles.module.css'
 
 type CursorType = {
-  additionalText?: string | undefined
+  text?: string | undefined
 }
 
-const Cursor = ({ additionalText }: CursorType) => {
-  const { mouseStatus } = useMouseContext()
+const Cursor = ({ text }: CursorType) => {
+  const { cursorStyle } = useCursorContext()
 
   const [cursorSize, setCursorSize] = useState<number>(1)
 
   useEffect(() => {
-    switch (mouseStatus) {
-      case 'small':
+    switch (cursorStyle) {
+      case 'default':
         setCursorSize(4)
         break
-      case 'medium':
+      case 'button':
         setCursorSize(6)
-        break
-      case 'large':
-        setCursorSize(8)
-        break
-      case 'smallText':
-        setCursorSize(4)
-        break
-      case 'mediumText':
-        setCursorSize(6)
-        break
-      case 'largeText':
-        setCursorSize(8)
         break
       default:
         setCursorSize(1)
     }
-  }, [mouseStatus])
+  }, [cursorStyle])
 
   const mouse = {
     x: useMotionValue(0),
@@ -71,16 +59,12 @@ const Cursor = ({ additionalText }: CursorType) => {
           y: smoothMouse.y,
         }}
         className={clsx(styles.cursorWrap, {
-          [styles.small]: mouseStatus === 'small',
-          [styles.medium]: mouseStatus === 'medium',
-          [styles.large]: mouseStatus === 'large',
-          [styles.smallText]: mouseStatus === 'smallText',
-          [styles.mediumText]: mouseStatus === 'mediumText',
-          [styles.largeText]: mouseStatus === 'largeText',
+          [styles.default]: cursorStyle === 'default',
+          [styles.button]: cursorStyle === 'button',
         })}
       >
         <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>
-        {additionalText && (
+        {text && (
           <motion.div
             className={styles.additionalText}
             variants={animations.additionalTextVariant}
@@ -88,7 +72,7 @@ const Cursor = ({ additionalText }: CursorType) => {
             animate='animate'
             exit='exit'
           >
-            {additionalText}
+            {text}
           </motion.div>
         )}
       </motion.div>

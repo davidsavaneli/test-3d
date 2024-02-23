@@ -2,123 +2,39 @@ import React from 'react'
 import Link from 'next/link'
 import { Button, MagneticLayout } from 'components'
 import Landing from './components/Landing'
-import { useMouseContext } from 'contexts'
 import styles from './styles.module.css'
+import { useCursorContext } from 'contexts'
 
 const View = () => {
-  const { onMouseOver, onMouseOut } = useMouseContext()
-
+  const { setCursorStyle } = useCursorContext()
+  
   return (
     <div className='container'>
       <Landing />
       <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('default')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          Default
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('small')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          Small
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('medium')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          Medium
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('large')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          Large
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('smallText', 'View More')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          SmallText
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('mediumText', 'View More')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          MediumText
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
-        <Link
-          scroll={false}
-          href='./about'
-          className={styles.link}
-          onMouseOver={() => onMouseOver('largeText', 'View More')}
-          onMouseOut={() => onMouseOut('default')}
-          onClick={() => onMouseOut('default')}
-        >
-          LargeText
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <MagneticLayout>
         <Button label='Get in touch' />
       </MagneticLayout>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <MagneticLayout>
+        <Link
+          href='/'
+          onMouseOver={() => setCursorStyle('default')}
+          onMouseOut={() => setCursorStyle('none')}
+          onClick={() => setCursorStyle('none')}
+        >
+          Lorem Ipsum
+        </Link>
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />

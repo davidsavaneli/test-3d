@@ -7,16 +7,9 @@
   pointer-events: none;
 }
 
-.cursorWrap.small,
-.cursorWrap.medium,
-.cursorWrap.large {
+.cursorWrap.default,
+.cursorWrap.button {
   mix-blend-mode: difference;
-}
-
-.cursorWrap.smallText,
-.cursorWrap.mediumText,
-.cursorWrap.largeText {
-  mix-blend-mode: inherit;
 }
 
 .cursor {
@@ -31,16 +24,9 @@
   transition: all 0.3s;
 }
 
-.cursorWrap.small .cursor,
-.cursorWrap.medium .cursor,
-.cursorWrap.smallText .cursor,
-.cursorWrap.mediumText .cursor {
+.cursorWrap.default .cursor,
+.cursorWrap.button .cursor {
   filter: blur(2px);
-}
-
-.cursorWrap.large .cursor,
-.cursorWrap.largeText .cursor {
-  filter: blur(3px);
 }
 
 .additionalText {
@@ -50,16 +36,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;
-}
-
-.cursorWrap.smallText .additionalText {
-  font-size: 12px;
-}
-
-.cursorWrap.mediumText .additionalText {
-  font-size: 16px;
-}
-
-.cursorWrap.largeText .additionalText {
-  font-size: 20px;
 }

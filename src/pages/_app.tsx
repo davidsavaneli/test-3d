@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import { CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
-import { MouseProvider } from 'contexts'
+import { CursorProvider } from 'contexts'
 
 import 'assets/css/styles.css'
 
@@ -16,7 +16,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <MouseProvider>
+      <CursorProvider>
         <CursorLayout>
           <CursorFluidAnimation />
           <Header />
@@ -32,7 +32,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
             )}
           </AnimatePresence>
         </CursorLayout>
-      </MouseProvider>
+      </CursorProvider>
     </React.Fragment>
   )
 }

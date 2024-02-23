@@ -1,17 +1,17 @@
 import React, { memo } from 'react'
 import { Cursor } from 'components'
-import { useMouseContext } from 'contexts'
+import { useCursorContext } from 'contexts'
 
 type CursorLayoutProps = {
   children: React.ReactNode
 }
 
 const CursorLayout = ({ children }: CursorLayoutProps) => {
-  const { additionalText } = useMouseContext()
+  const { cursorText } = useCursorContext()
 
   return (
     <React.Fragment>
-      <Cursor additionalText={additionalText} />
+      <Cursor text={cursorText} />
       {children}
     </React.Fragment>
   )
