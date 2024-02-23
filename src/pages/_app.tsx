@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import { CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll } from 'components'
@@ -10,7 +10,7 @@ import 'assets/css/styles.css'
 const App = ({ Component, router, pageProps }: AppProps) => {
   const { showPreloader } = useShowPreloader(true)
   useViewportHeight()
-  // useEffect(() => useScrollToTop(), [router.route])
+  useScrollToTop(router)
 
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />
 

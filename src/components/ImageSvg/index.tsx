@@ -1,10 +1,7 @@
 import React, { memo } from 'react'
 import Image, { ImageProps } from 'next/image'
-import { motion } from 'framer-motion'
 import clsx from 'clsx'
 import styles from './styles.module.css'
-
-import logo from 'assets/images/logo.svg'
 
 type ComponentProps = ImageProps & {
   fullWidth?: boolean
