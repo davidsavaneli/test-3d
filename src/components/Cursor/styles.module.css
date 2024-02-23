@@ -7,15 +7,15 @@
   pointer-events: none;
 }
 
-.cursorWrap.primary {
+.cursorWrap.small,
+.cursorWrap.medium,
+.cursorWrap.large {
   mix-blend-mode: difference;
 }
 
-.cursorWrap.secondary {
-  mix-blend-mode: inherit;
-}
-
-.cursorWrap.text {
+.cursorWrap.smallText,
+.cursorWrap.mediumText,
+.cursorWrap.largeText {
   mix-blend-mode: inherit;
 }
 
@@ -25,24 +25,22 @@
   margin-top: -12px;
   width: 24px;
   height: 24px;
-  background-color: #fff;
+  background-color: #c5fcfc;
   border-radius: 50%;
   pointer-events: none;
   transition: all 0.3s;
 }
 
-.cursorWrap.primary .cursor {
-  background-color: #c5fcfc;
-  filter: blur(2px)
+.cursorWrap.small .cursor,
+.cursorWrap.medium .cursor,
+.cursorWrap.smallText .cursor,
+.cursorWrap.mediumText .cursor {
+  filter: blur(2px);
 }
 
-.cursorWrap.secondary .cursor {
-  background-color: #fff;
-}
-
-.cursorWrap.text .cursor {
-  background-color: #c5fcfc;
-  filter: blur(2px)
+.cursorWrap.large .cursor,
+.cursorWrap.largeText .cursor {
+  filter: blur(3px);
 }
 
 .additionalText {
@@ -52,5 +50,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;
-  /* mix-blend-mode: exclusion; */
+}
+
+.cursorWrap.smallText .additionalText {
+  font-size: 12px;
+}
+
+.cursorWrap.mediumText .additionalText {
+  font-size: 16px;
+}
+
+.cursorWrap.largeText .additionalText {
+  font-size: 20px;
 }

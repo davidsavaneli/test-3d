@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MagneticLayout } from 'components'
+import Landing from './components/Landing'
 import { useMouseContext } from 'contexts'
 import styles from './styles.module.css'
 
@@ -9,11 +10,7 @@ const View = () => {
 
   return (
     <div className='container'>
-      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-      <br />
-      <br />
-      <br />
+      <Landing />
       <MagneticLayout>
         <Link
           scroll={false}
@@ -23,7 +20,7 @@ const View = () => {
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
-          About Page
+          Default
         </Link>
       </MagneticLayout>
       <br />
@@ -34,11 +31,11 @@ const View = () => {
           scroll={false}
           href='./about'
           className={styles.link}
-          onMouseOver={() => onMouseOver('primary')}
+          onMouseOver={() => onMouseOver('small')}
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
-          About Page 2
+          Small
         </Link>
       </MagneticLayout>
       <br />
@@ -49,11 +46,11 @@ const View = () => {
           scroll={false}
           href='./about'
           className={styles.link}
-          onMouseOver={() => onMouseOver('secondary')}
+          onMouseOver={() => onMouseOver('medium')}
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
-          About Page 3
+          Medium
         </Link>
       </MagneticLayout>
       <br />
@@ -64,36 +61,62 @@ const View = () => {
           scroll={false}
           href='./about'
           className={styles.link}
-          onMouseOver={() => onMouseOver('text', 'View More')}
+          onMouseOver={() => onMouseOver('large')}
           onMouseOut={() => onMouseOut('default')}
           onClick={() => onMouseOut('default')}
         >
-          About Page 4
+          Large
         </Link>
       </MagneticLayout>
       <br />
       <br />
-      <div className='f-regular' style={{ fontSize: '20px', margin: '50px 0' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis aut quibusdam? Recusandae rem voluptatum
-        earum inventore cupiditate in ducimus iusto voluptatibus, sunt soluta magni aliquid iure modi totam explicabo?
-      </div>
-      <div className='f-medium' style={{ fontSize: '20px', margin: '50px 0' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis aut quibusdam? Recusandae rem voluptatum
-        earum inventore cupiditate in ducimus iusto voluptatibus, sunt soluta magni aliquid iure modi totam explicabo?
-      </div>
-      <div className='f-semiBold' style={{ fontSize: '20px', margin: '50px 0' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis aut quibusdam? Recusandae rem voluptatum
-        earum inventore cupiditate in ducimus iusto voluptatibus, sunt soluta magni aliquid iure modi totam explicabo?
-      </div>
-      <div className='f-bold' style={{ fontSize: '20px', margin: '50px 0' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis aut quibusdam? Recusandae rem voluptatum
-        earum inventore cupiditate in ducimus iusto voluptatibus, sunt soluta magni aliquid iure modi totam explicabo?
-      </div>
+      <br />
+      <MagneticLayout>
+        <Link
+          scroll={false}
+          href='./about'
+          className={styles.link}
+          onMouseOver={() => onMouseOver('smallText', 'View More')}
+          onMouseOut={() => onMouseOut('default')}
+          onClick={() => onMouseOut('default')}
+        >
+          SmallText
+        </Link>
+      </MagneticLayout>
       <br />
       <br />
-      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <br />
+      <MagneticLayout>
+        <Link
+          scroll={false}
+          href='./about'
+          className={styles.link}
+          onMouseOver={() => onMouseOver('mediumText', 'View More')}
+          onMouseOut={() => onMouseOut('default')}
+          onClick={() => onMouseOut('default')}
+        >
+          MediumText
+        </Link>
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
+      <MagneticLayout>
+        <Link
+          scroll={false}
+          href='./about'
+          className={styles.link}
+          onMouseOver={() => onMouseOver('largeText', 'View More')}
+          onMouseOut={() => onMouseOut('default')}
+          onClick={() => onMouseOut('default')}
+        >
+          LargeText
+        </Link>
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
+
       <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
     </div>
   )

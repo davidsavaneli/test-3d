@@ -1,6 +1,19 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react'
 
-type MouseStatus = 'default' | 'primary' | 'secondary' | 'text'
+type MouseStatus =
+  | 'default'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'smallText'
+  | 'mediumText'
+  | 'largeText'
+  | 'smallFilled'
+  | 'mediumFilled'
+  | 'largeFilled'
+  | 'smallFilledText'
+  | 'mediumFilledText'
+  | 'largeFilledText'
 
 type MouseContextType = {
   mouseStatus: MouseStatus
