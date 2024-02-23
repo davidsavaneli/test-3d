@@ -73,6 +73,9 @@ const View = () => {
       </MagneticLayout>
       <br />
       <br />
+      <div style={{fontSize: '20px'}}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis aut quibusdam? Recusandae rem voluptatum
+      earum inventore cupiditate in ducimus iusto voluptatibus, sunt soluta magni aliquid iure modi totam explicabo?</div>
       <br />
       <br />
       <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>

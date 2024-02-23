@@ -1,5 +1,11 @@
 :root {
   --colorBg: rgb(18, 19, 21);
-  --colorBg-070: rgba(18, 19, 21, .7);
-  --colorBg-090: rgba(18, 19, 21, .9);
+  --colorBg-070: rgba(18, 19, 21, 0.7);
+  --colorBg-090: rgba(18, 19, 21, 0.9);
+
+  --fontLight: 'RaleGrotesk-Light';
+  --fontRegular: 'RaleGrotesk-Regular';
+  --fontMedium: 'RaleGrotesk-Medium';
+  --fontBold: 'RaleGrotesk-Bold';
+  --fontUppercase: 'MonumentExtended-Regular';
 }

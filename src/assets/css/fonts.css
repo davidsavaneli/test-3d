@@ -1,5 +1,29 @@
-:root {
-  --colorBg: rgb(18, 19, 21);
-  --colorBg-070: rgba(18, 19, 21, .7);
-  --colorBg-090: rgba(18, 19, 21, .9);
+@font-face {
+  font-family: "MonumentExtended-Regular";
+  src: url("../fonts/MonumentExtended-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RaleGrotesk-Light";
+  src: url("../fonts/RaleGrotesk-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RaleGrotesk-Regular";
+  src: url("../fonts/RaleGrotesk-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RaleGrotesk-Medium";
+  src: url("../fonts/RaleGrotesk-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RaleGrotesk-Bold";
+  src: url("../fonts/RaleGrotesk-Bold.woff2") format("woff2");
+  font-display: swap;
 }
