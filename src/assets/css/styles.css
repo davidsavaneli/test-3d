@@ -10,7 +10,7 @@ body {
   font-size: 14px;
   color: #fff;
   background-color: var(--colorBg);
-  font-family: var(--fontLight);
+  font-family: var(--fontMedium);
   font-weight: 100 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,11 +22,6 @@ body * {
   cursor: none !important;
 }
 
-.f-light,
-.f-light * {
-  font-family: var(--fontLight);
-}
-
 .f-regular,
 .f-regular * {
   font-family: var(--fontRegular);
@@ -35,6 +30,11 @@ body * {
 .f-medium,
 .f-medium * {
   font-family: var(--fontMedium);
+}
+
+.f-semiBold,
+.f-semiBold * {
+  font-family: var(--fontSemiBold);
 }
 
 .f-bold,

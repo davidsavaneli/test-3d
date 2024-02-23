@@ -1,29 +1,29 @@
 @font-face {
-  font-family: "MonumentExtended-Regular";
-  src: url("../fonts/MonumentExtended-Regular.woff2") format("woff2");
+  font-family: 'MonumentExtended-Regular';
+  src: url('../fonts/MonumentExtended-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "RaleGrotesk-Light";
-  src: url("../fonts/RaleGrotesk-Light.woff2") format("woff2");
+  font-family: 'Syne-Regular';
+  src: url('../fonts/Syne-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "RaleGrotesk-Regular";
-  src: url("../fonts/RaleGrotesk-Regular.woff2") format("woff2");
+  font-family: 'Syne-Medium';
+  src: url('../fonts/Syne-Medium.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "RaleGrotesk-Medium";
-  src: url("../fonts/RaleGrotesk-Medium.woff2") format("woff2");
+  font-family: 'Syne-SemiBold';
+  src: url('../fonts/Syne-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "RaleGrotesk-Bold";
-  src: url("../fonts/RaleGrotesk-Bold.woff2") format("woff2");
+  font-family: 'Syne-Bold';
+  src: url('../fonts/Syne-Bold.woff2') format('woff2');
   font-display: swap;
 }
