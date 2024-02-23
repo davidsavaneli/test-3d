@@ -16,14 +16,14 @@ const animations: animationTypes = {
         delay: 3.8,
         duration: 1.2,
         type: 'spring',
-        bounce: 0
+        bounce: 0,
       },
     },
   },
   btnVariant: {
     initial: {
       opacity: 0,
-      scale: 0.4
+      scale: 0.4,
     },
     animate: {
       opacity: 1,
@@ -32,10 +32,10 @@ const animations: animationTypes = {
         delay: 4.2,
         duration: 0.8,
         type: 'spring',
-        damping: 8
+        damping: 8,
       },
     },
-  }
+  },
 }
 
 export default animations

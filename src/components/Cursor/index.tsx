@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { motion, useMotionValue } from 'framer-motion'
 import { useMouseContext } from 'contexts'
@@ -55,30 +55,32 @@ const Cursor = ({ additionalText }: CursorType) => {
   }, [])
 
   return (
-    <motion.div
-      style={{
-        x: smoothMouse.x,
-        y: smoothMouse.y,
-      }}
-      className={clsx(styles.cursorWrap, {
-        [styles.primary]: mouseStatus === 'primary',
-        [styles.secondary]: mouseStatus === 'secondary',
-        [styles.text]: mouseStatus === 'text',
-      })}
-    >
-      <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>
-      {additionalText && (
-        <motion.div
-          className={styles.additionalText}
-          variants={animations.additionalTextVariant}
-          initial='initial'
-          animate='animate'
-          exit='exit'
-        >
-          {additionalText}
-        </motion.div>
-      )}
-    </motion.div>
+    <React.Fragment>
+      <motion.div
+        style={{
+          x: smoothMouse.x,
+          y: smoothMouse.y,
+        }}
+        className={clsx(styles.cursorWrap, {
+          [styles.primary]: mouseStatus === 'primary',
+          [styles.secondary]: mouseStatus === 'secondary',
+          [styles.text]: mouseStatus === 'text',
+        })}
+      >
+        <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>
+        {additionalText && (
+          <motion.div
+            className={styles.additionalText}
+            variants={animations.additionalTextVariant}
+            initial='initial'
+            animate='animate'
+            exit='exit'
+          >
+            {additionalText}
+          </motion.div>
+        )}
+      </motion.div>
+    </React.Fragment>
   )
 }
 

@@ -10,7 +10,7 @@ import 'assets/css/styles.css'
 const App = ({ Component, router, pageProps }: AppProps) => {
   const { showPreloader } = useShowPreloader(true)
   useViewportHeight()
-  useEffect(() => useScrollToTop(), [router.route])
+  // useEffect(() => useScrollToTop(), [router.route])
 
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />
 

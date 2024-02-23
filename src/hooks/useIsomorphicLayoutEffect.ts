@@ -10,5 +10,4 @@ import { useEffect, useLayoutEffect } from 'react'
  *   // Code to be executed during the layout phase on the client side
  * }, [dependency1, dependency2]);
  */
-export const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect
+export const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect

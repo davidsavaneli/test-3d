@@ -1,4 +1,4 @@
-import { useRef, useState, memo } from 'react'
+import React, { useRef, useState, memo } from 'react'
 import { motion } from 'framer-motion'
 
 type MagneticLayoutProps = {
@@ -30,16 +30,18 @@ const MagneticLayout = ({ children }: MagneticLayoutProps) => {
   const { x, y } = position
 
   return (
-    <motion.div
-      style={{ display: 'inline-flex' }}
-      ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 100, damping: 25, mass: 0.1 }}
-    >
-      {children}
-    </motion.div>
+    <React.Fragment>
+      <motion.div
+        style={{ display: 'inline-flex' }}
+        ref={ref}
+        onMouseMove={handleMouse}
+        onMouseLeave={reset}
+        animate={{ x, y }}
+        transition={{ type: 'spring', stiffness: 100, damping: 25, mass: 0.1 }}
+      >
+        {children}
+      </motion.div>
+    </React.Fragment>
   )
 }
 

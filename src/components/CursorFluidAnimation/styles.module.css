@@ -5,6 +5,8 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: 9997;
+  mix-blend-mode: difference;
 }
 
 .overlay canvas {

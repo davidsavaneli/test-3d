@@ -1365,25 +1365,30 @@ export default function (el, config) {
     q = v * (1 - f * s)
     t = v * (1 - (1 - f) * s)
 
-    switch (i % 6) {
-      case 0:
-        ;(r = v), (g = t), (b = p)
-        break
-      case 1:
-        ;(r = q), (g = v), (b = p)
-        break
-      case 2:
-        ;(r = p), (g = v), (b = t)
-        break
-      case 3:
-        ;(r = p), (g = q), (b = v)
-        break
-      case 4:
-        ;(r = t), (g = p), (b = v)
-        break
-      case 5:
-        ;(r = v), (g = p), (b = q)
-        break
+    if (i % 6 === 0) {
+      r = v
+      g = t
+      b = p
+    } else if (i % 6 === 1) {
+      r = q
+      g = v
+      b = p
+    } else if (i % 6 === 2) {
+      r = p
+      g = v
+      b = t
+    } else if (i % 6 === 3) {
+      r = p
+      g = q
+      b = v
+    } else if (i % 6 === 4) {
+      r = t
+      g = p
+      b = v
+    } else if (i % 6 === 5) {
+      r = v
+      g = p
+      b = q
     }
 
     return {
