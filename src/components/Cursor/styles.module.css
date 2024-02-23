@@ -29,6 +29,10 @@
   filter: blur(2px);
 }
 
+.cursorWrap.button .cursor {
+  background-color: transparent;
+}
+
 .additionalText {
   color: var(--colorBlack);
   position: absolute;

@@ -21,23 +21,6 @@ const View = () => {
       <br />
       <br />
       <br />
-      <MagneticLayout>
-        <Link
-          href='/'
-          onMouseOver={() => setCursorStyle('default')}
-          onMouseOut={() => setCursorStyle('none')}
-          onClick={() => setCursorStyle('none')}
-        >
-          Lorem Ipsum
-        </Link>
-      </MagneticLayout>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
 
       <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
       <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
