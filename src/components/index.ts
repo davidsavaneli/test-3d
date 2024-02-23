@@ -15,3 +15,5 @@ export { default as Header } from './Header'
 export { default as CursorFluidAnimation } from './CursorFluidAnimation'
 
 export { default as Cursor } from './Cursor'
+
+export { default as Button } from './Button'

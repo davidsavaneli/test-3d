@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { MagneticLayout } from 'components'
+import { Button, MagneticLayout } from 'components'
 import Landing from './components/Landing'
 import { useMouseContext } from 'contexts'
 import styles from './styles.module.css'
@@ -116,7 +116,19 @@ const View = () => {
       <br />
       <br />
       <br />
+      <MagneticLayout>
+        <Button label='Get in touch' />
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
 
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
+      <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
       <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
     </div>
   )

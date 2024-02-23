@@ -1,0 +1,46 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 44px;
+  margin: 0;
+  height: 64px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  border-radius: 100px;
+}
+
+.label {
+  position: relative;
+  top: 1px;
+  font-size: 18px;
+  color: #fff;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.borderLine {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #fff;
+  background-color: transparent;
+  padding-bottom: 0;
+  height: 100%;
+  border-radius: 100px;
+  transition:
+    padding-bottom 0.3s,
+    border-radius 0.3s,
+    background-color 0.3s,
+    filter 0.3s;
+}
+
+.button:hover .borderLine {
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background-color: var(--colorPrimary);
+  filter: blur(10px);
+}

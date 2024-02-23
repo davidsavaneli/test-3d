@@ -5,7 +5,7 @@
   top: 0;
   padding: 30px 0;
   background-image: linear-gradient(var(--colorBg) 4%, var(--colorBg-090) 16%, var(--colorBg-070) 71%, transparent);
-  z-index: 10;
+  z-index: 1;
   
 }
 
