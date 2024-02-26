@@ -23,6 +23,9 @@ const Cursor = ({ text }: CursorType) => {
       case 'button':
         setCursorSize(6)
         break
+      case 'largeText':
+        setCursorSize(10)
+        break
       default:
         setCursorSize(1)
     }
@@ -61,6 +64,7 @@ const Cursor = ({ text }: CursorType) => {
         className={clsx(styles.cursorWrap, {
           [styles.default]: cursorStyle === 'default',
           [styles.button]: cursorStyle === 'button',
+          [styles.largeText]: cursorStyle === 'largeText',
         })}
       >
         <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>

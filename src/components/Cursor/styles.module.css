@@ -8,7 +8,8 @@
 }
 
 .cursorWrap.default,
-.cursorWrap.button {
+.cursorWrap.button,
+.cursorWrap.largeText {
   mix-blend-mode: difference;
 }
 
@@ -31,6 +32,10 @@
 
 .cursorWrap.button .cursor {
   background-color: transparent;
+}
+
+.cursorWrap.largeText .cursor {
+  filter: blur(4px);
 }
 
 .additionalText {
