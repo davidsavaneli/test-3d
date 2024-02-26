@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react'
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 type CursorStyle = 'none' | 'default' | 'button'
 
@@ -23,6 +24,12 @@ type CursorProviderProps = {
 }
 
 export const CursorProvider = ({ children }: CursorProviderProps) => {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setTimeout(() => updateCursorStyle('none', ''), 500)
+  }, [pathname])
+
   const [style, setStyle] = useState<CursorStyle>('none')
   const [text, setText] = useState<string | undefined>(undefined)
 

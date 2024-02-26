@@ -7,12 +7,22 @@ import { useCursorContext } from 'contexts'
 
 const View = () => {
   const { setCursorStyle } = useCursorContext()
-  
+
   return (
     <div className='container'>
       <Landing />
       <MagneticLayout>
         <Button label='Get in touch' />
+      </MagneticLayout>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <MagneticLayout>
+        <Button label='Get in touch' href='./about' />
       </MagneticLayout>
       <br />
       <br />

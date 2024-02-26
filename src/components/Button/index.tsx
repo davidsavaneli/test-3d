@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import Link from 'next/link'
 import clsx from 'clsx'
 import { useCursorContext } from 'contexts'
 
@@ -6,19 +7,24 @@ import styles from './styles.module.css'
 
 export type ComponentProps = React.ComponentProps<'button'> & {
   label?: string
+  href?: string
 }
 
-const Button = ({ label, ...props }: ComponentProps) => {
+const Button = ({ label, href, ...props }: ComponentProps) => {
   const { setCursorStyle } = useCursorContext()
 
-  return (
-    <button
-      className={clsx(styles.button)}
-      {...props}
-      onMouseOver={() => setCursorStyle('button')}
-      onMouseOut={() => setCursorStyle('none')}
-      onClick={() => setCursorStyle('none')}
-    >
+  const cursorProps = {
+    onMouseOver: () => setCursorStyle('button'),
+    onMouseOut: () => setCursorStyle('none'),
+  }
+
+  return href ? (
+    <Link href={href} className={clsx(styles.button)} {...cursorProps}>
+      {label && <div className={styles.label}>{label}</div>}
+      <div className={styles.borderLine}></div>
+    </Link>
+  ) : (
+    <button className={clsx(styles.button)} {...props} {...cursorProps}>
       {label && <div className={styles.label}>{label}</div>}
       <div className={styles.borderLine}></div>
     </button>
