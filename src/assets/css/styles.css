@@ -46,3 +46,93 @@ body * {
 .f-uppercase * {
   font-family: var(--fontUppercase);
 }
+
+
+
+/*  */
+
+
+
+.Shss {
+  position: relative;
+  box-sizing: border-box !important;
+}
+
+.Shss * {
+  box-sizing: border-box !important;
+}
+
+.Shss-container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.Shss-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Shss-progress-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #333;
+  transform-origin: 0%;
+  width: 100vw;
+}
+
+.Shss-progress-bar.Shss-progress-bar-position-top {
+  top: 0;
+}
+
+.Shss-progress-bar.Shss-progress-bar-position-bottom {
+  bottom: 0;
+}
+
+/*  */
+
+.Shss-wrapper {
+  position: relative;
+}
+
+.Shss-slides {
+  position: relative;
+  display: flex;
+  width: max-content;
+  min-width: 100vw;
+}
+
+/*  */
+
+.Shss-slide {
+  position: relative;
+}
+
+.Shss-slide-active-points {
+  position: absolute;
+  width: 99.9%;
+  height: 99.9%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  margin: auto;
+}
+
+.Shss-slide-item {
+  position: relative;
+  width: auto;
+  min-width: auto;
+  height: auto;
+}
+
+.Shss-slide-item-inner {
+  height: 50vh;
+  width: 100vw;
+  border: 1px solid red
+}
