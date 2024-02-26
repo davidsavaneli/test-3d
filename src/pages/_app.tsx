@@ -25,9 +25,9 @@ const App = ({ Component, router, pageProps }: AppProps) => {
               <Preloader />
             ) : (
               <main key={router.route} id='main'>
-                <SmoothScroll root={true}>
+                {/* <SmoothScroll root={true}> */}
                   <Component {...pageProps} />
-                </SmoothScroll>
+                {/* </SmoothScroll> */}
               </main>
             )}
           </AnimatePresence>
