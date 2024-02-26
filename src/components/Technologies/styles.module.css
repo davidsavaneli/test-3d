@@ -1,0 +1,17 @@
+.technologies {
+  position: relative;
+  margin: 200px 0;
+}
+
+.wrapper {
+  display: flex;
+  margin: 20px 0;
+}
+
+.img {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  margin: 0 40px;
+  opacity: 0.4;
+}

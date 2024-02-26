@@ -14,6 +14,10 @@
   border-radius: 100px;
 }
 
+.button * {
+  pointer-events: none;
+}
+
 .label {
   position: relative;
   top: 1px;
@@ -21,6 +25,7 @@
   color: #fff;
   z-index: 1;
   mix-blend-mode: difference;
+  transition: transform 0.3s;
 }
 
 .borderLine {
@@ -38,9 +43,15 @@
     filter 0.3s;
 }
 
-.button:hover .borderLine {
-  padding-bottom: 100%;
-  border-radius: 50%;
-  background-color: var(--colorPrimary);
-  filter: blur(20px);
+@media (hover: hover) {
+  .button:hover .label {
+    transform: scale(1.16)
+  }
+
+  .button:hover .borderLine {
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background-color: var(--colorPrimary);
+    filter: blur(20px);
+  }
 }

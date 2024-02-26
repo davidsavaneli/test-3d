@@ -17,3 +17,7 @@ export { default as CursorFluidAnimation } from './CursorFluidAnimation'
 export { default as Cursor } from './Cursor'
 
 export { default as Button } from './Button'
+
+export { default as VelocityAnimation } from './VelocityAnimation'
+
+export { default as Technologies } from './Technologies'
