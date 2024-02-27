@@ -1,0 +1,41 @@
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -5000px;
+  bottom: -5000px;
+}
+
+.stars {
+  background-image: url('../../assets/images/stars.png');
+  background-size: 1000px;
+  background-position: center center;
+  opacity: 0.5;
+}
+
+.twinkling {
+  background-image: url('../../assets/images/twinkling.png');
+  background-position: center top;
+  animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}

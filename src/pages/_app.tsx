@@ -1,7 +1,7 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll } from 'components'
+import { BackgrundOverlay, CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
 
@@ -16,10 +16,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <div className='background-stars'>
-        <div className='stars overlay'></div>
-        <div className='twinkling overlay'></div>
-      </div>
+      <BackgrundOverlay />
       <CursorProvider>
         <CursorLayout>
           <CursorFluidAnimation />

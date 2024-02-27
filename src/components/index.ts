@@ -21,3 +21,5 @@ export { default as Button } from './Button'
 export { default as VelocityAnimation } from './VelocityAnimation'
 
 export { default as Technologies } from './Technologies'
+
+export { default as BackgrundOverlay } from './BackgrundOverlay'
