@@ -20,11 +20,11 @@ const BackgrundOverlay = () => {
 
   const { scrollY } = useScroll()
 
-  const y = useTransform(scrollY, [0, bodyHeight], [-3000, 3000])
+  const y = useTransform(scrollY, [0, bodyHeight], [-bodyHeight / 10, bodyHeight / 10])
 
   const scrollVelocity = useVelocity(scrollY)
 
-  const opacity = useTransform(scrollVelocity, [3000, 0, -3000], [1, 0.5, 1], {
+  const opacity = useTransform(scrollVelocity, [bodyHeight / 10, 0, -bodyHeight / 10], [1, 0.5, 1], {
     clamp: false,
   })
 
