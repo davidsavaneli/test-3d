@@ -5,6 +5,7 @@
 @import 'fonts.css';
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -45,4 +46,45 @@ body * {
 .f-uppercase,
 .f-uppercase * {
   font-family: var(--fontUppercase);
+}
+
+/*  */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.background-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.background-stars .stars {
+  background-image: url('../images/stars.png');
+  background-size: 1000px;
+  background-position: center center;
+  opacity: 0.6;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.background-stars .twinkling {
+  background: url('../images/twinkling.png') center top;
+  animation: move-twink-back 200s linear infinite;
 }

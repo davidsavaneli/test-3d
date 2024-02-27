@@ -16,6 +16,10 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
+      <div className='background-stars'>
+        <div className='stars overlay'></div>
+        <div className='twinkling overlay'></div>
+      </div>
       <CursorProvider>
         <CursorLayout>
           <CursorFluidAnimation />
@@ -25,9 +29,9 @@ const App = ({ Component, router, pageProps }: AppProps) => {
               <Preloader />
             ) : (
               <main key={router.route} id='main'>
-                {/* <SmoothScroll root={true}> */}
+                <SmoothScroll root={true}>
                   <Component {...pageProps} />
-                {/* </SmoothScroll> */}
+                </SmoothScroll>
               </main>
             )}
           </AnimatePresence>
