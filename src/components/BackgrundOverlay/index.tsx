@@ -8,10 +8,7 @@ const BackgrundOverlay = () => {
   const [bodyHeight, setBodyHeight] = useState<number>(0)
 
   useEffect(() => {
-    const handleBodySize = () => {
-      console.log(document.body.clientHeight);
-      setBodyHeight(document.body.clientHeight);
-    };
+    const handleBodySize = () => setBodyHeight(document.body.clientHeight)
 
     handleBodySize()
     const handleResize = () => handleBodySize()
@@ -19,7 +16,7 @@ const BackgrundOverlay = () => {
     resizeObserver.observe(document.body)
 
     return () => resizeObserver.disconnect()
-  }, []);
+  }, [])
 
   const { scrollY } = useScroll()
 

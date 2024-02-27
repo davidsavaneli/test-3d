@@ -27,7 +27,7 @@ export const CursorProvider = ({ children }: CursorProviderProps) => {
   const pathname = usePathname()
 
   useEffect(() => {
-    setTimeout(() => updateCursorStyle('none', ''), 500)
+    setTimeout(() => updateCursorStyle('none', ''), 800)
   }, [pathname])
 
   const [style, setStyle] = useState<CursorStyle>('none')
