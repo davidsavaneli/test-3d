@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useCursorContext } from 'contexts'
 import { useWindowSize } from 'hooks'
+import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
 
@@ -13,14 +14,8 @@ const Landing = () => {
 
   const hoverState = useMotionValue(0)
 
-  const config = {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  }
-
-  const rotateY = useSpring(useTransform(x, [0, width], [8, -8]), config)
-  const rotateX = useSpring(useTransform(y, [0, height], [-8, 8]), config)
+  const rotateY = useSpring(useTransform(x, [0, width], [8, -8]), springConfig)
+  const rotateX = useSpring(useTransform(y, [0, height], [-8, 8]), springConfig)
 
   function handleMouse(event: any) {
     const rect = event.currentTarget.getBoundingClientRect()
@@ -51,11 +46,11 @@ const Landing = () => {
             onMouseOver={() => setCursorStyle('largeText')}
             onMouseOut={() => setCursorStyle('none')}
             whileHover={{
-              scale: 1.06,
+              scale: 1.08,
             }}
             transition={{
               duration: 0.6,
-              config,
+              springConfig,
             }}
           >
             Tech Zone for You

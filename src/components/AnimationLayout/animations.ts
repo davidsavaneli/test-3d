@@ -18,10 +18,8 @@ const animations: animationTypes = {
       opacity: 1,
       y: '0',
       transition: {
-        duration: 1.4,
+        duration: 1.2,
         delay: 0.4,
-        type: 'spring',
-        bounce: 0,
       },
     },
     exit: {

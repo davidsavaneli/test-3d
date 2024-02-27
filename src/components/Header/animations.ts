@@ -1,4 +1,6 @@
 import { Variants } from 'framer-motion'
+import { springConfig } from 'animations'
+
 
 type animationTypes = {
   logoVariant: Variants
@@ -17,6 +19,7 @@ const animations: animationTypes = {
         duration: 1.2,
         type: 'spring',
         bounce: 0,
+        ...springConfig
       },
     },
   },
@@ -32,7 +35,7 @@ const animations: animationTypes = {
         delay: 4.2,
         duration: 0.8,
         type: 'spring',
-        damping: 8,
+        ...springConfig
       },
     },
   },

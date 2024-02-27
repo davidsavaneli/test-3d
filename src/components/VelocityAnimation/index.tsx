@@ -9,6 +9,7 @@ import {
   useAnimationFrame,
 } from 'framer-motion'
 import { wrap } from '@motionone/utils'
+import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
 
@@ -21,10 +22,7 @@ const VelocityAnimation = ({ children, baseVelocity = 1 }: VelocityAnimationProp
   const baseX = useMotionValue(0)
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  })
+  const smoothVelocity = useSpring(scrollVelocity, springConfig)
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   })

@@ -1,5 +1,6 @@
 import React, { memo, useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion'
+import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
 
@@ -23,7 +24,7 @@ const Services = () => {
 
         const offsetTop = sliderRef.current.offsetTop
         const boxHeight = sliderContentRef.current.offsetHeight
-        const height = (boxWidth - windowWidth + boxHeight) * 2
+        const height = (boxWidth - windowWidth + boxHeight) * 1
 
         sliderRef.current.style.height = `${height}px`
 
@@ -41,12 +42,6 @@ const Services = () => {
 
     return () => resizeObserver.disconnect()
   })
-
-  const springConfig = {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  }
 
   const { scrollY } = useScroll()
   const { scrollYProgress } = useScroll({ target: sliderRef })

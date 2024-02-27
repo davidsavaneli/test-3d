@@ -1,5 +1,7 @@
 import React, { useRef, useState, memo } from 'react'
 import { motion } from 'framer-motion'
+import { springConfig } from 'animations'
+
 
 type MagneticLayoutProps = {
   children: React.ReactNode
@@ -37,7 +39,7 @@ const MagneticLayout = ({ children }: MagneticLayoutProps) => {
         onMouseMove={handleMouse}
         onMouseLeave={reset}
         animate={{ x, y }}
-        transition={{ type: 'spring', stiffness: 100, damping: 25, mass: 0.1 }}
+        transition={{ type: 'spring', ...springConfig }}
       >
         {children}
       </motion.div>
