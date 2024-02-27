@@ -10,8 +10,8 @@ const View = () => {
 
   return (
     <>
+      <Landing />
       <div className='container'>
-        <Landing />
         <MagneticLayout>
           <Button label='Get in touch' />
         </MagneticLayout>
@@ -48,28 +48,28 @@ const View = () => {
         <br />
       </div>
       <Services />
-      <div style={{height: '2px', backgroundColor: 'green'}}></div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+      <div style={{ height: '2px', backgroundColor: 'green' }}></div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Technologies />
       <div className='container'>
         <br />

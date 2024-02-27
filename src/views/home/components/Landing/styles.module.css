@@ -1,17 +1,29 @@
 .landing {
-  height: 600px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.title {
-  font-size: 80px;
-  font-family: var(--fontUppercase);
-  transition: opacity 0.3s, transform .3s;
+.wrapper {
+  perspective: 400px;
 }
 
-.title:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
+.inner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 90px;
+  font-family: var(--fontUppercase);
+  text-align: center;
+}
+
+.text {
+  font-size: 20px;
+  text-align: center;
+  max-width: 512px;
+  margin-top: 40px;
 }
