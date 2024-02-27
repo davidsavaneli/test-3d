@@ -49,14 +49,15 @@ const Services = () => {
   }
 
   const { scrollY } = useScroll()
+  const { scrollYProgress } = useScroll({ target: sliderRef })
 
   const transformX = useSpring(scrollY, springConfig)
-  const scrollVelocity = useVelocity(scrollY)
+  const scrollVelocity = useVelocity(scrollYProgress)
   const smoothVelocity = useSpring(scrollVelocity, springConfig)
 
   const x = useTransform(transformX, [startPos, endPos], [startTrValue, endTrValue])
 
-  const scale = useTransform(smoothVelocity, [1000, 0, -1000], [0.9, 1, 0.9], {
+  const scale = useTransform(smoothVelocity, [1, 0, -1], [0.001, 1, 0.001], {
     clamp: false,
   })
 
