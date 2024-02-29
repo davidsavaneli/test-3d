@@ -32,13 +32,13 @@ const Landing = () => {
     y.set(height / 2)
   }
 
-  const xx = document.getElementById('services-section')
+  const servicesSectionEl = document.getElementById('services-section')
 
   const scrollDown = () => {
-    if (xx) {
-      Scroll.scrollTo(xx.offsetTop, {
-        duration: 1200,
-        smooth: 'easeOutExpo',
+    if (servicesSectionEl) {
+      Scroll.scrollTo(servicesSectionEl.offsetTop, {
+        duration: 1400,
+        smooth: 'easeOutQuart',
       })
     }
   }
@@ -73,7 +73,9 @@ const Landing = () => {
           </div>
         </motion.div>
       </div>
-      <div className={styles.test} onClick={() => scrollDown()}>Scroll</div>
+      <div className={styles.test} onClick={() => scrollDown()}>
+        Scroll
+      </div>
     </div>
   )
 }
