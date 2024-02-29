@@ -22,7 +22,7 @@ const AnimatedTitle = ({
   const transformX = useSpring(scrollY, springConfig)
 
   const fillProgress = useTransform(transformX, [animationStartPosition, animationEndPosition], ['0%', '100%'])
-  const test = useTransform(
+  const x = useTransform(
     transformX,
     [animationStartPosition, animationEndPosition],
     [animationDirection === 'ltr' ? '40px' : '-40px', '0px'],
@@ -34,7 +34,7 @@ const AnimatedTitle = ({
         [styles.ltr]: animationDirection === 'ltr',
         [styles.rtl]: animationDirection === 'rtl',
       })}
-      style={{ x: test }}
+      style={{ x }}
     >
       <motion.div className={clsx(styles.title, styles.first)}>
         <span>{children}</span>

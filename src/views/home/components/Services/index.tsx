@@ -91,15 +91,13 @@ const Services = () => {
                   <div className={styles.slideItemSpaceLarge}></div>
                 </div>
               </div>
-              {servicesData.map((o: servicesDataTypes) => {
-                return (
-                  <div className={styles.slide} key={o.id}>
-                    <div className={styles.slideItem}>
-                      <ServiceItem scale={scale} data={o} />
-                    </div>
+              {servicesData.map((o: servicesDataTypes) => (
+                <div className={styles.slide} key={o.id}>
+                  <div className={styles.slideItem}>
+                    <ServiceItem scale={scale} data={o} />
                   </div>
-                )
-              })}
+                </div>
+              ))}
               <div className={styles.slide}>
                 <div className={styles.slideItem}>
                   <div className={styles.slideItemSpaceSmall}></div>
