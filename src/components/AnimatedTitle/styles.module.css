@@ -1,0 +1,52 @@
+.titleBox {
+  display: flex;
+  width: max-content;
+  position: relative;
+}
+
+.titleBox.ltr {
+  justify-content: flex-start;
+}
+
+.titleBox.rtl {
+  justify-content: flex-end;
+}
+
+.title {
+  overflow: hidden;
+}
+
+.title.first {
+  position: absolute;
+  opacity: 0.15;
+}
+
+.title.second {
+  position: relative;
+  opacity: 1;
+}
+
+.titleBox.rtl .title {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title span {
+  display: block;
+  font-size: 120px;
+  color: var(--colorWhite);
+  font-family: var(--fontUppercase);
+  line-height: 1;
+  text-transform: uppercase;
+  width: 100%;
+  overflow: hidden;
+}
+
+.title.second span {
+  width: 0%;
+}
+
+.titleBox.rtl .title span {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,7 +1,10 @@
 import React, { memo, useRef, useState, useEffect } from 'react'
 import clsx from 'clsx'
-import { motion, useScroll, useSpring, useTransform, useVelocity, useMotionValueEvent } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform, useVelocity, MotionValue } from 'framer-motion'
 import { springConfig } from 'animations'
+import { ImageSvg, AnimatedTitle } from 'components'
+import { servicesData } from 'testData'
+import { servicesDataTypes } from 'types'
 
 import styles from './styles.module.css'
 
@@ -10,7 +13,6 @@ const Services = () => {
   const [endPos, setEndPos] = useState<number>(0)
   const [startTrValue, setStartTrValue] = useState<number>(0)
   const [endTrValue, setEndTrValue] = useState<number>(0)
-  const [titleProgress, setTitleProgress] = useState<number>(0)
 
   const sliderRef = useRef<HTMLDivElement>(null)
   const sliderContainerRef = useRef<HTMLDivElement>(null)
@@ -54,58 +56,53 @@ const Services = () => {
 
   const x = useTransform(transformX, [startPos, endPos], [startTrValue, endTrValue])
 
-  const scale = useTransform(smoothVelocity, [1, 0, -1], [0.001, 1, 0.001], {
+  const scale = useTransform(smoothVelocity, [3, 0, -3], [0, 1, 0], {
     clamp: false,
   })
 
-  const titleWidth = useTransform(transformX, [startPos, endPos], [0, 100])
-
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    setTitleProgress(titleWidth.get())
-  })
+  const headlineSectionTextY = useTransform(transformX, [startPos, endPos / 2], ['0px', '-100px'])
+  const headlineSectionTextOpacity = useTransform(transformX, [startPos, endPos / 2], ['1', '0'])
 
   return (
     <div className={styles.slider} ref={sliderRef}>
-      <div className={styles.backgroundTitleBox}>
-        <div className={clsx(styles.backgroundTitle, styles.first)}>
-          <span>Services</span>
-        </div>
-        <div className={clsx(styles.backgroundTitle, styles.second)}>
-          <span style={{ width: titleProgress + '%' }}>Services</span>
-        </div>
-      </div>
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
+        <div className={styles.headlineSection}>
+          <div className='container'>
+            <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='rtl'>
+              Our
+            </AnimatedTitle>
+            <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='ltr'>
+              Services
+            </AnimatedTitle>
+            <motion.div
+              className={styles.headlineSectionText}
+              style={{ y: headlineSectionTextY, opacity: headlineSectionTextOpacity }}
+            >
+              We are dedicated to delivering exceptional software solutions that drive business success through
+              cutting-edge technology.
+            </motion.div>
+          </div>
+        </div>
         <motion.div className={styles.sliderContent} ref={sliderContentRef}>
           <div className={styles.sliderWrapper}>
             <motion.div ref={slidesRef} className={styles.slides} style={{ x }}>
               <div className={styles.slide}>
                 <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
+                  <div className={styles.slideItemSpaceLarge}></div>
                 </div>
               </div>
+              {servicesData.map((o: servicesDataTypes) => {
+                return (
+                  <div className={styles.slide} key={o.id}>
+                    <div className={styles.slideItem}>
+                      <ServiceItem scale={scale} data={o} />
+                    </div>
+                  </div>
+                )
+              })}
               <div className={styles.slide}>
                 <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
-                </div>
-              </div>
-              <div className={styles.slide}>
-                <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
-                </div>
-              </div>
-              <div className={styles.slide}>
-                <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
-                </div>
-              </div>
-              <div className={styles.slide}>
-                <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
-                </div>
-              </div>
-              <div className={styles.slide}>
-                <div className={styles.slideItem}>
-                  <motion.div className={styles.slideItemInner} style={{ scale }}></motion.div>
+                  <div className={styles.slideItemSpaceSmall}></div>
                 </div>
               </div>
             </motion.div>
@@ -113,6 +110,24 @@ const Services = () => {
         </motion.div>
       </motion.div>
     </div>
+  )
+}
+
+type ServiceItemProps = {
+  scale: MotionValue
+  data: servicesDataTypes
+}
+
+const ServiceItem = ({ scale, data }: ServiceItemProps) => {
+  return (
+    <motion.div className={styles.serviceItem} style={{ scale }}>
+      <div className={styles.serviceItemNumber}>{data.number}.</div>
+      <h2 className={styles.serviceItemTitle}>{data.title}</h2>
+      <p className={styles.serviceItemText}>{data.description}</p>
+      <div className={styles.serviceItemIcon}>
+        <ImageSvg src={data.icon} alt={data.title} fullWidth />
+      </div>
+    </motion.div>
   )
 }
 

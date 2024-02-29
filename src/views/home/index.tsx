@@ -12,7 +12,7 @@ const View = () => {
     <>
       <Landing />
       <Services />
-      <div style={{ height: '2px', backgroundColor: 'blue' }}></div>
+      {/* <div style={{ height: '2px', backgroundColor: 'blue' }}></div> */}
       <div className='container'>
         <MagneticLayout>
           <Button label='Get in touch' />

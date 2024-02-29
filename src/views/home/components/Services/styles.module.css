@@ -2,39 +2,17 @@
   position: relative;
 }
 
-.backgroundTitleBox {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: var(--fullHeight);
-}
-
-.backgroundTitle {
+.headlineSection {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
+  top: 22%;
+  left: 0%;
 }
 
-.backgroundTitle.first {
-  opacity: 0.2;
-}
-
-.backgroundTitle.second {
-}
-
-.backgroundTitle span {
-  display: block;
-  font-size: 100px;
-  color: var(--colorWhite);
-  font-family: var(--fontUppercase);
-  width: 100%;
-  overflow: hidden;
-}
-
-.backgroundTitle.second span {
-  width: 80%;
+.headlineSectionText {
+  font-size: 30px;
+  color: var(--colorTextPrimary);
+  width: 600px;
+  margin-top: 150px;
 }
 
 .sliderContainer {
@@ -69,15 +47,75 @@
   position: relative;
   min-width: auto;
   height: var(--fullHeight);
-  width: 1500px;
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.slideItemInner {
-  width: 100px;
-  height: 100px;
-  background-color: green;
+.slideItemSpaceLarge {
+  width: 55vw;
+}
+
+.slideItemSpaceSmall {
+  width: 10vw;
+}
+
+.serviceItem {
+  position: relative;
+  width: 560px;
+  height: 420px;
+  background-color: var(--colorCardBg);
+  border-radius: var(--primaryBorderRadius);
+  margin: 0 50px;
+  padding: 40px 50px 40px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider .slides > div:nth-child(6n + 2) .serviceItem {
+  top: -15%;
+}
+
+.slider .slides > div:nth-child(6n + 3) .serviceItem {
+  bottom: -15%;
+}
+
+.slider .slides > div:nth-child(6n + 4) .serviceItem {
+  top: 0%;
+}
+
+.slider .slides > div:nth-child(6n + 5) .serviceItem {
+  top: -15%;
+}
+
+.slider .slides > div:nth-child(6n + 6) .serviceItem {
+  bottom: -15%;
+}
+
+.serviceItemNumber {
+  font-size: 28px;
+  color: var(--colorWhite);
+}
+
+.serviceItemTitle {
+  font-size: 30px;
+  color: var(--colorWhite);
+  font-family: var(--fontUppercase);
+  margin-top: 30px;
+}
+
+.serviceItemText {
+  font-size: 18px;
+  color: var(--colorTextPrimary);
+  margin-top: 30px;
+  opacity: 0.6;
+}
+
+.serviceItemIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top: auto;
 }

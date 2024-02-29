@@ -5,6 +5,8 @@
   --colorBg-070: rgba(18, 19, 21, 0.7);
   --colorBg-090: rgba(18, 19, 21, 0.9);
 
+  --colorTextPrimary: rgba(255, 255, 255, 0.6);
+
   --fontRegular: 'Syne-Regular';
   --fontMedium: 'Syne-Medium';
   --fontSemiBold: 'Syne-SemiBold';
@@ -14,4 +16,7 @@
   --colorBlack: #121315;
   --colorWhite: #fff;
   --colorPrimary: #c5fcfc;
+  --colorCardBg: #1b1c1d;
+
+  --primaryBorderRadius: 24px;
 }
