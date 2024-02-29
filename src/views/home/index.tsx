@@ -11,6 +11,8 @@ const View = () => {
   return (
     <>
       <Landing />
+      <Services />
+      <div style={{ height: '2px', backgroundColor: 'blue' }}></div>
       <div className='container'>
         <MagneticLayout>
           <Button label='Get in touch' />
@@ -47,8 +49,6 @@ const View = () => {
         <br />
         <br />
       </div>
-      <Services />
-      <div style={{ height: '2px', backgroundColor: 'green' }}></div>
       <br />
       <br />
       <br />

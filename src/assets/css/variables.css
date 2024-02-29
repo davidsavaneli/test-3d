@@ -1,4 +1,6 @@
 :root {
+  --fullHeight: calc(var(--vh, 1vh) * 100);
+
   --colorBg: #121315;
   --colorBg-070: rgba(18, 19, 21, 0.7);
   --colorBg-090: rgba(18, 19, 21, 0.9);

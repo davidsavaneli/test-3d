@@ -2,6 +2,41 @@
   position: relative;
 }
 
+.backgroundTitleBox {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: var(--fullHeight);
+}
+
+.backgroundTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.backgroundTitle.first {
+  opacity: 0.2;
+}
+
+.backgroundTitle.second {
+}
+
+.backgroundTitle span {
+  display: block;
+  font-size: 100px;
+  color: var(--colorWhite);
+  font-family: var(--fontUppercase);
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgroundTitle.second span {
+  width: 80%;
+}
+
 .sliderContainer {
   position: sticky;
   top: 0;
@@ -33,7 +68,7 @@
 .slideItem {
   position: relative;
   min-width: auto;
-  height: 50vh;
+  height: var(--fullHeight);
   width: 1500px;
   border: 1px solid red;
   display: flex;

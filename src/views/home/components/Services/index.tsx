@@ -1,5 +1,6 @@
 import React, { memo, useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion'
+import clsx from 'clsx'
+import { motion, useScroll, useSpring, useTransform, useVelocity, useMotionValueEvent } from 'framer-motion'
 import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
@@ -9,6 +10,7 @@ const Services = () => {
   const [endPos, setEndPos] = useState<number>(0)
   const [startTrValue, setStartTrValue] = useState<number>(0)
   const [endTrValue, setEndTrValue] = useState<number>(0)
+  const [titleProgress, setTitleProgress] = useState<number>(0)
 
   const sliderRef = useRef<HTMLDivElement>(null)
   const sliderContainerRef = useRef<HTMLDivElement>(null)
@@ -56,8 +58,22 @@ const Services = () => {
     clamp: false,
   })
 
+  const titleWidth = useTransform(transformX, [startPos, endPos], [0, 100])
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setTitleProgress(titleWidth.get())
+  })
+
   return (
     <div className={styles.slider} ref={sliderRef}>
+      <div className={styles.backgroundTitleBox}>
+        <div className={clsx(styles.backgroundTitle, styles.first)}>
+          <span>Services</span>
+        </div>
+        <div className={clsx(styles.backgroundTitle, styles.second)}>
+          <span style={{ width: titleProgress + '%' }}>Services</span>
+        </div>
+      </div>
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
         <motion.div className={styles.sliderContent} ref={sliderContentRef}>
           <div className={styles.sliderWrapper}>
