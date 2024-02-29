@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useCursorContext } from 'contexts'
+import { MagneticLayout } from 'components'
 
 import styles from './styles.module.css'
 
@@ -20,15 +21,19 @@ const Button = ({ label, href, ...props }: ComponentProps) => {
   }
 
   return href ? (
-    <Link scroll={false} href={href} className={clsx(styles.button)} {...cursorProps}>
-      {label && <div className={styles.label}>{label}</div>}
-      <div className={styles.borderLine}></div>
-    </Link>
+    <MagneticLayout>
+      <Link scroll={false} href={href} className={clsx(styles.button)} {...cursorProps}>
+        {label && <div className={styles.label}>{label}</div>}
+        <div className={styles.borderLine}></div>
+      </Link>
+    </MagneticLayout>
   ) : (
-    <button className={clsx(styles.button)} {...props} {...cursorProps}>
-      {label && <div className={styles.label}>{label}</div>}
-      <div className={styles.borderLine}></div>
-    </button>
+    <MagneticLayout>
+      <button className={clsx(styles.button)} {...props} {...cursorProps}>
+        {label && <div className={styles.label}>{label}</div>}
+        <div className={styles.borderLine}></div>
+      </button>
+    </MagneticLayout>
   )
 }
 

@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.cursorWrap.default {
+  z-index: 999999;
+}
+
 .cursorWrap.default,
 .cursorWrap.button,
 .cursorWrap.largeText {

@@ -15,9 +15,7 @@ const View = () => {
       <Technologies />
       {/* <div style={{ height: '2px', backgroundColor: 'blue' }}></div> */}
       <div className='container'>
-        <MagneticLayout>
-          <Button label='Get in touch' />
-        </MagneticLayout>
+        <Button label='Get in touch' />
         <br />
         <br />
         <br />
@@ -25,9 +23,7 @@ const View = () => {
         <br />
         <br />
         <br />
-        <MagneticLayout>
-          <Button label='Get in touch' href='./about' />
-        </MagneticLayout>
+        <Button label='Get in touch' href='./about' />
         <br />
         <br />
         <br />

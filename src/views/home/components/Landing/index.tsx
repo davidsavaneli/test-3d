@@ -3,8 +3,11 @@ import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
 import { useWindowSize } from 'hooks'
 import { springConfig } from 'animations'
+import { ImageSvg, MagneticLayout } from 'components'
 
 import styles from './styles.module.css'
+
+import arrowDownSrc from 'assets/images/arrow-down.svg'
 
 const Landing = () => {
   const { setCursorStyle } = useCursorContext()
@@ -73,8 +76,17 @@ const Landing = () => {
           </div>
         </motion.div>
       </div>
-      <div className={styles.test} onClick={() => scrollDown()}>
-        Scroll
+      <div className={styles.scrollDownBtnBox}>
+        <MagneticLayout>
+          <div
+            className={styles.scrollDownBtn}
+            onClick={() => scrollDown()}
+            onMouseOver={() => setCursorStyle('default')}
+            onMouseOut={() => setCursorStyle('none')}
+          >
+            <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
+          </div>
+        </MagneticLayout>
       </div>
     </div>
   )
