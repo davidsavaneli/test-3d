@@ -1,4 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
 import { useWindowSize } from 'hooks'
 import { springConfig } from 'animations'
@@ -31,6 +32,17 @@ const Landing = () => {
     y.set(height / 2)
   }
 
+  const xx = document.getElementById('services-section')
+
+  const scrollDown = () => {
+    if (xx) {
+      Scroll.scrollTo(xx.offsetTop, {
+        duration: 1200,
+        smooth: 'easeOutExpo',
+      })
+    }
+  }
+
   return (
     <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse}>
       <div className={styles.wrapper}>
@@ -61,6 +73,7 @@ const Landing = () => {
           </div>
         </motion.div>
       </div>
+      <div className={styles.test} onClick={() => scrollDown()}>Scroll</div>
     </div>
   )
 }

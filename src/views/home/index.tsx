@@ -12,6 +12,7 @@ const View = () => {
     <>
       <Landing />
       <Services />
+      <Technologies />
       {/* <div style={{ height: '2px', backgroundColor: 'blue' }}></div> */}
       <div className='container'>
         <MagneticLayout>
@@ -70,24 +71,13 @@ const View = () => {
       <br />
       <br />
       <br />
-      <Technologies />
-      <div className='container'>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-        <div style={{ height: '300px', border: '1px solid red', backgroundColor: 'transparent' }}></div>
-      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   )
 }

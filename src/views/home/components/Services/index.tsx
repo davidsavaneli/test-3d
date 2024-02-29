@@ -64,7 +64,7 @@ const Services = () => {
   const headlineSectionTextOpacity = useTransform(transformX, [startPos, endPos / 2], ['1', '0'])
 
   return (
-    <div className={styles.slider} ref={sliderRef}>
+    <div className={styles.slider} ref={sliderRef} id="services-section">
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
         <div className={styles.headlineSection}>
           <div className='container'>

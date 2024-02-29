@@ -5,13 +5,22 @@
 
 .wrapper {
   display: flex;
-  margin: 20px 0;
 }
 
 .img {
-  width: 36px;
-  height: 36px;
+  width: 130px;
+  height: 70px;
   position: relative;
-  margin: 0 40px;
-  opacity: 0.4;
+  margin: 0 10px;
+  background-color: var(--colorCardBg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--secondaryBorderRadius);
+}
+
+.img img {
+  max-width: 26px !important;
+  max-height: 26px !important;
+  opacity: 0.6;
 }

@@ -78,9 +78,6 @@ const Images = () => {
 const Technologies = () => {
   return (
     <section className={styles.technologies}>
-      <VelocityAnimation baseVelocity={1}>
-        <Images />
-      </VelocityAnimation>
       <VelocityAnimation baseVelocity={-1}>
         <Images />
       </VelocityAnimation>
