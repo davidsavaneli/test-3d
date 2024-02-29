@@ -93,21 +93,21 @@
 }
 
 .serviceItemNumber {
-  font-size: 28px;
+  font-size: 32px;
   color: var(--colorWhite);
 }
 
 .serviceItemTitle {
-  font-size: 30px;
+  font-size: 28px;
   color: var(--colorWhite);
   font-family: var(--fontUppercase);
   margin-top: 30px;
 }
 
 .serviceItemText {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--colorTextPrimary);
-  margin-top: 30px;
+  margin-top: 22px;
   opacity: 0.6;
 }
 
