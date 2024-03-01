@@ -36,4 +36,4 @@ const BackgrundOverlay = () => {
   )
 }
 
-export default memo(BackgrundOverlay)
+export default BackgrundOverlay

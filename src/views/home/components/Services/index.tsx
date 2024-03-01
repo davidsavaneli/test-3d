@@ -1,5 +1,4 @@
-import React, { memo, useRef, useState, useEffect } from 'react'
-import clsx from 'clsx'
+import React, { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, useTransform, useVelocity, MotionValue } from 'framer-motion'
 import { springConfig } from 'animations'
 import { ImageSvg, AnimatedTitle } from 'components'
@@ -32,7 +31,7 @@ const Services = () => {
 
         sliderRef.current.style.height = `${height}px`
 
-        console.log(sliderRef.current.offsetTop)
+        console.log(sliderRef.current.offsetTop, ' - services')
         setStartPos(offsetTop)
         setEndPos(height - (boxHeight - offsetTop))
         setStartTrValue(0)

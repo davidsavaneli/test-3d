@@ -1,10 +1,5 @@
-import React, { useRef, useEffect, useState, memo } from 'react'
-import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion'
-import { animateScroll as Scroll } from 'react-scroll'
-import { useCursorContext } from 'contexts'
-import { useWindowSize } from 'hooks'
-import { springConfig } from 'animations'
-import { ImageSvg, MagneticLayout, Button } from 'components'
+import React, { useRef, useEffect, useState } from 'react'
+import { motion, useTransform, useScroll } from 'framer-motion'
 
 import styles from './styles.module.css'
 

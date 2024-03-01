@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useCursorContext } from 'contexts'
 import { MagneticLayout, ImageSvg } from 'components'
@@ -51,10 +51,10 @@ const ContactButton = () => {
                 d='M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0'
                 transform='translate(100,100)'
                 fill='none'
-                stroke-width='0'
+                strokeWidth='0'
               ></path>
-              <g font-size='13.1px'>
-                <text text-anchor='start'>
+              <g>
+                <text textAnchor='start'>
                   <textPath className={styles.text} xlinkHref='#textPath' startOffset='0%'>
                     Let's talk! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's talk!
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's talk!
@@ -70,4 +70,4 @@ const ContactButton = () => {
   )
 }
 
-export default memo(ContactButton)
+export default ContactButton
