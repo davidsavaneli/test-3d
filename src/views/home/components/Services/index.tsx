@@ -65,8 +65,10 @@ const Services = () => {
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
         <div className={styles.headlineSection}>
           <div className='container'>
-            <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
-            <AnimatedTitle animationDirection='ltr'>Services</AnimatedTitle>
+            <div className={styles.titles}>
+              <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
+              <AnimatedTitle animationDirection='ltr'>Services</AnimatedTitle>
+            </div>
             <AnimatedSubText>
               We are dedicated to delivering exceptional software solutions that drive business success through
               cutting-edge technology.

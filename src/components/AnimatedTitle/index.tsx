@@ -16,8 +16,8 @@ const AnimatedTitle = ({ children, animationDirection = 'ltr' }: ComponentProps)
   const { scrollYProgress } = useScroll({ target: titleRef })
   const transformX = useSpring(scrollYProgress, springConfig)
 
-  const fillProgress = useTransform(transformX, [1, 0.7], ['0%', '100%'])
-  const x = useTransform(transformX, [1, 0.7], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
+  const fillProgress = useTransform(transformX, [1, 0.5], ['0%', '100%'])
+  const x = useTransform(transformX, [1, 0.5], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
 
   return (
     <motion.div

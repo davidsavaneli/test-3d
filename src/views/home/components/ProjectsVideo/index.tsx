@@ -4,7 +4,6 @@ import { motion, useTransform, useScroll } from 'framer-motion'
 import styles from './styles.module.css'
 
 const ProjectsVideo = () => {
-  const [endPos, setEndPos] = useState<number>(0)
   const [videoInitialWidth, setVideoInitialWidth] = useState<number>(1)
   const [videoInitialHeight, setVideoInitialHeight] = useState<number>(1)
   const [videoFinalWidth, setVideoFinalWidth] = useState<number>(0)
@@ -32,7 +31,6 @@ const ProjectsVideo = () => {
       if (videoSectionRef?.current && videoBoxRef?.current && videoRef?.current) {
         const videoSectionHeight = (videoInitialHeight * videoBoxRef?.current.clientWidth) / videoInitialWidth
 
-        setEndPos(videoSectionRef.current?.offsetTop)
         setVideoFinalWidth(videoBoxRef?.current.clientWidth)
         setVideoFinalHeight(videoSectionHeight)
 
@@ -48,7 +46,7 @@ const ProjectsVideo = () => {
     return () => resizeObserver.disconnect()
   })
 
-  const { scrollYProgress } = useScroll({target: videoSectionRef, offset: ['start end', 'start start']})
+  const { scrollYProgress } = useScroll({ target: videoSectionRef, offset: ['start end', 'start start'] })
 
   const y = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
   const width = useTransform(scrollYProgress, [0, 1], ['204px', `${videoFinalWidth}px`])
@@ -59,13 +57,7 @@ const ProjectsVideo = () => {
     <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
       <div className='container'>
         <div className={styles.videoBox} ref={videoBoxRef}>
-          <motion.video
-            loop
-            muted
-            autoPlay
-            style={{ y: y, width: width, height: height, borderRadius: borderRadius }}
-            ref={videoRef}
-          >
+          <motion.video loop muted autoPlay style={{ y, width, height, borderRadius }} ref={videoRef}>
             <source src={require('assets/images/uploads/home/projects-video.mp4')} type='video/mp4' />
           </motion.video>
         </div>

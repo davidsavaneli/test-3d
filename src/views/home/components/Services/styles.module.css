@@ -8,6 +8,10 @@
   left: 0%;
 }
 
+.titles {
+  margin-bottom: 100px;
+}
+
 .sliderContainer {
   position: sticky;
   top: 0;
