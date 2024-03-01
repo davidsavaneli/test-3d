@@ -35,7 +35,7 @@
   height: 140px;
   text-transform: uppercase;
   font-family: var(--fontMedium);
-  animation: contactButtonRotateAnimation 12s linear infinite;
+  animation: contactButtonRotateAnimation 6s linear infinite;
 }
 
 @keyframes contactButtonRotateAnimation {
