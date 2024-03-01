@@ -1,0 +1,53 @@
+.button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+.buttonInner {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerLine {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+.logo {
+  position: absolute;
+  width: 36px;
+}
+
+.roundedBox {
+  width: 140px;
+  height: 140px;
+  text-transform: uppercase;
+  font-family: var(--fontMedium);
+  animation: contactButtonRotateAnimation 12s linear infinite;
+}
+
+@keyframes contactButtonRotateAnimation {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.text {
+  font-size: 21px;
+  fill: #fff;
+}

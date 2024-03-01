@@ -1,7 +1,7 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
-import { BackgrundOverlay, CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll } from 'components'
+import { BackgrundOverlay, CursorLayout, Preloader, CursorFluidAnimation, Header, SmoothScroll, ContactButton } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
 
@@ -21,6 +21,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
         <CursorLayout>
           <CursorFluidAnimation />
           <Header />
+          <ContactButton />
           <AnimatePresence mode='wait'>
             {showPreloader ? (
               <Preloader />

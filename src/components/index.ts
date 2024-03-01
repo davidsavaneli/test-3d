@@ -25,3 +25,5 @@ export { default as Technologies } from './Technologies'
 export { default as BackgrundOverlay } from './BackgrundOverlay'
 
 export { default as AnimatedTitle } from './AnimatedTitle'
+
+export { default as ContactButton } from './ContactButton'

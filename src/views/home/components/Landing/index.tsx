@@ -35,11 +35,11 @@ const Landing = () => {
     y.set(height / 2)
   }
 
-  const servicesSectionEl = document.getElementById('products-video-section')
+  const productsVideoSectionEl = document.getElementById('products-video-section')
 
   const scrollDown = () => {
-    if (servicesSectionEl) {
-      Scroll.scrollTo(servicesSectionEl.offsetTop, {
+    if (productsVideoSectionEl) {
+      Scroll.scrollTo(productsVideoSectionEl.offsetTop, {
         duration: 1400,
         smooth: 'easeOutQuad',
       })
