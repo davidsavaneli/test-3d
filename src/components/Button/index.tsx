@@ -17,7 +17,6 @@ const Button = ({ label, href, ...props }: ComponentProps) => {
   const cursorProps = {
     onMouseOver: () => setCursorStyle('button'),
     onMouseOut: () => setCursorStyle('none'),
-    // onClick: () => console.log('dsf')
   }
 
   return href ? (

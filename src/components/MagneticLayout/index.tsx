@@ -1,7 +1,7 @@
 import React, { useRef, useState, memo } from 'react'
 import { motion } from 'framer-motion'
 import { springConfig } from 'animations'
-
+import styles from './styles.module.css'
 
 type MagneticLayoutProps = {
   children: React.ReactNode
@@ -34,7 +34,7 @@ const MagneticLayout = ({ children }: MagneticLayoutProps) => {
   return (
     <React.Fragment>
       <motion.div
-        style={{ display: 'inline-flex' }}
+        className={styles.magneticLayout}
         ref={ref}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
