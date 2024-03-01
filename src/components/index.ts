@@ -26,4 +26,6 @@ export { default as BackgrundOverlay } from './BackgrundOverlay'
 
 export { default as AnimatedTitle } from './AnimatedTitle'
 
+export { default as AnimatedSubText } from './AnimatedSubText'
+
 export { default as ContactButton } from './ContactButton'

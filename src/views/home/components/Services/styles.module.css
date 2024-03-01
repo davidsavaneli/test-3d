@@ -8,13 +8,6 @@
   left: 0%;
 }
 
-.headlineSectionText {
-  font-size: 30px;
-  color: var(--colorTextPrimary);
-  width: 600px;
-  margin-top: 150px;
-}
-
 .sliderContainer {
   position: sticky;
   top: 0;

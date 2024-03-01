@@ -16,3 +16,12 @@
   width: 600px;
   margin-top: 150px;
 }
+
+.productItemRow {
+  display: flex;
+}
+
+.productItemCol {
+  width: 50%;
+  min-width: 50%;
+}

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, useTransform, useVelocity, MotionValue } from 'framer-motion'
 import { springConfig } from 'animations'
-import { ImageSvg, AnimatedTitle } from 'components'
+import { ImageSvg, AnimatedTitle, AnimatedSubText } from 'components'
 import { servicesData } from 'testData'
 import { servicesDataTypes } from 'types'
 
@@ -17,6 +17,7 @@ const Services = () => {
   const sliderContainerRef = useRef<HTMLDivElement>(null)
   const sliderContentRef = useRef<HTMLDivElement>(null)
   const slidesRef = useRef<HTMLDivElement>(null)
+  const headlineSectionTextRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const calculateSizes = () => {
@@ -31,7 +32,6 @@ const Services = () => {
 
         sliderRef.current.style.height = `${height}px`
 
-        console.log(sliderRef.current.offsetTop, ' - services')
         setStartPos(offsetTop)
         setEndPos(height - (boxHeight - offsetTop))
         setStartTrValue(0)
@@ -60,27 +60,17 @@ const Services = () => {
     clamp: false,
   })
 
-  const headlineSectionTextY = useTransform(transformX, [startPos, endPos / 2], ['0px', '-100px'])
-  const headlineSectionTextOpacity = useTransform(transformX, [startPos, endPos / 2], ['1', '0'])
-
   return (
     <div className={styles.slider} ref={sliderRef}>
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
         <div className={styles.headlineSection}>
           <div className='container'>
-            <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='rtl'>
-              Our
-            </AnimatedTitle>
-            <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='ltr'>
-              Services
-            </AnimatedTitle>
-            <motion.div
-              className={styles.headlineSectionText}
-              style={{ y: headlineSectionTextY, opacity: headlineSectionTextOpacity }}
-            >
+            <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
+            <AnimatedTitle animationDirection='ltr'>Services</AnimatedTitle>
+            <AnimatedSubText>
               We are dedicated to delivering exceptional software solutions that drive business success through
               cutting-edge technology.
-            </motion.div>
+            </AnimatedSubText>
           </div>
         </div>
         <motion.div className={styles.sliderContent} ref={sliderContentRef}>

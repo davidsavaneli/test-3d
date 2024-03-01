@@ -1,4 +1,4 @@
-import React, { ReactNode, memo } from 'react'
+import React, { useRef, ReactNode, memo } from 'react'
 import clsx from 'clsx'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { springConfig } from 'animations'
@@ -8,25 +8,16 @@ import styles from './styles.module.css'
 export type ComponentProps = {
   children?: ReactNode
   animationDirection?: 'ltr' | 'rtl'
-  animationStartPosition?: number
-  animationEndPosition?: number
 }
 
-const AnimatedTitle = ({
-  children,
-  animationDirection = 'ltr',
-  animationStartPosition = 0,
-  animationEndPosition = 0,
-}: ComponentProps) => {
-  const { scrollY } = useScroll()
-  const transformX = useSpring(scrollY, springConfig)
+const AnimatedTitle = ({ children, animationDirection = 'ltr' }: ComponentProps) => {
+  const titleRef = useRef<HTMLDivElement>(null)
 
-  const fillProgress = useTransform(transformX, [animationStartPosition, animationEndPosition], ['0%', '100%'])
-  const x = useTransform(
-    transformX,
-    [animationStartPosition, animationEndPosition],
-    [animationDirection === 'ltr' ? '40px' : '-40px', '0px'],
-  )
+  const { scrollYProgress } = useScroll({ target: titleRef })
+  const transformX = useSpring(scrollYProgress, springConfig)
+
+  const fillProgress = useTransform(transformX, [1, 0.7], ['0%', '100%'])
+  const x = useTransform(transformX, [1, 0.7], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
 
   return (
     <motion.div
@@ -35,6 +26,7 @@ const AnimatedTitle = ({
         [styles.rtl]: animationDirection === 'rtl',
       })}
       style={{ x }}
+      ref={titleRef}
     >
       <motion.div className={clsx(styles.title, styles.first)}>
         <span>{children}</span>

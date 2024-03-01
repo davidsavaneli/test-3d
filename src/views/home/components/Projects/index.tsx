@@ -18,8 +18,6 @@ const Projects = () => {
 
         setStartPos(pos)
         setEndPos(pos + 500)
-        console.log(window.innerHeight, ' - window.innerHeight')
-        console.log(pos, ' - pos')
       }
     }
 
@@ -31,12 +29,12 @@ const Projects = () => {
     return () => resizeObserver.disconnect()
   })
 
-  const { scrollY } = useScroll()
+  const { scrollYProgress } = useScroll({target: productsRef})
 
-  const transformY = useSpring(scrollY, springConfig)
+  const transformY = useSpring(scrollYProgress, springConfig)
 
-  const headlineSectionTextY = useTransform(transformY, [startPos, endPos], ['0px', '-100px'])
-  const headlineSectionTextOpacity = useTransform(transformY, [startPos, endPos], ['0', '1'])
+  const headlineSectionTextY = useTransform(transformY, [0.5, 1], ['-100px', '0px'])
+  const headlineSectionTextOpacity = useTransform(transformY, [0.5, 1], ['1', '0'])
 
   return (
     <div className={styles.projectsSection} ref={productsRef}>
@@ -53,10 +51,10 @@ const Projects = () => {
           </div>
           <div className='col-8'>
             <div className={styles.titleBox}>
-              <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='rtl'>
+              <AnimatedTitle animationDirection='rtl'>
                 Our
               </AnimatedTitle>
-              <AnimatedTitle animationStartPosition={startPos} animationEndPosition={endPos} animationDirection='ltr'>
+              <AnimatedTitle animationDirection='ltr'>
                 Works
               </AnimatedTitle>
             </div>
@@ -79,9 +77,9 @@ type ProductItemProps = {
 const ProductItem = ({ label }: ProductItemProps) => {
   return (
     <motion.div className={styles.productItem}>
-      <div className='row'>
-        <div className='col-6'>left</div>
-        <div className='col-6'>right</div>
+      <div className={styles.productItemRow}>
+        <div className={styles.productItemCol}>left</div>
+        <div className={styles.productItemCol}>right</div>
       </div>
     </motion.div>
   )
