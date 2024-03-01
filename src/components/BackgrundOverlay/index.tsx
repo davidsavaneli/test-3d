@@ -1,4 +1,4 @@
-import React, { memo, useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, useVelocity } from 'framer-motion'
 import clsx from 'clsx'
 

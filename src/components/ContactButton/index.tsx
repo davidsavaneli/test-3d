@@ -56,8 +56,8 @@ const ContactButton = () => {
               <g>
                 <text textAnchor='start'>
                   <textPath className={styles.text} xlinkHref='#textPath' startOffset='0%'>
-                    Let's talk! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's talk!
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's talk!
+                    Let`s talk! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let`s talk!
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let`s talk!
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </textPath>
                 </text>

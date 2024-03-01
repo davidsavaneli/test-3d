@@ -17,7 +17,6 @@ const Services = () => {
   const sliderContainerRef = useRef<HTMLDivElement>(null)
   const sliderContentRef = useRef<HTMLDivElement>(null)
   const slidesRef = useRef<HTMLDivElement>(null)
-  const headlineSectionTextRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const calculateSizes = () => {

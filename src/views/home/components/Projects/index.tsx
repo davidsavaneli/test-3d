@@ -1,7 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react'
-import { motion, useTransform, useScroll, useSpring, useVelocity } from 'framer-motion'
+import React, { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { AnimatedSubText, AnimatedTitle } from 'components'
-import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
 
@@ -43,7 +42,7 @@ const ProductItem = ({ label }: ProductItemProps) => {
   return (
     <motion.div className={styles.productItem}>
       <div className={styles.productItemRow}>
-        <div className={styles.productItemCol}>left</div>
+        <div className={styles.productItemCol}>{label}</div>
         <div className={styles.productItemCol}>right</div>
       </div>
     </motion.div>

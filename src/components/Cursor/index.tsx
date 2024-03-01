@@ -52,7 +52,7 @@ const Cursor = ({ text }: CursorType) => {
     return () => {
       window.removeEventListener('mousemove', manageMouseMove)
     }
-  }, [])
+  })
 
   return (
     <React.Fragment>

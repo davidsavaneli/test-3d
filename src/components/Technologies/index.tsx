@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import { VelocityAnimation, ImageSvg } from 'components'
 
 import styles from './styles.module.css'
