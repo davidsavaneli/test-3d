@@ -61,7 +61,7 @@ const ProductsVideo = () => {
   const borderRadius = useTransform(scrollY, [0, endPos], ['160px', `40px`])
 
   return (
-    <div className={styles.videoSection} ref={videoSectionRef}>
+    <div className={styles.videoSection} ref={videoSectionRef} id='products-video-section'>
       <div className='container'>
         <div className={styles.videoBox} ref={videoBoxRef}>
           <motion.video
