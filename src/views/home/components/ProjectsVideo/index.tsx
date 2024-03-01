@@ -48,12 +48,12 @@ const ProjectsVideo = () => {
     return () => resizeObserver.disconnect()
   })
 
-  const { scrollY } = useScroll()
+  const { scrollYProgress } = useScroll({target: videoSectionRef, offset: ['start end', 'start start']})
 
-  const y = useTransform(scrollY, [0, endPos], ['-150px', `150px`])
-  const width = useTransform(scrollY, [0, endPos], ['204px', `${videoFinalWidth}px`])
-  const height = useTransform(scrollY, [0, endPos], ['70px', `${videoFinalHeight}px`])
-  const borderRadius = useTransform(scrollY, [0, endPos], ['160px', `40px`])
+  const y = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
+  const width = useTransform(scrollYProgress, [0, 1], ['204px', `${videoFinalWidth}px`])
+  const height = useTransform(scrollYProgress, [0, 1], ['70px', `${videoFinalHeight}px`])
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
 
   return (
     <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
