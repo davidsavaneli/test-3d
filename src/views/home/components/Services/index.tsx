@@ -32,6 +32,7 @@ const Services = () => {
 
         sliderRef.current.style.height = `${height}px`
 
+        console.log(sliderRef.current.offsetTop)
         setStartPos(offsetTop)
         setEndPos(height - (boxHeight - offsetTop))
         setStartTrValue(0)
@@ -129,4 +130,4 @@ const ServiceItem = ({ scale, data }: ServiceItemProps) => {
   )
 }
 
-export default memo(Services)
+export default Services

@@ -1,0 +1,15 @@
+.videoSection {
+  position: relative;
+  margin-bottom: 250px;
+}
+
+.videoBox {
+  position: relative;
+}
+
+.videoBox video {
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+}

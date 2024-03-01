@@ -3,7 +3,7 @@ import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
 import { useWindowSize } from 'hooks'
 import { springConfig } from 'animations'
-import { ImageSvg, MagneticLayout } from 'components'
+import { ImageSvg, MagneticLayout, Button } from 'components'
 
 import styles from './styles.module.css'
 
@@ -87,6 +87,9 @@ const Landing = () => {
             <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
           </div>
         </MagneticLayout>
+      </div>
+      <div className={styles.contactBtnBox}>
+        <Button label='Get in touch' />
       </div>
     </div>
   )
