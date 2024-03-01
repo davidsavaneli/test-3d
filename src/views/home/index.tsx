@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Technologies, ContactButton } from 'components'
+import { Button, Technologies } from 'components'
 import Landing from './components/Landing'
 import Services from './components/Services'
 import ProductsVideo from './components/ProductsVideo'
 import styles from './styles.module.css'
 
 const View = () => {
-  const [loading, setLoading] = useState<boolean>()
+  const [loaded, setLoaded] = useState<boolean>(false)
 
   useEffect(() => {
-    setTimeout(() => setLoading(true), 200)
+    setTimeout(() => setLoaded(true), 200)
   })
 
   return (
     <>
       <Landing />
       <ProductsVideo />
-      {loading && <Services />}
+      {loaded && <Services />} {/* TODO */}
       <Technologies />
       <div className='container'>
         <Button label='Get in touch' />
