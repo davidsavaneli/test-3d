@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Technologies } from 'components'
 import Landing from './components/Landing'
+import ProjectsVideo from './components/ProjectsVideo'
 import Services from './components/Services'
-import ProductsVideo from './components/ProductsVideo'
+import Projects from './components/Projects'
 import styles from './styles.module.css'
 
 const View = () => {
@@ -15,8 +16,9 @@ const View = () => {
   return (
     <>
       <Landing />
-      <ProductsVideo />
+      <ProjectsVideo />
       {loaded && <Services />} {/* TODO */}
+      <Projects />
       <Technologies />
       <div className='container'>
         <Button label='Get in touch' />

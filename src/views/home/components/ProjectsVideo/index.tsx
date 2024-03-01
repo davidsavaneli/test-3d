@@ -3,7 +3,7 @@ import { motion, useTransform, useScroll } from 'framer-motion'
 
 import styles from './styles.module.css'
 
-const ProductsVideo = () => {
+const ProjectsVideo = () => {
   const [endPos, setEndPos] = useState<number>(0)
   const [videoInitialWidth, setVideoInitialWidth] = useState<number>(1)
   const [videoInitialHeight, setVideoInitialHeight] = useState<number>(1)
@@ -56,7 +56,7 @@ const ProductsVideo = () => {
   const borderRadius = useTransform(scrollY, [0, endPos], ['160px', `40px`])
 
   return (
-    <div className={styles.videoSection} ref={videoSectionRef} id='products-video-section'>
+    <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
       <div className='container'>
         <div className={styles.videoBox} ref={videoBoxRef}>
           <motion.video
@@ -66,7 +66,7 @@ const ProductsVideo = () => {
             style={{ y: y, width: width, height: height, borderRadius: borderRadius }}
             ref={videoRef}
           >
-            <source src={require('assets/images/uploads/home/products-video.mp4')} type='video/mp4' />
+            <source src={require('assets/images/uploads/home/projects-video.mp4')} type='video/mp4' />
           </motion.video>
         </div>
       </div>
@@ -74,4 +74,4 @@ const ProductsVideo = () => {
   )
 }
 
-export default ProductsVideo
+export default ProjectsVideo

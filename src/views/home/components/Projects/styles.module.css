@@ -1,0 +1,18 @@
+.projectsSection {
+  position: relative;
+  /* border: 2px solid red; */
+  margin: 100px 0;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.headlineSectionText {
+  font-size: 30px;
+  color: var(--colorTextPrimary);
+  width: 600px;
+  margin-top: 150px;
+}
