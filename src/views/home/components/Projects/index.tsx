@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import { motion } from 'framer-motion'
-import { AnimatedSubText, AnimatedTitle } from 'components'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { AnimatedSubText, AnimatedTitle, Button } from 'components'
 
 import styles from './styles.module.css'
 
@@ -28,6 +28,7 @@ const Projects = () => {
       <div className='container'>
         <div className={styles.items}>
           <ProductItem />
+          <ProductItem />
         </div>
       </div>
     </div>
@@ -39,13 +40,37 @@ type ProductItemProps = {
 }
 
 const ProductItem = ({ label }: ProductItemProps) => {
+  const productItemRef = useRef<HTMLVideoElement>(null)
+
+  const { scrollYProgress } = useScroll({ target: productItemRef, offset: ['start end', 'end start'] })
+
+  const InfoY = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
+  const ImageY = useTransform(scrollYProgress, [0, 1], ['150px', `-150px`])
+
   return (
-    <motion.div className={styles.productItem}>
+    <motion.article className={styles.productItem} ref={productItemRef}>
       <div className={styles.productItemRow}>
-        <div className={styles.productItemCol}>{label}</div>
-        <div className={styles.productItemCol}>right</div>
+        <div className={styles.productItemCol}>
+          <motion.div className={styles.productItemInfo} style={{ y: InfoY }}>
+            <div className={styles.productItemTitle}>
+              <AnimatedTitle size='medium' disableX fontLowercase>
+                Altfolio
+              </AnimatedTitle>
+            </div>
+            <p className={styles.productItemDescription}>
+              Track your net worth across alternative investments like precious metals and cryptocurrencies.
+            </p>
+            <p className={styles.productItemDescription}>UI Design, UX, Wireframe</p>
+            <div className={styles.productItemButton}>
+              <Button label='View More' />
+            </div>
+          </motion.div>
+        </div>
+        <div className={styles.productItemCol}>
+          <motion.div className={styles.productItemImgBox} style={{ y: ImageY }}></motion.div>
+        </div>
       </div>
-    </motion.div>
+    </motion.article>
   )
 }
 

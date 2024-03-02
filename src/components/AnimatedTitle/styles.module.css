@@ -42,6 +42,18 @@
   overflow: hidden;
 }
 
+.fontLowercase .title span {
+  text-transform: inherit;
+}
+
+.titleBox.large .title span {
+  font-size: 120px;
+}
+
+.titleBox.medium .title span {
+  font-size: 60px;
+}
+
 .title.second span {
   width: 0%;
 }

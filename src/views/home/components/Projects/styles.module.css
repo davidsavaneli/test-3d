@@ -1,6 +1,5 @@
 .projectsSection {
   position: relative;
-  /* border: 2px solid red; */
   margin: 100px 0;
 }
 
@@ -17,11 +16,65 @@
   margin-top: 150px;
 }
 
+.items {
+  position: relative;
+}
+
+.productItem {
+  position: relative;
+  margin: 200px 0;
+}
+
 .productItemRow {
   display: flex;
 }
 
+.items .productItem:nth-child(2n + 2) .productItemRow {
+  flex-direction: row-reverse;
+}
+
 .productItemCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50%;
   min-width: 50%;
+}
+
+.productItemInfo {
+  position: relative;
+  max-width: 600px;
+  padding: 0 50px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.items .productItem:nth-child(2n + 1) .productItemInfo {
+  text-align: right;
+}
+
+.productItemTitle {
+  display: flex;
+}
+
+.items .productItem:nth-child(2n + 1) .productItemTitle {
+  justify-content: flex-end;
+}
+
+.productItemDescription {
+  font-size: 20px;
+  color: var(--colorWhite);
+  font-family: var(--fontregular);
+  opacity: 0.7;
+  margin-top: 30px;
+}
+
+.productItemButton {
+  margin-top: 80px;
+}
+
+.productItemImgBox {
+  height: 1000px;
+  background-color: var(--colorCardBg);
+  border-radius: var(--primaryBorderRadius);
 }

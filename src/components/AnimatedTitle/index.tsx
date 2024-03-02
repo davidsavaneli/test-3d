@@ -8,22 +8,36 @@ import styles from './styles.module.css'
 export type ComponentProps = {
   children?: ReactNode
   animationDirection?: 'ltr' | 'rtl'
+  size?: 'large' | 'medium'
+  disableX?: boolean
+  fontLowercase?: boolean
 }
 
-const AnimatedTitle = ({ children, animationDirection = 'ltr' }: ComponentProps) => {
+const AnimatedTitle = ({
+  children,
+  animationDirection = 'ltr',
+  size = 'large',
+  disableX = false,
+  fontLowercase = false,
+}: ComponentProps) => {
   const titleRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: titleRef })
   const transformX = useSpring(scrollYProgress, springConfig)
 
   const fillProgress = useTransform(transformX, [1, 0.5], ['0%', '100%'])
-  const x = useTransform(transformX, [1, 0.5], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
+  const x = !disableX
+    ? useTransform(transformX, [1, 0.5], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
+    : undefined
 
   return (
     <motion.div
       className={clsx(styles.titleBox, {
         [styles.ltr]: animationDirection === 'ltr',
         [styles.rtl]: animationDirection === 'rtl',
+        [styles.large]: size === 'large',
+        [styles.medium]: size === 'medium',
+        [styles.fontLowercase]: fontLowercase,
       })}
       style={{ x }}
       ref={titleRef}
