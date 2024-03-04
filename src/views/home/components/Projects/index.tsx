@@ -51,8 +51,8 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
-  const InfoY = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
-  const ImageY = useTransform(scrollYProgress, [0, 1], ['150px', `-150px`])
+  const InfoY = useTransform(scrollYProgress, [0, 1], ['-100px', `100px`])
+  const ImageY = useTransform(scrollYProgress, [0, 1], ['100px', `-100px`])
 
   return (
     <motion.article className={styles.projectItem} ref={projectItemRef}>
