@@ -8,6 +8,8 @@ export { default as SmoothScroll } from './SmoothScroll'
 
 export { default as ImageSvg } from './ImageSvg'
 
+export { default as AnimatedImage } from './AnimatedImage'
+
 export { default as Preloader } from './Preloader'
 
 export { default as Header } from './Header'

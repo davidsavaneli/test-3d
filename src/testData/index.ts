@@ -53,3 +53,54 @@ export const servicesData = [
     icon: serviceIcon6,
   },
 ]
+
+import projectImg1 from 'assets/images/uploads/home/project-img-1.png'
+import projectImg2 from 'assets/images/uploads/home/project-img-2.png'
+import projectImg3 from 'assets/images/uploads/home/project-img-3.png'
+import projectImg4 from 'assets/images/uploads/home/project-img-4.png'
+
+export const projectsData = [
+  {
+    id: 1,
+    title: 'Altfolio',
+    description: 'Track your net worth across alternative investments like precious metals and cryptocurrencies.',
+    tags: ['Mobile App', 'Finance'],
+    image: {
+      src: projectImg1,
+      alt: 'Altfolio',
+    },
+  },
+  {
+    id: 2,
+    title: 'Georgian Railway',
+    description:
+      'Georgian Railway Booking System: A user-centric platform enabling seamless train ticket booking.',
+    tags: ['Online Booking', 'Web App'],
+    image: {
+      src: projectImg2,
+      alt: 'Georgian Railway',
+    },
+  },
+  {
+    id: 3,
+    title: 'Cavea Movie Theatre',
+    description:
+      'Cave Movie Theatre Booking: Streamlined, intuitive platform for effortlessly reserving movie tickets.',
+    tags: ['E-Ticketing Platform', 'Online Booking'],
+    image: {
+      src: projectImg3,
+      alt: 'Cavea Movie Theatre',
+    },
+  },
+  {
+    id: 4,
+    title: 'Business Media',
+    description:
+      'Business Media Platform: A dynamic digital hub for professionals, offering the latest in business news.',
+    tags: ['Professional Networking', 'Industry Analysis'],
+    image: {
+      src: projectImg4,
+      alt: 'Business Media',
+    },
+  },
+]
