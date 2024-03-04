@@ -6,8 +6,6 @@ import { projectsDataTypes } from 'types'
 
 import styles from './styles.module.css'
 
-import ProjectImgSrc1 from 'assets/images/uploads/home/project-img-1.png'
-
 const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null)
 

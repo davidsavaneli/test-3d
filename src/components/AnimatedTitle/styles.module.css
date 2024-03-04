@@ -33,7 +33,7 @@
 
 .title span {
   display: block;
-  font-size: 120px;
+  font-size: 110px;
   color: var(--colorWhite);
   font-family: var(--fontUppercase);
   line-height: 1;
@@ -48,7 +48,7 @@
 }
 
 .titleBox.large .title span {
-  font-size: 120px;
+  font-size: 110px;
 }
 
 .titleBox.medium .title span {
