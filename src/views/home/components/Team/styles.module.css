@@ -8,3 +8,11 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.sliderCont {
+  overflow: hidden;
+}
+
+.test {
+  display: flex;
+}

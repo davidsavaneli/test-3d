@@ -11,3 +11,11 @@
 .link * {
   pointer-events: none;
 }
+
+.test {
+  width: 50vw;
+  min-width: 50vw;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid red;
+}

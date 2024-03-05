@@ -4,7 +4,7 @@ import Landing from './components/Landing'
 import ProjectsVideo from './components/ProjectsVideo'
 import Services from './components/Services'
 import Projects from './components/Projects'
-import Team from './components/Team'
+import { Team } from './components/Team'
 import styles from './styles.module.css'
 
 const View = () => {
@@ -20,7 +20,12 @@ const View = () => {
       <ProjectsVideo />
       {loaded && <Services />} {/* TODO */}
       <Projects />
-      <Team />
+      <Team>
+        <div className={styles.test}>1</div>
+        <div className={styles.test}>2</div>
+        <div className={styles.test}>3</div>
+        <div className={styles.test}>4</div>
+      </Team>
       <Technologies />
       <div className='container'>
         <Button label='Get in touch' />
