@@ -4,7 +4,12 @@ import clsx from 'clsx'
 import { motion, useMotionValue } from 'framer-motion'
 import { useCursorContext } from 'contexts'
 import animations from './animations'
+import { ImageSvg } from 'components'
 import styles from './styles.module.css'
+
+import dragArrowLeftSrc from 'assets/images/drag-arrow-left.svg'
+import dragArrowRightSrc from 'assets/images/drag-arrow-right.svg'
+import dragCircleSrc from 'assets/images/drag-circle.svg'
 
 type CursorType = {
   text?: string | undefined
@@ -25,6 +30,9 @@ const Cursor = ({ text }: CursorType) => {
         break
       case 'largeText':
         setCursorSize(10)
+        break
+      case 'drag':
+        setCursorSize(5)
         break
       default:
         setCursorSize(1)
@@ -65,9 +73,11 @@ const Cursor = ({ text }: CursorType) => {
           [styles.default]: cursorStyle === 'default',
           [styles.button]: cursorStyle === 'button',
           [styles.largeText]: cursorStyle === 'largeText',
+          [styles.drag]: cursorStyle === 'drag',
         })}
       >
         <motion.div className={clsx(styles.cursor)} style={{ scale: cursorSize }}></motion.div>
+        {cursorStyle === 'drag' && <DragIcon />}
         {text && (
           <motion.div
             className={styles.additionalText}
@@ -81,6 +91,34 @@ const Cursor = ({ text }: CursorType) => {
         )}
       </motion.div>
     </React.Fragment>
+  )
+}
+
+const DragIcon = () => {
+  return (
+    <motion.div
+      className={styles.dragIcon}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 0.3,
+          delay: 0.1,
+        },
+      }}
+      exit={{ opacity: 0 }}
+    >
+      <div className={styles.dragArrow}>
+        <ImageSvg src={dragArrowLeftSrc} alt='left' fullHeight />
+      </div>
+      <div className={styles.dragCircle}>
+        <ImageSvg src={dragCircleSrc} alt='left' fullWidth />
+      </div>
+      <div className={styles.dragArrow}>
+        <ImageSvg src={dragArrowRightSrc} alt='right' fullHeight />
+      </div>
+    </motion.div>
   )
 }
 

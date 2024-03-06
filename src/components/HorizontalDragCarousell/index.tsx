@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, ReactNode } from 'react'
 import { useMotionValue, motion, useSpring } from 'framer-motion'
+import { useCursorContext } from 'contexts'
 import styles from './styles.module.css'
 
 type HorizontalDragCarousellTypes = {
@@ -13,6 +14,13 @@ const HorizontalDragCarousell = ({
   bounceStiffness = 100,
   bounceDamping = 12,
 }: HorizontalDragCarousellTypes) => {
+  const { setCursorStyle } = useCursorContext()
+
+  const cursorProps = {
+    onMouseOver: () => setCursorStyle('drag'),
+    onMouseOut: () => setCursorStyle('none'),
+  }
+
   const sliderContainerRef = useRef<HTMLDivElement>(null)
   const sliderWrapperRef = useRef<HTMLDivElement>(null)
 
@@ -38,7 +46,7 @@ const HorizontalDragCarousell = ({
   })
 
   return (
-    <div className={styles.sliderContainer} ref={sliderContainerRef}>
+    <div className={styles.sliderContainer} ref={sliderContainerRef} {...cursorProps}>
       <motion.div
         ref={sliderWrapperRef}
         drag='x'

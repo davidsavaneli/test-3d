@@ -17,6 +17,10 @@
   mix-blend-mode: difference;
 }
 
+.cursorWrap.drag {
+  mix-blend-mode: normal;
+}
+
 .cursor {
   position: absolute;
   margin-left: -12px;
@@ -25,12 +29,12 @@
   height: 22px;
   background-color: var(--colorPrimary);
   border-radius: 50%;
-  pointer-events: none;
   transition: all 0.3s;
 }
 
 .cursorWrap.default .cursor,
-.cursorWrap.button .cursor {
+.cursorWrap.button .cursor,
+.cursorWrap.drag .cursor {
   filter: blur(2px);
 }
 
@@ -49,4 +53,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;
+}
+
+.dragIcon {
+  position: absolute;
+  top: -6px;
+  left: -26px;
+  margin: auto;
+  width: 52px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dragIcon .dragArrow {
+  height: 12px;
+}
+
+.dragCircle {
+  width: 12px;
+  height: 12px;
 }
