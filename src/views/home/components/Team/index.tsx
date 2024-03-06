@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { teamData } from 'testData'
 import { teamDataTypes } from 'types'
+import { springConfig } from 'animations'
 
 import styles from './styles.module.css'
 
 const Team = () => {
+  const sliderRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({ target: sliderRef, offset: ['end start', 'start end'] })
+  const transformX = useSpring(scrollYProgress, springConfig)
+
+  const y = useTransform(transformX, [1, 0], ['80px', '-80px'])
+
   return (
     <div className={styles.teamSection}>
       <div className='container'>
@@ -23,7 +32,7 @@ const Team = () => {
           </div>
         </div>
       </div>
-      <div className={styles.slider}>
+      <motion.div className={styles.slider} ref={sliderRef} style={{ y }}>
         <HorizontalDragCarousell>
           <div className={styles.slideSpace}></div>
           {teamData.map((o: teamDataTypes, index) => {
@@ -35,7 +44,7 @@ const Team = () => {
           })}
           <div className={styles.slideSpace}></div>
         </HorizontalDragCarousell>
-      </div>
+      </motion.div>
     </div>
   )
 }
