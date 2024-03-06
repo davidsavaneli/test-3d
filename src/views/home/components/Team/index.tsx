@@ -1,84 +1,63 @@
-// import React, { useRef } from 'react'
-// import { motion, useScroll, useTransform } from 'framer-motion'
-// import { AnimatedSubText, AnimatedTitle, Button, AnimatedImage } from 'components'
+import React from 'react'
+import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
+import { teamData } from 'testData'
+import { teamDataTypes } from 'types'
 
-// import styles from './styles.module.css'
-
-// const Team = () => {
-//   return (
-//     <div className={styles.teamSection}>
-//       <div className='container'>
-//         <div className='row'>
-//           <div className='col-8'>
-//             <div className={styles.titleBox}>
-//               <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
-//               <AnimatedTitle animationDirection='ltr'>Team</AnimatedTitle>
-//             </div>
-//           </div>
-//           <div className='col-4'>
-//             <AnimatedSubText>
-//               We are a diverse group of digital specialists, building innovative brands and products.
-//             </AnimatedSubText>
-//           </div>
-//         </div>
-//       </div>
-//       sdsd
-//     </div>
-//   )
-// }
-
-// export default Team
-
-import React, { useRef, useEffect, useState, ReactNode } from 'react'
-import { useMotionValue, motion, useSpring, useMotionValueEvent } from 'framer-motion'
 import styles from './styles.module.css'
 
-type TeamTypes = {
-  children: ReactNode
-  bounceStiffness?: number
-  bounceDamping?: number
-}
-
-export const Team = ({ children, bounceStiffness = 100, bounceDamping = 10 }: TeamTypes) => {
-  const ref = useRef<HTMLDivElement>(null)
-
-  const transformX = useMotionValue<number>(0)
-  const x = useSpring(transformX)
-
-  const [sliderConstraints, setSliderConstraints] = useState<number>(0)
-
-  useEffect(() => {
-    const calculateSizes = () => {
-      if (ref?.current) {
-        setSliderConstraints(ref.current.scrollWidth - window.innerWidth)
-        x.set(0)
-      }
-    }
-
-    calculateSizes()
-    const handleResize = () => calculateSizes()
-    const resizeObserver = new ResizeObserver(handleResize)
-    if (ref?.current) resizeObserver.observe(ref?.current)
-
-    return () => resizeObserver.disconnect()
-  })
-
+const Team = () => {
   return (
-    <div className={styles.sliderCont}>
-      <motion.div
-        ref={ref}
-        drag='x'
-        initial={{ x: 0 }}
-        style={{ x }}
-        dragConstraints={{
-          left: -sliderConstraints,
-          right: 0,
-        }}
-        dragTransition={{ bounceStiffness, bounceDamping }}
-        className={styles.test}
-      >
-        {children}
-      </motion.div>
+    <div className={styles.teamSection}>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-8'>
+            <div className={styles.titleBox}>
+              <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
+              <AnimatedTitle animationDirection='ltr'>Team</AnimatedTitle>
+            </div>
+          </div>
+          <div className='col-4'>
+            <AnimatedSubText>
+              We are a diverse group of digital specialists, building innovative brands and products.
+            </AnimatedSubText>
+          </div>
+        </div>
+      </div>
+      <div className={styles.slider}>
+        <HorizontalDragCarousell>
+          <div className={styles.slideSpace}></div>
+          {teamData.map((o: teamDataTypes, index) => {
+            return (
+              <React.Fragment key={index}>
+                <TeamItem data={o} key={o.id} />
+              </React.Fragment>
+            )
+          })}
+          <div className={styles.slideSpace}></div>
+        </HorizontalDragCarousell>
+      </div>
     </div>
   )
 }
+
+type TeamItemProps = {
+  data: teamDataTypes
+}
+
+const TeamItem = ({ data }: TeamItemProps) => {
+  return (
+    <div className={styles.slide}>
+      <div className={styles.slideItem}>
+        <div className={styles.slideImgBox}>
+          <AnimatedImage src={data.image.src} alt={data.image.alt} />
+        </div>
+        <div className={styles.slideInfo}>
+          <div className={styles.slideName}>{data.name}</div>
+          <div className={styles.slidePosition}>{data.position}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Team

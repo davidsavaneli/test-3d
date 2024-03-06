@@ -1,0 +1,7 @@
+.sliderContainer {
+  overflow: hidden;
+}
+
+.sliderWrapper {
+  display: flex;
+}

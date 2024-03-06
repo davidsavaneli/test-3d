@@ -20,3 +20,10 @@ export type projectsDataTypes = {
   tags: string[]
   image: imageTypes
 }
+
+export type teamDataTypes = {
+  id: number
+  name: string
+  position: string
+  image: imageTypes
+}

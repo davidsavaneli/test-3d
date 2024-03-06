@@ -1,8 +1,7 @@
 import React, { useRef, ReactNode, memo } from 'react'
 import Image, { ImageProps } from 'next/image'
 import clsx from 'clsx'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import { springConfig } from 'animations'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 import styles from './styles.module.css'
 

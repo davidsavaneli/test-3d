@@ -104,3 +104,68 @@ export const projectsData = [
     },
   },
 ]
+
+
+import teamImg1 from 'assets/images/uploads/home/team-member-img-1.jpg'
+import teamImg2 from 'assets/images/uploads/home/team-member-img-2.jpg'
+import teamImg3 from 'assets/images/uploads/home/team-member-img-3.jpg'
+import teamImg4 from 'assets/images/uploads/home/team-member-img-4.jpg'
+import teamImg5 from 'assets/images/uploads/home/team-member-img-5.jpg'
+import teamImg6 from 'assets/images/uploads/home/team-member-img-6.jpg'
+
+export const teamData = [
+  {
+    id: 1,
+    name: 'Giorgi Modrekelidze',
+    position: 'CO-FOUNDER / CEO',
+    image: {
+      src: teamImg1,
+      alt: 'Giorgi Modrekelidze',
+    },
+  },
+  {
+    id: 2,
+    name: 'Salome Bakashvili',
+    position: 'CO-FOUNDER / CCO',
+    image: {
+      src: teamImg2,
+      alt: 'Salome Bakashvili',
+    },
+  },
+  {
+    id: 3,
+    name: 'Giorgi Lekveishvili',
+    position: 'CO-FOUNDER / CTO',
+    image: {
+      src: teamImg3,
+      alt: 'Giorgi Lekveishvili',
+    },
+  },
+  {
+    id: 4,
+    name: 'Nikoloz Dzneladze',
+    position: 'CO-FOUNDER / CPO',
+    image: {
+      src: teamImg4,
+      alt: 'Nikoloz Dzneladze',
+    },
+  },
+  {
+    id: 5,
+    name: 'Mariam Omanidze',
+    position: 'IT PROJECT MANAGER / PRODUCT OWNER',
+    image: {
+      src: teamImg5,
+      alt: 'Mariam Omanidze',
+    },
+  },
+  {
+    id: 6,
+    name: 'David Savaneli',
+    position: 'HEAD OF FRONT-END DEVELOPMENT',
+    image: {
+      src: teamImg6,
+      alt: 'David Savaneli',
+    },
+  },
+]
