@@ -9,7 +9,7 @@ const Team = () => {
   return (
     <div className={styles.teamSection}>
       <div className='container'>
-        <div className='row'>
+        <div className='row align-items-center'>
           <div className='col-8'>
             <div className={styles.titleBox}>
               <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
@@ -17,7 +17,7 @@ const Team = () => {
             </div>
           </div>
           <div className='col-4'>
-            <AnimatedSubText>
+            <AnimatedSubText endPositionY={0}>
               We are a diverse group of digital specialists, building innovative brands and products.
             </AnimatedSubText>
           </div>

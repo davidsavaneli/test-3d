@@ -12,9 +12,9 @@ const Projects = () => {
   return (
     <div className={styles.projectsSection} ref={projectsRef}>
       <div className='container'>
-        <div className='row'>
+        <div className='row align-items-center'>
           <div className='col-4'>
-            <AnimatedSubText>
+            <AnimatedSubText endPositionY={0}>
               Our software solutions amplify opportunities for venture and private equity firms, regardless of stage or
               provided timeline.
             </AnimatedSubText>
