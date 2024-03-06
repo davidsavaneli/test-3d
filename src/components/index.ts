@@ -33,4 +33,3 @@ export { default as AnimatedSubText } from './AnimatedSubText'
 export { default as ContactButton } from './ContactButton'
 
 export { default as HorizontalDragCarousell } from './HorizontalDragCarousell'
-

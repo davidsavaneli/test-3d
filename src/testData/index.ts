@@ -73,8 +73,7 @@ export const projectsData = [
   {
     id: 2,
     title: 'Georgian Railway',
-    description:
-      'Georgian Railway Booking System: A user-centric platform enabling seamless train ticket booking.',
+    description: 'Georgian Railway Booking System: A user-centric platform enabling seamless train ticket booking.',
     tags: ['Online Booking', 'Web App'],
     image: {
       src: projectImg2,
@@ -104,7 +103,6 @@ export const projectsData = [
     },
   },
 ]
-
 
 import teamImg1 from 'assets/images/uploads/home/team-member-img-1.jpg'
 import teamImg2 from 'assets/images/uploads/home/team-member-img-2.jpg'

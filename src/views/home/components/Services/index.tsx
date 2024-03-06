@@ -68,7 +68,7 @@ const Services = () => {
               <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
               <AnimatedTitle animationDirection='ltr'>Services</AnimatedTitle>
             </div>
-            <AnimatedSubText endY="0px">
+            <AnimatedSubText endY='0px'>
               We are dedicated to delivering exceptional software solutions that drive business success through
               cutting-edge technology.
             </AnimatedSubText>
