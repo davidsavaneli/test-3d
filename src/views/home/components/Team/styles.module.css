@@ -38,7 +38,6 @@
 
 .slideImgBox img {
   border-radius: 12px;
-  filter: grayscale(100%);
   object-fit: cover;
   object-position: center 16%;
   pointer-events: none;
