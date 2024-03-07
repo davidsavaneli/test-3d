@@ -31,6 +31,9 @@ const Cursor = ({ text }: CursorType) => {
       case 'largeText':
         setCursorSize(10)
         break
+      case 'smallText':
+        setCursorSize(2.5)
+        break
       case 'drag':
         setCursorSize(5)
         break
@@ -73,6 +76,7 @@ const Cursor = ({ text }: CursorType) => {
           [styles.default]: cursorStyle === 'default',
           [styles.button]: cursorStyle === 'button',
           [styles.largeText]: cursorStyle === 'largeText',
+          [styles.smallText]: cursorStyle === 'smallText',
           [styles.drag]: cursorStyle === 'drag',
         })}
       >
