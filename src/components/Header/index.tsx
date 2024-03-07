@@ -20,20 +20,18 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className='container'>
-        <div className='row'>
-          <div className='col-12 d-flex align-items-center'>
-            <Link href='./' className={styles.logoWrapper} {...cursorProps}>
-              <motion.div
-                className={styles.logo}
-                variants={animations.logoVariant}
-                initial='initial'
-                animate='animate'
-                data-cursor-exclusion
-              >
-                <ImageSvg src={logo} alt='' fullWidth />
-              </motion.div>
-            </Link>
-          </div>
+        <div className={styles.wrapper}>
+          <Link href='./' className={styles.logoWrapper} {...cursorProps} scroll={false}>
+            <motion.div
+              className={styles.logo}
+              variants={animations.logoVariant}
+              initial='initial'
+              animate='animate'
+              data-cursor-exclusion
+            >
+              <ImageSvg src={logo} alt='' fullWidth />
+            </motion.div>
+          </Link>
         </div>
       </div>
     </header>

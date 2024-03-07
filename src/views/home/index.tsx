@@ -14,13 +14,13 @@ const View = () => {
   })
 
   return (
-    <>
+    <div className={styles.pageHome}>
       <Landing />
       <ProjectsVideo />
       {loaded && <Services />} {/* TODO */}
       <Projects />
       <Team />
-    </>
+    </div>
   )
 }
 

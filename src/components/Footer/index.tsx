@@ -26,11 +26,11 @@ const Footer = () => {
         <div className={styles.top}>
           <div className='row'>
             <div className='col-6 d-flex align-items-center'>
-              <Link href='./' className={styles.logo} {...logoCursorProps}>
+              <Link href='./' className={styles.logo} {...logoCursorProps} scroll={false}>
                 <ImageSvg src={logoSrc} alt='Techzy' fullHeight />
               </Link>
               <div className={styles.links}>
-                <Link className={styles.link} href='./privacy-policy' {...smallTextCursorProps}>
+                <Link className={styles.link} href='./privacy-policy' {...smallTextCursorProps} scroll={false}>
                   Privacy Policy
                 </Link>
               </div>
@@ -50,7 +50,9 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.copyright}>
-          <div className={styles.copyrightTitle}>&copy; {new Date().getFullYear()} Techzy Inc. All rights reserved.</div>
+          <div className={styles.copyrightTitle}>
+            &copy; {new Date().getFullYear()} Techzy Inc. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 .contactButton {
-  transition: opacity .1s 1s, visibility .1s 1s;
+  display: inline;
+  transition: opacity .1s .7s, visibility .1s .7s;
 }
 
 .contactButton.isContactPage {
