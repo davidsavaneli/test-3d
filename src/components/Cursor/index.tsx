@@ -98,16 +98,10 @@ const DragIcon = () => {
   return (
     <motion.div
       className={styles.dragIcon}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        transition: {
-          duration: 0.3,
-          delay: 0.1,
-        },
-      }}
-      exit={{ opacity: 0 }}
+      variants={animations.dragIconVariant}
+      initial='initial'
+      animate='animate'
+      exit='exit'
     >
       <div className={styles.dragArrow}>
         <ImageSvg src={dragArrowLeftSrc} alt='left' fullHeight />
