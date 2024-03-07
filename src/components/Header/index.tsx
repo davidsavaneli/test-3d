@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { animateScroll as Scroll } from 'react-scroll'
 import { ImageSvg } from 'components'
 import { useCursorContext } from 'contexts'
 import animations from './animations'
@@ -17,19 +17,12 @@ const Header = () => {
     onMouseOut: () => setCursorStyle('none'),
   }
 
-  const scrollToTop = () => {
-    Scroll.scrollTo(0, {
-      duration: 1000,
-      smooth: 'easeOutQuad',
-    })
-  }
-
   return (
     <header className={styles.header}>
       <div className='container'>
         <div className='row'>
           <div className='col-12 d-flex align-items-center'>
-            <div className={styles.logoWrapper} {...cursorProps} onClick={() => scrollToTop()}>
+            <Link href='./' className={styles.logoWrapper} {...cursorProps}>
               <motion.div
                 className={styles.logo}
                 variants={animations.logoVariant}
@@ -39,7 +32,7 @@ const Header = () => {
               >
                 <ImageSvg src={logo} alt='' fullWidth />
               </motion.div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
