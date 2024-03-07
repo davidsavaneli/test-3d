@@ -12,8 +12,7 @@
 
   --colorBrand: #c5fcfc;
   --colorCardBg: #1b1c1d;
+  --colorLine: rgba(255, 255, 255, 0.2);
 
   --primaryBorderRadius: 24px;
-
-  --colorLine: rgba(255, 255, 255, 0.2);
 }
