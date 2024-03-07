@@ -91,21 +91,20 @@
 
 .serviceItemNumber {
   font-size: 32px;
-  color: var(--colorWhite);
+  color: var(--colorPrimary);
 }
 
 .serviceItemTitle {
   font-size: 28px;
-  color: var(--colorWhite);
+  color: var(--colorPrimary);
   font-family: var(--fontUppercase);
   margin-top: 30px;
 }
 
 .serviceItemText {
   font-size: 20px;
-  color: var(--colorTextPrimary);
+  color: var(--colorSecondary);
   margin-top: 22px;
-  opacity: 0.6;
 }
 
 .serviceItemIcon {

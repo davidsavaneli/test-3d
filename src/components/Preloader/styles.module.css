@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background-color: #000;
+  background-color: var(--colorDark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
   left: -50px;
   right: -50px;
   bottom: -50px;
-  background-color: #000;
+  background-color: var(--colorDark);
   z-index: 1;
 }
 

@@ -18,7 +18,7 @@
   position: relative;
   top: 1px;
   font-size: 18px;
-  color: #fff;
+  color: var(--colorPrimary);
   z-index: 1;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -28,7 +28,7 @@
 .borderLine {
   position: absolute;
   width: 100%;
-  border: 1px solid #fff;
+  border: 1px solid var(--colorPrimary);
   background-color: transparent;
   padding-bottom: 0;
   height: 100%;
@@ -48,7 +48,7 @@
   .button:hover .borderLine {
     padding-bottom: 100%;
     border-radius: 50%;
-    background-color: var(--colorPrimary);
+    background-color: var(--colorBrand);
     filter: blur(20px);
   }
 }

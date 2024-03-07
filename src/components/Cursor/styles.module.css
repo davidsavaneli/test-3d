@@ -27,7 +27,7 @@
   margin-top: -12px;
   width: 22px;
   height: 22px;
-  background-color: var(--colorPrimary);
+  background-color: var(--colorBrand);
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -47,7 +47,7 @@
 }
 
 .additionalText {
-  color: var(--colorBlack);
+  color: var(--colorDark);
   position: absolute;
   top: 50%;
   left: 50%;

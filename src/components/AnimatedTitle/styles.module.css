@@ -34,7 +34,7 @@
 .title span {
   display: block;
   font-size: 110px;
-  color: var(--colorWhite);
+  color: var(--colorPrimary);
   font-family: var(--fontUppercase);
   line-height: 1;
   text-transform: uppercase;

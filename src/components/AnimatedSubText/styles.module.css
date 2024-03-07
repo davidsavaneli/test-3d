@@ -1,5 +1,5 @@
 .animatedSubText {
   font-size: 30px;
-  color: var(--colorTextPrimary);
+  color: var(--colorSecondary);
   max-width: 600px;
 }

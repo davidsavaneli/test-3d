@@ -57,8 +57,7 @@
 
 .projectItemDescription {
   font-size: 20px;
-  color: var(--colorWhite);
-  opacity: 0.6;
+  color: var(--colorSecondary);
   margin-top: 30px;
 }
 

@@ -1,23 +1,19 @@
 :root {
   --fullHeight: calc(var(--vh, 1vh) * 100);
+  
+  --fontMedium: 'Syne-Medium';
+  --fontUppercase: 'MonumentExtended-Regular';
 
   --colorBg: #121315;
   --colorBg-070: rgba(18, 19, 21, 0.7);
   --colorBg-090: rgba(18, 19, 21, 0.9);
 
-  --colorTextPrimary: rgba(255, 255, 255, 0.6);
+  --colorPrimary: rgba(255, 255, 255, 1);
+  --colorSecondary: rgba(255, 255, 255, 0.6);
+  --colorDark: #1b1c1d;
 
-  --fontRegular: 'Syne-Regular';
-  --fontMedium: 'Syne-Medium';
-  --fontSemiBold: 'Syne-SemiBold';
-  --fontBold: 'Syne-Bold';
-  --fontUppercase: 'MonumentExtended-Regular';
-
-  --colorBlack: #121315;
-  --colorWhite: #fff;
-  --colorPrimary: #c5fcfc;
+  --colorBrand: #c5fcfc;
   --colorCardBg: #1b1c1d;
 
   --primaryBorderRadius: 24px;
-  --secondaryBorderRadius: 12px;
 }
