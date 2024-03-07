@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, ReactNode } from 'react'
+import React, { useRef, useEffect, useState, ReactNode, memo } from 'react'
 import { useMotionValue, motion, useSpring } from 'framer-motion'
 import { useCursorContext } from 'contexts'
 import styles from './styles.module.css'
@@ -33,7 +33,6 @@ const HorizontalDragCarousell = ({
     const calculateSizes = () => {
       if (sliderWrapperRef?.current && sliderContainerRef?.current) {
         setSliderConstraints(sliderWrapperRef.current.scrollWidth - sliderContainerRef?.current.clientWidth)
-        transformX.set(0)
       }
     }
 
@@ -65,4 +64,4 @@ const HorizontalDragCarousell = ({
   )
 }
 
-export default HorizontalDragCarousell
+export default memo(HorizontalDragCarousell)

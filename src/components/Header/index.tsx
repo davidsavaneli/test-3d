@@ -28,7 +28,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className='container'>
         <div className='row'>
-          <div className='col-6 d-flex align-items-center'>
+          <div className='col-12 d-flex align-items-center'>
             <div className={styles.logoWrapper} {...cursorProps} onClick={() => scrollToTop()}>
               <motion.div
                 className={styles.logo}
@@ -40,16 +40,6 @@ const Header = () => {
                 <ImageSvg src={logo} alt='' fullWidth />
               </motion.div>
             </div>
-          </div>
-          <div className='col-6 d-flex align-items-center justify-content-end'>
-            {/* <MagneticLayout>
-              <motion.div
-                className={styles.btn}
-                variants={animations.btnVariant}
-                initial='initial'
-                animate='animate'
-              ></motion.div>
-            </MagneticLayout> */}
           </div>
         </div>
       </div>

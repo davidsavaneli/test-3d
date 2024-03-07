@@ -9,6 +9,7 @@ import {
   Header,
   SmoothScroll,
   ContactButton,
+  Footer
 } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
@@ -41,6 +42,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
               </main>
             )}
           </AnimatePresence>
+          <Footer />
         </CursorLayout>
       </CursorProvider>
     </React.Fragment>

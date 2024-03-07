@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Technologies } from 'components'
 import Landing from './components/Landing'
 import ProjectsVideo from './components/ProjectsVideo'
 import Services from './components/Services'
@@ -21,34 +20,6 @@ const View = () => {
       {loaded && <Services />} {/* TODO */}
       <Projects />
       <Team />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   )
 }

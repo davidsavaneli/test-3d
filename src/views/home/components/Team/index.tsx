@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { teamData } from 'testData'
@@ -69,4 +69,4 @@ const TeamItem = ({ data }: TeamItemProps) => {
   )
 }
 
-export default Team
+export default memo(Team)
