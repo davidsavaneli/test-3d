@@ -4,7 +4,7 @@
   right: 0;
   top: 0;
   padding: 30px 0;
-  background-image: linear-gradient(var(--colorBg) 4%, var(--colorBg-090) 16%, var(--colorBg-070) 71%, transparent);
+  mix-blend-mode: difference;
   z-index: 1;
   
 }
