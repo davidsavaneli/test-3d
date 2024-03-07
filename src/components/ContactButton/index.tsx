@@ -9,11 +9,15 @@ import logoSrc from 'assets/images/logo-small.svg'
 
 const ContactButton = () => {
   const [windowHeight, setWindowHeight] = useState<number>(0)
+  const [mainElHeight, setMainElHeight] = useState<number>(0)
 
   useEffect(() => {
     const calculateSizes = () => {
       if (typeof window !== 'undefined') {
         setWindowHeight(window.innerHeight)
+
+        const mainEl = document.getElementById('main')
+        mainEl?.offsetHeight && setMainElHeight(mainEl?.offsetHeight - window.innerHeight)
       }
     }
 
@@ -35,9 +39,10 @@ const ContactButton = () => {
   const { scrollY } = useScroll()
 
   const x = useTransform(scrollY, [0, windowHeight], ['300%', `0%`])
+  const scale = useTransform(scrollY, [mainElHeight, mainElHeight + 100], ['1', '0'])
 
   return (
-    <motion.div className={styles.button} {...cursorProps} style={{ x: x }}>
+    <motion.div className={styles.button} {...cursorProps} style={{ x: x, scale: scale }}>
       <MagneticLayout>
         <div className={styles.buttonInner}>
           <div className={styles.innerLine}></div>
