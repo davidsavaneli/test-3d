@@ -1,3 +1,11 @@
+.contactButton {
+  transition: opacity .1s 1s, visibility .1s 1s;
+}
+
+.contactButton.isContactPage {
+  opacity: 0;
+}
+
 .button {
   position: fixed;
   bottom: 40px;

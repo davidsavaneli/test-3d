@@ -90,7 +90,7 @@ const Landing = () => {
         </MagneticLayout>
       </div>
       <div className={styles.contactBtnBox}>
-        <Button label='Get in touch' />
+        <Button label='Get in touch' href='./contact' />
       </div>
     </div>
   )

@@ -1,9 +1,9 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import { AnimationLayout } from 'components'
-import View from 'views/about'
+import View from 'views/contact'
 
-const AboutPage: NextPage = () => {
+const ContactPage: NextPage = () => {
   return (
     <AnimationLayout>
       <View />
@@ -11,4 +11,4 @@ const AboutPage: NextPage = () => {
   )
 }
 
-export default AboutPage
+export default ContactPage
