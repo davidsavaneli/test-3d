@@ -3,6 +3,32 @@
 }
 
 .top {
+  padding: 30px 0;
+  border-top: 1px solid var(--colorLine);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 160px;
+}
+
+.topItem {
+  position: relative;
+}
+
+.topItemLabel {
+  font-size: 16px;
+  color: var(--colorSecondary);
+  margin: 3px 0;
+}
+
+.topItemValue {
+  display: block;
+  font-size: 18px;
+  color: var(--colorPrimary);
+  margin: 3px 0;
+  padding: 5px 10px 5px 0;
+}
+
+.middle {
   padding-top: 50px;
   border-top: 1px solid var(--colorLine);
 }
@@ -22,7 +48,7 @@
   color: var(--colorSecondary);
   padding: 5px 0;
   font-size: 16px;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .links:before {

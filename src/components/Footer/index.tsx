@@ -24,6 +24,36 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className='container'>
         <div className={styles.top}>
+          <div className={styles.topItem}>
+            <div className={styles.topItemLabel}>Email:</div>
+            <a
+              href='mailto:someone@example.com'
+              target='_blank'
+              className={styles.topItemValue}
+              {...smallTextCursorProps}
+            >
+              Send email
+            </a>
+          </div>
+          <div className={styles.topItem}>
+            <div className={styles.topItemLabel}>Phone:</div>
+            <a href='tel:+995551318884' target='_blank' className={styles.topItemValue} {...smallTextCursorProps}>
+              +995 551 31 88 84
+            </a>
+          </div>
+          <div className={styles.topItem}>
+            <div className={styles.topItemLabel}>Address:</div>
+            <a
+              href='https://maps.app.goo.gl/44VaNYLndFg1wDrWA'
+              target='_blank'
+              className={styles.topItemValue}
+              {...smallTextCursorProps}
+            >
+              80 Chavchavadze ave, 0162, Tbilisi, Georgia
+            </a>
+          </div>
+        </div>
+        <div className={styles.middle}>
           <div className='row'>
             <div className='col-6 d-flex align-items-center'>
               <Link href='./' className={styles.logo} {...logoCursorProps} scroll={false}>
