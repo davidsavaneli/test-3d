@@ -213,7 +213,12 @@ const View = () => {
                 <div className='col-12'>
                   <div className={clsx('row', styles.formBottom)}>
                     <div className='col-6 d-flex align-items-center'>
-                      <Button label='Get in touch' type='submit' disabled={disableSubmitBtn} />
+                      <Button
+                        label='Get in touch'
+                        type='submit'
+                        disabled={disableSubmitBtn}
+                        loading={disableSubmitBtn}
+                      />
                     </div>
                     <div className='col-6 d-flex align-items-center justify-content-end'>
                       <div className={styles.tcText}>

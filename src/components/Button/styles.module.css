@@ -22,7 +22,19 @@
   z-index: 1;
   mix-blend-mode: difference;
   pointer-events: none;
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.2s;
+}
+
+.button.loading .label {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .button:hover .label {
+    transform: scale(1.16);
+  }
 }
 
 .borderLine {
@@ -41,14 +53,44 @@
 }
 
 @media (hover: hover) {
-  .button:hover .label {
-    transform: scale(1.16);
-  }
-
   .button:hover .borderLine {
     padding-bottom: 100%;
     border-radius: 50%;
     background-color: var(--colorBrand);
     filter: blur(20px);
+  }
+}
+
+.button.loading:before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--colorPrimary);
+  border-radius: 50%;
+  border-left: 0;
+  border-top: 0;
+  transition: border-color 0.3s;
+  animation: buttonLoaderAnimation 0.5s linear infinite !important;
+}
+
+@keyframes buttonLoaderAnimation {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (hover: hover) {
+  .button.loading:hover:before {
+    border-color: var(--colorDark);
   }
 }

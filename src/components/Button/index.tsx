@@ -9,9 +9,10 @@ import styles from './styles.module.css'
 export type ComponentProps = React.ComponentProps<'button'> & {
   label?: string
   href?: string
+  loading?: boolean
 }
 
-const Button = ({ label, href, ...props }: ComponentProps) => {
+const Button = ({ label, href, loading = false, ...props }: ComponentProps) => {
   const { setCursorStyle } = useCursorContext()
 
   const cursorProps = {
@@ -28,7 +29,13 @@ const Button = ({ label, href, ...props }: ComponentProps) => {
     </MagneticLayout>
   ) : (
     <MagneticLayout>
-      <button className={clsx(styles.button)} {...props} {...cursorProps}>
+      <button
+        className={clsx(styles.button, {
+          [styles.loading]: loading,
+        })}
+        {...props}
+        {...cursorProps}
+      >
         {label && <div className={styles.label}>{label}</div>}
         <div className={styles.borderLine}></div>
       </button>
