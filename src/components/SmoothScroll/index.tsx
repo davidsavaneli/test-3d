@@ -8,6 +8,7 @@ type SmoothScrollProps = {
 
 const SmoothScroll = ({ children, root = false }: SmoothScrollProps) => {
   return <ReactLenis root={root}>{children}</ReactLenis>
+  // return <>{children}</>
 }
 
 export default SmoothScroll

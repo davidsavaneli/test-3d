@@ -7,12 +7,14 @@
   --colorBg: #121315;
 
   --colorPrimary: rgba(255, 255, 255, 1);
+  --colorPrimary-006: rgba(255, 255, 255, 0.06);
   --colorSecondary: rgba(255, 255, 255, 0.6);
   --colorDark: #1b1c1d;
-
+  --colorError: #a90000;
   --colorBrand: #c5fcfc;
   --colorCardBg: #1b1c1d;
   --colorLine: rgba(255, 255, 255, 0.2);
 
   --primaryBorderRadius: 24px;
+  --secondaryBorderRadius: 12px;
 }

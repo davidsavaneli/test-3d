@@ -229,12 +229,15 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* input {   
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: none;
-} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--colorPrimary);
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 100px 100px var(--colorDark);
+}
 
 input::-webkit-contacts-auto-fill-button,
 input::-webkit-credentials-auto-fill-button {

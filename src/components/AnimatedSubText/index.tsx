@@ -1,4 +1,5 @@
 import React, { useRef, ReactNode, memo } from 'react'
+import clsx from 'clsx'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { springConfig } from 'animations'
 
@@ -10,6 +11,7 @@ export type ComponentProps = {
   endPositionOpacity?: number
   startY?: string
   endY?: string
+  size?: 'large' | 'medium'
 }
 
 const AnimatedSubText = ({
@@ -18,6 +20,7 @@ const AnimatedSubText = ({
   endPositionOpacity = 0.7,
   startY = '80px',
   endY = '-80px',
+  size = 'large',
 }: ComponentProps) => {
   const animatedSubTextRef = useRef<HTMLDivElement>(null)
 
@@ -28,7 +31,14 @@ const AnimatedSubText = ({
   const y = useTransform(transformX, [1, endPositionY], [startY, endY])
 
   return (
-    <motion.div ref={animatedSubTextRef} className={styles.animatedSubText} style={{ opacity, y }}>
+    <motion.div
+      ref={animatedSubTextRef}
+      style={{ opacity, y }}
+      className={clsx(styles.animatedSubText, {
+        [styles.large]: size === 'large',
+        [styles.medium]: size === 'medium',
+      })}
+    >
       {children}
     </motion.div>
   )

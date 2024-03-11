@@ -35,7 +35,8 @@
 
 .cursorWrap.default .cursor,
 .cursorWrap.button .cursor,
-.cursorWrap.drag .cursor {
+.cursorWrap.drag .cursor,
+.cursorWrap.smallText .cursor {
   filter: blur(2px);
 }
 
@@ -43,8 +44,7 @@
   background-color: transparent;
 }
 
-.cursorWrap.largeText .cursor,
-.cursorWrap.smallText .cursor {
+.cursorWrap.largeText .cursor {
   filter: blur(4px);
 }
 

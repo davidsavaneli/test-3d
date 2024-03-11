@@ -2,6 +2,7 @@
 @import 'grids.css';
 @import 'variables.css';
 @import 'fonts.css';
+@import 'mui.css';
 
 body {
   position: relative;
