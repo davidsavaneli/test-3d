@@ -78,7 +78,7 @@ const View = () => {
       <div className={styles.formBox}>
         <div className='row'>
           <div className='col-5'>
-            <div className={styles.infoBox}>
+            <div className={styles.leftBox}>
               <MagneticLayout>
                 <Link scroll={false} href='./' className={styles.closeBtn} {...closeCursorProps}>
                   <div className={styles.closeBtnBg}></div>
@@ -90,16 +90,18 @@ const View = () => {
                   </svg>
                 </Link>
               </MagneticLayout>
-              <AnimatedTitle animationDirection='rtl' size='medium' disableX>
-                Contact
-              </AnimatedTitle>
-              <AnimatedTitle animationDirection='ltr' size='medium' disableX>
-                Us
-              </AnimatedTitle>
-              <div className={styles.descriptionBox}>
-                <AnimatedSubText startY={'0px'} endY={'0px'} size='medium'>
-                  Fill out the form, and a member of our team will reach out to you to discuss how we can help.
-                </AnimatedSubText>
+              <div className={styles.infoBox}>
+                <AnimatedTitle animationDirection='rtl' size='medium' disableX>
+                  Contact
+                </AnimatedTitle>
+                <AnimatedTitle animationDirection='ltr' size='medium' disableX>
+                  Us
+                </AnimatedTitle>
+                <div className={styles.descriptionBox}>
+                  <AnimatedSubText startY={'0px'} endY={'0px'} size='medium'>
+                    Fill out the form, and a member of our team will reach out to you to discuss how we can help.
+                  </AnimatedSubText>
+                </div>
               </div>
             </div>
           </div>

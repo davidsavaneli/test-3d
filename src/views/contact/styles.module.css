@@ -3,7 +3,7 @@
   margin: 100px auto 0 auto;
 }
 
-.infoBox {
+.leftBox {
   padding-right: 50px;
   margin-top: 15px;
 }
@@ -14,7 +14,6 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-bottom: 80px;
 }
 
 .closeBtnBg {
@@ -70,6 +69,10 @@
   }
 }
 
+.infoBox {
+  margin-top: 80px;
+}
+
 .descriptionBox {
   margin-top: 50px;
 }
@@ -89,6 +92,7 @@
 .tcText {
   font-size: 14px;
   color: var(--colorSecondary);
+  text-align: right;
 }
 
 .tcText a {
