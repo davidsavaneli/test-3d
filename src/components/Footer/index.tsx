@@ -63,6 +63,9 @@ const Footer = () => {
                 <Link className={styles.link} href='./privacy-policy' {...smallTextCursorProps} scroll={false}>
                   Privacy Policy
                 </Link>
+                <Link className={styles.link} href='./terms-and-conditions' {...smallTextCursorProps} scroll={false}>
+                  Terms & Conditions
+                </Link>
               </div>
             </div>
             <div className='col-6 d-flex align-items-center justify-content-end'>
