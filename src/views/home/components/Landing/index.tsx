@@ -79,14 +79,15 @@ const Landing = () => {
       </div>
       <div className={styles.scrollDownBtnBox}>
         <MagneticLayout>
-          <div
+          <motion.div
             className={styles.scrollDownBtn}
             onClick={() => scrollDown()}
             onMouseOver={() => setCursorStyle('default')}
             onMouseOut={() => setCursorStyle('none')}
+            whileTap={{ scale: 0.9 }}
           >
             <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
-          </div>
+          </motion.div>
         </MagneticLayout>
       </div>
       <div className={styles.contactBtnBox}>

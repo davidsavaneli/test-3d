@@ -44,7 +44,7 @@ const ContactButton = () => {
 
   const { scrollY } = useScroll()
 
-  const x = useTransform(scrollY, [0, pathname === '/' ? windowHeight : 0], ['300%', `0%`])
+  const x = useTransform(scrollY, [0, windowHeight], ['300%', `0%`])
   const scale = useTransform(scrollY, [mainElHeight, mainElHeight + 100], ['1', '0'])
 
   return (

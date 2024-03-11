@@ -63,6 +63,10 @@
   transition: color 0.3s;
 }
 
+.link:last-child {
+  margin-right: 0;
+}
+
 @media (hover: hover) {
   .link:hover {
     color: var(--colorPrimary);
