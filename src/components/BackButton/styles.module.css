@@ -1,0 +1,60 @@
+.backBtn {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.backBtnBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: var(--colorDark);
+  transition:
+    transform 0.3s,
+    background-color 0.3s,
+    filter 0.3s;
+}
+
+@media (hover: hover) {
+  .backBtn:hover .backBtnBg {
+    transform: scale(1.2);
+    background-color: var(--colorBrand);
+    filter: blur(10px);
+  }
+}
+
+.backIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+
+@media (hover: hover) {
+  .backBtn:hover .backIcon {
+    transform: scale(1.1);
+  }
+}
+
+.backIconPath {
+  fill: var(--colorPrimary);
+  transition: fill 0.3s;
+}
+
+@media (hover: hover) {
+  .backBtn:hover .backIconPath {
+    fill: var(--colorDark);
+  }
+}

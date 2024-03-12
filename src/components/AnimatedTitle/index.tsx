@@ -25,7 +25,12 @@ const AnimatedTitle = ({
   const { scrollYProgress } = useScroll({ target: titleRef })
   const transformX = useSpring(scrollYProgress, springConfig)
 
-  const fillProgress = useTransform(transformX, [1, 0.5], ['0%', '100%'])
+  const clipPath = useTransform(
+    transformX,
+    [1, 0.5],
+    ['polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)', 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'],
+  )
+
   const x = !disableX
     ? useTransform(transformX, [1, 0.5], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
     : undefined
@@ -46,7 +51,7 @@ const AnimatedTitle = ({
         <span>{children}</span>
       </motion.div>
       <motion.div className={clsx(styles.title, styles.second)}>
-        <motion.span style={{ width: fillProgress }}>{children}</motion.span>
+        <motion.span style={{ clipPath: clipPath }}>{children}</motion.span>
       </motion.div>
     </motion.div>
   )
