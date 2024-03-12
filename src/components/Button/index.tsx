@@ -23,7 +23,7 @@ const Button = ({ label, href, loading = false, ...props }: ComponentProps) => {
 
   return href ? (
     <MagneticLayout>
-      <motion.div whileTap={{ scale: 0.9 }}>
+      <motion.div whileTap={{ scale: 0.8 }}>
         <Link scroll={false} href={href} className={clsx(styles.button)} {...cursorProps}>
           {label && <div className={styles.label}>{label}</div>}
           <div className={styles.borderLine}></div>
@@ -32,7 +32,7 @@ const Button = ({ label, href, loading = false, ...props }: ComponentProps) => {
     </MagneticLayout>
   ) : (
     <MagneticLayout>
-      <motion.div whileTap={{ scale: 0.9 }}>
+      <motion.div whileTap={{ scale: 0.8 }}>
         <button
           className={clsx(styles.button, {
             [styles.loading]: loading,

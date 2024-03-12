@@ -84,7 +84,7 @@ const Landing = () => {
             onClick={() => scrollDown()}
             onMouseOver={() => setCursorStyle('default')}
             onMouseOut={() => setCursorStyle('none')}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.8 }}
           >
             <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
           </motion.div>

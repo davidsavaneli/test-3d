@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion'
+import { Variants, spring } from 'framer-motion'
 
 type animationTypes = {
   svg: Variants
@@ -24,9 +24,9 @@ const animations: animationTypes = {
     },
     exit: {
       opacity: 0,
-      y: '0',
+      y: '-50px',
       transition: {
-        duration: 0.6,
+        duration: 0.8,
       },
     },
   },

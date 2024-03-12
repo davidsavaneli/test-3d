@@ -1,0 +1,124 @@
+.Toastify {
+  position: relative;
+  z-index: 1;
+}
+
+.Toastify__toast {
+  border-radius: var(--secondaryBorderRadius) !important;
+  box-shadow: 0 !important;
+  margin-bottom: 8px !important;
+  padding: 14px 10px 14px 5px !important;
+  min-height: inherit !important;
+}
+
+.Toastify__toast-container {
+  padding: 10px !important;
+  width: auto !important;
+  max-width: 470px !important;
+  min-width: 280px !important;
+}
+
+.Toastify__toast-body {
+  padding: 0px 20px 0px 12px !important;
+}
+
+.Toastify__toast--success {
+  background-color: var(--toastifyBg) !important;
+}
+
+.Toastify__toast--error {
+  background-color: var(--toastifyBg) !important;
+}
+
+.Toastify__toast-icon {
+  -webkit-margin-end: 15px;
+  margin-inline-end: 15px;
+}
+
+.Toastify__toast--success svg {
+  fill: var(--colorSuccess) !important;
+}
+
+.Toastify__toast--error svg {
+  fill: var(--colorError) !important;
+}
+
+.Toastify__toast-body > div:last-child {
+  font-size: 14px !important;
+  font-family: var(--fontMedium) !important;
+}
+
+.Toastify__toast--success .Toastify__toast-body > div:last-child {
+  color: var(--colorPrimary) !important;
+}
+
+.Toastify__toast--error .Toastify__toast-body > div:last-child {
+  color: var(--colorPrimary) !important;
+}
+
+.Toastify__toast-body + div:not(.Toastify__progress-bar) {
+  position: absolute !important;
+  top: 50% !important;
+  right: 8px !important;
+  transform: translateY(-50%) scale(0.8) !important;
+}
+
+.Toastify__progress-bar {
+  /* display: none; */
+}
+
+.Toastify__progress-bar--bg {
+  opacity: 0 !important;
+  background-color: transparent !important;
+}
+
+.Toastify__progress-bar--success {
+  background-color: var(--colorSuccess) !important;
+}
+
+.Toastify__progress-bar--error {
+  background-color: var(--colorError) !important;
+}
+
+.Toastify__close-button {
+  position: relative !important;
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  padding: 8px !important;
+  align-self: center !important;
+  opacity: 1 !important;
+  transition: transform .3s !important;
+}
+
+@media (hover: hover) {
+  .Toastify__close-button:hover {
+    transform: scale(1.2) !important;
+  }
+}
+
+.Toastify__close-button > svg {
+  display: none !important;
+}
+
+.Toastify__close-button:before,
+.Toastify__close-button:after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  width: 16px !important;
+  height: 1px !important;
+  background-color: var(--colorPrimary) !important;
+}
+
+.Toastify__close-button:before {
+  transform: rotate(45deg) !important;
+}
+
+.Toastify__close-button:after {
+  transform: rotate(-45deg) !important;
+}

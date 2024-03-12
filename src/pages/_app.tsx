@@ -1,5 +1,6 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
+import { ToastContainer } from 'react-toastify'
 import { AnimatePresence } from 'framer-motion'
 import {
   BackgrundOverlay,
@@ -15,6 +16,7 @@ import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
 
 import 'assets/css/styles.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
   const { showPreloader } = useShowPreloader(true)
@@ -45,6 +47,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
           <Footer />
         </CursorLayout>
       </CursorProvider>
+      <ToastContainer position='bottom-right' />
     </React.Fragment>
   )
 }

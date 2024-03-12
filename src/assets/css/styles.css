@@ -3,6 +3,7 @@
 @import 'variables.css';
 @import 'fonts.css';
 @import 'mui.css';
+@import 'toastify.css';
 
 body {
   position: relative;

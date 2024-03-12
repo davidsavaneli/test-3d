@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useLenis } from '@studio-freight/react-lenis'
 import clsx from 'clsx'
+import { toast } from 'react-toastify'
 import { AnimatedSubText, AnimatedTitle, MagneticLayout, Button } from 'components'
 import { useCursorContext } from 'contexts'
 import { useFormik } from 'formik'
@@ -63,11 +64,15 @@ const View = () => {
       }).then(async (response) => {
         if (response.status === 200) {
           resetForm()
-          console.log('success')
+          toast.success(
+            'Thank you for sharing your idea! Your message has been successfully sent. We appreciate your interest and will get back to you as soon as possible.',
+          )
           setDisableSubmitBtn(false)
         } else {
           resetForm()
-          console.log('error')
+          toast.error(
+            'Oops! Something went wrong. Please check your entries and try again. If the problem persists, feel free to email us directly at contanct@techzy.app.',
+          )
           setDisableSubmitBtn(false)
         }
       })
@@ -81,7 +86,7 @@ const View = () => {
           <div className='col-5'>
             <div className={styles.leftBox}>
               <MagneticLayout>
-                <motion.div whileTap={{ scale: 0.9 }}>
+                <motion.div whileTap={{ scale: 0.8 }}>
                   <Link scroll={false} href='./' className={styles.closeBtn} {...closeCursorProps}>
                     <div className={styles.closeBtnBg}></div>
                     <svg
