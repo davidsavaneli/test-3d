@@ -19,16 +19,16 @@ const Team = () => {
     <div className={styles.teamSection}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col-8'>
-            <div className={styles.titleBox}>
-              <AnimatedTitle transformDirection='ltr'>Our</AnimatedTitle>
-              <AnimatedTitle transformDirection='rtl'>Team</AnimatedTitle>
-            </div>
-          </div>
           <div className='col-4'>
             <AnimatedSubText endPositionY={0}>
               We are a diverse group of digital specialists, building innovative brands and products.
             </AnimatedSubText>
+          </div>
+          <div className='col-8'>
+            <div className={styles.titleBox}>
+              <AnimatedTitle transformDirection='rtl'>Our</AnimatedTitle>
+              <AnimatedTitle transformDirection='ltr'>Team</AnimatedTitle>
+            </div>
           </div>
         </div>
       </div>

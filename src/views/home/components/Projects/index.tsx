@@ -13,17 +13,17 @@ const Projects = () => {
     <div className={styles.projectsSection} ref={projectsRef}>
       <div className='container'>
         <div className='row align-items-center'>
+          <div className='col-8'>
+            <div className={styles.titleBox}>
+              <AnimatedTitle transformDirection='ltr'>Recent</AnimatedTitle>
+              <AnimatedTitle transformDirection='rtl'>Work</AnimatedTitle>
+            </div>
+          </div>
           <div className='col-4'>
             <AnimatedSubText endPositionY={0}>
               Our software solutions amplify opportunities for venture and private equity firms, regardless of stage or
               provided timeline.
             </AnimatedSubText>
-          </div>
-          <div className='col-8'>
-            <div className={styles.titleBox}>
-              <AnimatedTitle transformDirection='rtl'>Recent</AnimatedTitle>
-              <AnimatedTitle transformDirection='ltr'>Work</AnimatedTitle>
-            </div>
           </div>
         </div>
       </div>
@@ -53,10 +53,10 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
   const InfoY = useTransform(scrollYProgress, [0, 1], ['-100px', '100px'])
-  const InfoX = useTransform(scrollYProgress, [0, 1], [even ? '-40px' : '40px', even ? '40px' : '-40px'])
+  const InfoX = useTransform(scrollYProgress, [0, 1], [!even ? '-40px' : '40px', !even ? '40px' : '-40px'])
   const ImageY = useTransform(scrollYProgress, [0, 1], ['100px', '-100px'])
-  const ImageX = useTransform(scrollYProgress, [0, 1], [even ? '40px' : '-40px', even ? '-40px' : '40px'])
-  const ImageRotate = useTransform(scrollYProgress, [0, 1], [even ? '5deg' : '-5deg', even ? '-5deg' : '5deg'])
+  const ImageX = useTransform(scrollYProgress, [0, 1], [!even ? '40px' : '-40px', !even ? '-40px' : '40px'])
+  const ImageRotate = useTransform(scrollYProgress, [0, 1], [!even ? '5deg' : '-5deg', !even ? '-5deg' : '5deg'])
 
   return (
     <motion.article className={styles.projectItem} ref={projectItemRef}>
@@ -65,7 +65,7 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
           <motion.div className={styles.projectItemInfo} style={{ y: InfoY, x: InfoX }}>
             <div className={styles.projectItemTitle}>
               {data.title.split(' ').map((word, index) => (
-                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={even ? 'left' : 'right'}>
+                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={!even ? 'left' : 'right'}>
                   {word}
                 </AnimatedTitle>
               ))}
