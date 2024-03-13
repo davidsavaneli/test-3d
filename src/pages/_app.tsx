@@ -8,9 +8,9 @@ import {
   Preloader,
   CursorFluidAnimation,
   Header,
-  SmoothScroll,
   ContactButton,
-  Footer
+  Footer,
+  SmoothScroller,
 } from 'components'
 import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
@@ -38,9 +38,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
               <Preloader />
             ) : (
               <main key={router.route} id='main'>
-                <SmoothScroll root={true}>
-                  <Component {...pageProps} />
-                </SmoothScroll>
+                <Component {...pageProps} />
               </main>
             )}
           </AnimatePresence>
@@ -48,6 +46,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
         </CursorLayout>
       </CursorProvider>
       <ToastContainer position='bottom-right' />
+      <SmoothScroller />
     </React.Fragment>
   )
 }

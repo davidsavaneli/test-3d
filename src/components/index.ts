@@ -6,7 +6,7 @@ export { default as ContentPageLayout } from './ContentPageLayout'
 
 export { default as MagneticLayout } from './MagneticLayout'
 
-export { default as SmoothScroll } from './SmoothScroll'
+export { default as SmoothScroller } from './SmoothScroller'
 
 export { default as ImageSvg } from './ImageSvg'
 
