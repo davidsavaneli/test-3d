@@ -1,30 +1,29 @@
 .wrapper {
-  padding-top: 100px;
+  padding-top: 40px;
 }
 
 .title {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .wysiwyg {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .wysiwyg h3 {
   font-size: 28px;
-  margin-bottom: 10px;
+  margin: 15px 0;
   font-family: var(--fontUppercase);
   color: var(--colorPrimary);
 }
 
 .wysiwyg p {
   font-size: 24px;
-  margin-bottom: 10px;
   color: var(--colorSecondary)
 }
 
 .wysiwyg ul {
-  margin: 20px 0 20px 40px;
+  margin: 20px 0 20px 50px;
 }
 
 .wysiwyg li {
@@ -35,8 +34,7 @@
 
 .wysiwyg a {
   font-size: 24px;
-  color: var(--colorSecondary);
-  transition: color .3s;
+  color: var(--colorPrimary);
 }
 
 @media (hover: hover) {
