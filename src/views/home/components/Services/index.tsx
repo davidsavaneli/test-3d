@@ -59,19 +59,23 @@ const Services = () => {
     clamp: false,
   })
 
+  const titleX = useTransform(transformX, [startPos, endPos], ['0%', '100%'])
+
   return (
     <div className={styles.slider} ref={sliderRef}>
       <motion.div className={styles.sliderContainer} ref={sliderContainerRef}>
         <div className={styles.headlineSection}>
           <div className='container'>
-            <div className={styles.titles}>
-              <AnimatedTitle transformDirection='ltr'>Our</AnimatedTitle>
-              <AnimatedTitle transformDirection='rtl'>Services</AnimatedTitle>
-            </div>
-            <AnimatedSubText endY='0px'>
-              We are dedicated to delivering exceptional software solutions that drive business success through
-              cutting-edge technology.
-            </AnimatedSubText>
+            <motion.div className={styles.headlineInfoBox} style={{ x: titleX }}>
+              <div className={styles.titles}>
+                <AnimatedTitle transformDirection='ltr'>Our</AnimatedTitle>
+                <AnimatedTitle transformDirection='rtl'>Services</AnimatedTitle>
+              </div>
+              <AnimatedSubText endY='0px'>
+                We are dedicated to delivering exceptional software solutions that drive business success through
+                cutting-edge technology.
+              </AnimatedSubText>
+            </motion.div>
           </div>
         </div>
         <motion.div className={styles.sliderContent} ref={sliderContentRef}>
@@ -91,7 +95,7 @@ const Services = () => {
               ))}
               <div className={styles.slide}>
                 <div className={styles.slideItem}>
-                  <div className={styles.slideItemSpaceSmall}></div>
+                  <div className={styles.slideItemSpaceLarge}></div>
                 </div>
               </div>
             </motion.div>

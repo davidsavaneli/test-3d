@@ -6,6 +6,11 @@
   position: absolute;
   top: 22%;
   left: 0%;
+  width: 100%;
+}
+
+.headlineInfoBox {
+  width: 50%;
 }
 
 .titles {
