@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useLenis } from '@studio-freight/react-lenis'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
 import { AnimatedSubText, AnimatedTitle, Button, BackButton } from 'components'
@@ -10,6 +9,10 @@ import * as yup from 'yup'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormLabel from '@mui/material/FormLabel'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
 
 import styles from './styles.module.css'
 
@@ -18,16 +21,14 @@ const validationSchema = yup.object({
   CompanyName: yup.string().required('Company Name required'),
   Email: yup.string().email('Invalid email').required('Email required'),
   Tel: yup.string().typeError('Please enter a valid phone number').required('Phone required'),
-  Budget: yup.string().required('Budget required'),
+  Budget: yup
+    .string()
+    .oneOf(['Under $25,000', '$25,000 - $200,000', '$200,000 - $500,000', 'Over $500,000'])
+    .required('Budget required'),
   ProjectDescription: yup.string().required('Project description required'),
 })
 
 const View = () => {
-  const lenis = useLenis()
-
-  const handleStopScrolling = () => lenis.stop()
-  const handleStartScrolling = () => lenis.start()
-
   const { setCursorStyle } = useCursorContext()
 
   const smallTextCursorProps = {
@@ -48,28 +49,29 @@ const View = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      setDisableSubmitBtn(true)
-      await fetch('https://hooks.zapier.com/hooks/catch/17945339/3eo258h', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(values, null, 2),
-      }).then(async (response) => {
-        if (response.status === 200) {
-          resetForm()
-          toast.success(
-            'Thank you for sharing your idea! Your message has been successfully sent. We appreciate your interest and will get back to you as soon as possible.',
-          )
-          setDisableSubmitBtn(false)
-        } else {
-          resetForm()
-          toast.error(
-            'Oops! Something went wrong. Please check your entries and try again. If the problem persists, feel free to email us directly at contanct@techzy.app.',
-          )
-          setDisableSubmitBtn(false)
-        }
-      })
+      alert(JSON.stringify(values, null, 2))
+      // setDisableSubmitBtn(true)
+      // await fetch('https://hooks.zapier.com/hooks/catch/17945339/3eo258h', {
+      //   method: 'POST',
+      //   headers: {
+      //     Accept: 'application/json',
+      //   },
+      //   body: JSON.stringify(values, null, 2),
+      // }).then(async (response) => {
+      //   if (response.status === 200) {
+      //     resetForm()
+      //     toast.success(
+      //       'Thank you for sharing your idea! Your message has been successfully sent. We appreciate your interest and will get back to you as soon as possible.',
+      //     )
+      //     setDisableSubmitBtn(false)
+      //   } else {
+      //     resetForm()
+      //     toast.error(
+      //       'Oops! Something went wrong. Please check your entries and try again. If the problem persists, feel free to email us directly at contanct@techzy.app.',
+      //     )
+      //     setDisableSubmitBtn(false)
+      //   }
+      // })
     },
   })
 
@@ -81,11 +83,8 @@ const View = () => {
             <div className={styles.leftBox}>
               <BackButton />
               <div className={styles.infoBox}>
-                <AnimatedTitle transformDirection='ltr' size='medium'>
-                  Contact
-                </AnimatedTitle>
-                <AnimatedTitle transformDirection='rtl' size='medium'>
-                  Us
+                <AnimatedTitle size='medium' disableX>
+                  Contact us
                 </AnimatedTitle>
 
                 <div className={styles.descriptionBox}>
@@ -154,6 +153,24 @@ const View = () => {
                 <div className='col-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
+                      Est. Budget
+                      <RadioGroup
+                        name='Budget'
+                        onChange={formik.handleChange}
+                      >
+                        <FormControlLabel value={'Under $25,000'} control={<Radio />} label='Under $25,000' />
+                        <FormControlLabel value={'$25,000 - $200,000'} control={<Radio />} label='$25,000 - $200,000' />
+                        <FormControlLabel
+                          value={'$200,000 - $500,000'}
+                          control={<Radio />}
+                          label='$200,000 - $500,000'
+                        />
+                        <FormControlLabel value={'Over $500,000'} control={<Radio />} label='Over $500,000' />
+                      </RadioGroup>
+                    </FormControl>
+                    {formik.touched.Budget && formik.errors.Budget ? <div>{formik.errors.Budget}</div> : null}
+
+                    {/* <FormControl fullWidth>
                       <TextField
                         className='MuiSelect'
                         select
@@ -168,8 +185,8 @@ const View = () => {
                               </svg>
                             </div>
                           ),
-                          onOpen: () => handleStopScrolling(),
-                          onClose: () => handleStartScrolling(),
+                          onOpen: () => console.log('onOpen'),
+                          onClose: () => console.log('onClose'),
                         }}
                         label='Est. Budget'
                         name='Budget'
@@ -182,7 +199,7 @@ const View = () => {
                         <MenuItem value={'$200,000 - $500,000'}>{'$200,000 - $500,000'}</MenuItem>
                         <MenuItem value={'Over $500,000'}>{'Over $500,000'}</MenuItem>
                       </TextField>
-                    </FormControl>
+                    </FormControl> */}
                   </div>
                 </div>
                 <div className='col-12'>
@@ -214,7 +231,7 @@ const View = () => {
                     <div className='col-7 d-flex align-items-center justify-content-end'>
                       <div className={styles.tcText}>
                         By sending, I agree to the{' '}
-                        <Link href='https://www.google.com/' target='_blank' {...smallTextCursorProps}>
+                        <Link href='./terms-and-conditions' {...smallTextCursorProps}>
                           terms and conditions.
                         </Link>
                       </div>
