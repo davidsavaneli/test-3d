@@ -1,6 +1,5 @@
 .titleBox {
   display: flex;
-  /* width: max-content; */
   position: relative;
 }
 
@@ -17,6 +16,10 @@
 .title {
   overflow: hidden;
   width: min-content;
+}
+
+.titleBox.autoWidth .title {
+  width: auto;
 }
 
 .title.first {

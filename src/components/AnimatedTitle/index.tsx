@@ -10,6 +10,7 @@ export type ComponentProps = {
   transformDirection?: 'ltr' | 'rtl'
   textAlign?: 'left' | 'right'
   size?: 'large' | 'medium'
+  autoWidth?: boolean
   disableX?: boolean
   fontLowercase?: boolean
 }
@@ -19,6 +20,7 @@ const AnimatedTitle = ({
   transformDirection = 'ltr',
   textAlign = 'left',
   size = 'large',
+  autoWidth = false,
   disableX = false,
   fontLowercase = false,
 }: ComponentProps) => {
@@ -53,6 +55,7 @@ const AnimatedTitle = ({
         [styles.textAlignRight]: textAlign === 'right',
         [styles.sizeLarge]: size === 'large',
         [styles.sizeMedium]: size === 'medium',
+        [styles.autoWidth]: autoWidth,
         [styles.fontLowercase]: fontLowercase,
       })}
       style={{ x }}

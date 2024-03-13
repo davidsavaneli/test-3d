@@ -27,12 +27,12 @@ const Footer = () => {
           <div className={styles.topItem}>
             <div className={styles.topItemLabel}>Email:</div>
             <a
-              href='mailto:someone@example.com'
+              href='mailto:contact@techzy.app'
               target='_blank'
               className={styles.topItemValue}
               {...smallTextCursorProps}
             >
-              Send email
+              contact@techzy.app
             </a>
           </div>
           <div className={styles.topItem}>

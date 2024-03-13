@@ -6,6 +6,42 @@
   margin-top: 100px;
 }
 
-.text {
-  margin-top: 100px;
+.wysiwyg {
+  margin-top: 80px;
+}
+
+.wysiwyg h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-family: var(--fontUppercase);
+  color: var(--colorPrimary);
+}
+
+.wysiwyg p {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--colorSecondary)
+}
+
+.wysiwyg ul {
+  margin: 20px 0 20px 40px;
+}
+
+.wysiwyg li {
+  font-size: 24px;
+  color: var(--colorSecondary);
+  list-style-type: disc;
+}
+
+.wysiwyg a {
+  font-size: 24px;
+  color: var(--colorSecondary);
+  transition: color .3s;
+}
+
+@media (hover: hover) {
+  .wysiwyg a:hover {
+    color: var(--colorPrimary);
+    text-decoration: underline;
+  }
 }
