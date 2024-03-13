@@ -104,12 +104,12 @@ export const projectsData = [
   },
 ]
 
-import teamImg1 from 'assets/images/uploads/home/team-member-img-1.jpg'
-import teamImg2 from 'assets/images/uploads/home/team-member-img-2.jpg'
-import teamImg3 from 'assets/images/uploads/home/team-member-img-3.jpg'
-import teamImg4 from 'assets/images/uploads/home/team-member-img-4.jpg'
-import teamImg5 from 'assets/images/uploads/home/team-member-img-5.jpg'
-import teamImg6 from 'assets/images/uploads/home/team-member-img-6.jpg'
+import teamImg1 from 'assets/images/uploads/home/team-member-img-1.webp'
+import teamImg2 from 'assets/images/uploads/home/team-member-img-2.webp'
+import teamImg3 from 'assets/images/uploads/home/team-member-img-3.webp'
+import teamImg4 from 'assets/images/uploads/home/team-member-img-4.webp'
+import teamImg5 from 'assets/images/uploads/home/team-member-img-5.webp'
+import teamImg6 from 'assets/images/uploads/home/team-member-img-6.webp'
 
 export const teamData = [
   {
