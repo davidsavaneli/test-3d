@@ -32,7 +32,7 @@ const Projects = () => {
           {projectsData.map((o: projectsDataTypes, index) => {
             return (
               <React.Fragment key={index}>
-                <ProjectItem data={o} key={o.id} textAlign={index % 2 ? 'left' : 'right'} />
+                <ProjectItem data={o} key={o.id} even={index % 2 ? true : false} />
               </React.Fragment>
             )
           })}
@@ -44,25 +44,28 @@ const Projects = () => {
 
 type ProjectItemProps = {
   data: projectsDataTypes
-  textAlign?: 'left' | 'right'
+  even?: boolean
 }
 
-const ProjectItem = ({ data, textAlign = 'left' }: ProjectItemProps) => {
+const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
   const projectItemRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
-  const InfoY = useTransform(scrollYProgress, [0, 1], ['-100px', `100px`])
-  const ImageY = useTransform(scrollYProgress, [0, 1], ['100px', `-100px`])
+  const InfoY = useTransform(scrollYProgress, [0, 1], ['-80px', '80px'])
+  const InfoX = useTransform(scrollYProgress, [0, 1], [even ? '-20px' : '20px', even ? '20px' : '-20px'])
+  const ImageY = useTransform(scrollYProgress, [0, 1], ['80px', '-80px'])
+  const ImageX = useTransform(scrollYProgress, [0, 1], [even ? '20px' : '-40px', even ? '-40px' : '20px'])
+  const ImageRotate = useTransform(scrollYProgress, [0, 1], [even ? '2deg' : '-2deg', even ? '-2deg' : '2deg'])
 
   return (
     <motion.article className={styles.projectItem} ref={projectItemRef}>
       <div className={styles.projectItemRow}>
         <div className={styles.projectItemCol}>
-          <motion.div className={styles.projectItemInfo} style={{ y: InfoY }}>
+          <motion.div className={styles.projectItemInfo} style={{ y: InfoY, x: InfoX }}>
             <div className={styles.projectItemTitle}>
               {data.title.split(' ').map((word, index) => (
-                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={textAlign}>
+                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={even ? 'left' : 'right'}>
                   {word}
                 </AnimatedTitle>
               ))}
@@ -84,7 +87,7 @@ const ProjectItem = ({ data, textAlign = 'left' }: ProjectItemProps) => {
           </motion.div>
         </div>
         <div className={styles.projectItemCol}>
-          <motion.div className={styles.projectItemImgBox} style={{ y: ImageY }}>
+          <motion.div className={styles.projectItemImgBox} style={{ y: ImageY, x: ImageX, rotate: ImageRotate }}>
             <AnimatedImage src={data.image.src} alt={data.image.alt} />
           </motion.div>
         </div>

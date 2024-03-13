@@ -1,6 +1,7 @@
 .projectsSection {
   position: relative;
-  margin: 150px 0;
+  margin: 150px 0 80px 0;
+  overflow: hidden;
 }
 
 .titleBox {
