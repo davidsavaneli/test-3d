@@ -30,11 +30,6 @@ const View = () => {
 
   const { setCursorStyle } = useCursorContext()
 
-  const closeCursorProps = {
-    onMouseOver: () => setCursorStyle('button'),
-    onMouseOut: () => setCursorStyle('none'),
-  }
-
   const smallTextCursorProps = {
     onMouseOver: () => setCursorStyle('smallText'),
     onMouseOut: () => setCursorStyle('none'),
