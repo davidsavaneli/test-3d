@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import React, { useRef } from 'react'
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion'
 import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
 import { useWindowSize } from 'hooks'
@@ -11,6 +11,7 @@ import styles from './styles.module.css'
 import arrowDownSrc from 'assets/images/arrow-down.svg'
 
 const Landing = () => {
+  const landingRef = useRef<HTMLDivElement>(null)
   const { setCursorStyle } = useCursorContext()
   const { width = 0, height = 0 } = useWindowSize()
 
@@ -47,9 +48,15 @@ const Landing = () => {
     }
   }
 
+  const { scrollYProgress } = useScroll({ target: landingRef, offset: ['start end', 'end start'] })
+
+  const wrapperScale = useTransform(scrollYProgress, [0, 1], ['2', '0'])
+  const wrapperY = useTransform(scrollYProgress, [0, 1], ['-300px', '300px'])
+  const wrapperOpacity = useTransform(scrollYProgress, [0, 1], ['3', '-1'])
+
   return (
-    <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse}>
-      <div className={styles.wrapper}>
+    <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse} ref={landingRef}>
+      <motion.div className={styles.wrapper} style={{scale: wrapperScale, y: wrapperY, opacity: wrapperOpacity}}>
         <motion.div
           className={styles.inner}
           style={{
@@ -71,12 +78,12 @@ const Landing = () => {
           >
             Tech Zone for You
           </motion.h1>
-          <div className={styles.text}>
+          <motion.div className={styles.text}>
             We roar with success, delivering the TECHZY through versatile design, branding and the latest tech
             development to companies.
-          </div>
+          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
       <div className={styles.scrollDownBtnBox}>
         <MagneticLayout>
           <motion.div
