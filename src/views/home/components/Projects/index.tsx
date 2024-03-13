@@ -52,9 +52,9 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
-  const InfoY = useTransform(scrollYProgress, [0, 1], ['-100px', '100px'])
+  const InfoY = useTransform(scrollYProgress, [0, 1], ['-80px', '80px'])
   const InfoX = useTransform(scrollYProgress, [0, 1], [even ? '-20px' : '20px', even ? '20px' : '20px'])
-  const ImageY = useTransform(scrollYProgress, [0, 1], ['100px', '-100px'])
+  const ImageY = useTransform(scrollYProgress, [0, 1], ['80px', '-80px'])
   const ImageX = useTransform(scrollYProgress, [0, 1], [even ? '20px' : '-40px', even ? '-40px' : '20px'])
   const ImageRotate = useTransform(scrollYProgress, [0, 1], [even ? '2deg' : '-2deg', even ? '-2deg' : '2deg'])
 
