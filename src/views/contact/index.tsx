@@ -86,12 +86,13 @@ const View = () => {
             <div className={styles.leftBox}>
               <BackButton />
               <div className={styles.infoBox}>
-                <AnimatedTitle animationDirection='rtl' size='medium' disableX>
+                <AnimatedTitle transformDirection='ltr' size='medium'>
                   Contact
                 </AnimatedTitle>
-                <AnimatedTitle animationDirection='ltr' size='medium' disableX>
+                <AnimatedTitle transformDirection='rtl' size='medium'>
                   Us
                 </AnimatedTitle>
+
                 <div className={styles.descriptionBox}>
                   <AnimatedSubText startY={'0px'} endY={'0px'} size='medium'>
                     Fill out the form, and a member of our team will reach out to you to discuss how we can help.

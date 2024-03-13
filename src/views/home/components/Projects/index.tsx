@@ -21,8 +21,8 @@ const Projects = () => {
           </div>
           <div className='col-8'>
             <div className={styles.titleBox}>
-              <AnimatedTitle animationDirection='rtl'>Recent</AnimatedTitle>
-              <AnimatedTitle animationDirection='ltr'>Work</AnimatedTitle>
+              <AnimatedTitle transformDirection='rtl'>Recent</AnimatedTitle>
+              <AnimatedTitle transformDirection='ltr'>Work</AnimatedTitle>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@ const Projects = () => {
           {projectsData.map((o: projectsDataTypes, index) => {
             return (
               <React.Fragment key={index}>
-                <ProjectItem data={o} key={o.id} />
+                <ProjectItem data={o} key={o.id} textAlign={index % 2 ? 'left' : 'right'} />
               </React.Fragment>
             )
           })}
@@ -44,9 +44,10 @@ const Projects = () => {
 
 type ProjectItemProps = {
   data: projectsDataTypes
+  textAlign?: 'left' | 'right'
 }
 
-const ProjectItem = ({ data }: ProjectItemProps) => {
+const ProjectItem = ({ data, textAlign = 'left' }: ProjectItemProps) => {
   const projectItemRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
@@ -61,7 +62,7 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
           <motion.div className={styles.projectItemInfo} style={{ y: InfoY }}>
             <div className={styles.projectItemTitle}>
               {data.title.split(' ').map((word, index) => (
-                <AnimatedTitle key={index} size='medium' disableX fontLowercase>
+                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={textAlign}>
                   {word}
                 </AnimatedTitle>
               ))}

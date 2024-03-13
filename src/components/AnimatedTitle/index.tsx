@@ -7,7 +7,8 @@ import styles from './styles.module.css'
 
 export type ComponentProps = {
   children?: ReactNode
-  animationDirection?: 'ltr' | 'rtl'
+  transformDirection?: 'ltr' | 'rtl'
+  textAlign?: 'left' | 'right'
   size?: 'large' | 'medium'
   disableX?: boolean
   fontLowercase?: boolean
@@ -15,33 +16,43 @@ export type ComponentProps = {
 
 const AnimatedTitle = ({
   children,
-  animationDirection = 'ltr',
+  transformDirection = 'ltr',
+  textAlign = 'left',
   size = 'large',
   disableX = false,
   fontLowercase = false,
 }: ComponentProps) => {
   const titleRef = useRef<HTMLDivElement>(null)
 
-  const { scrollYProgress } = useScroll({ target: titleRef })
+  const { scrollYProgress } = useScroll({ target: titleRef, offset: ['end start', 'start end'] })
   const transformX = useSpring(scrollYProgress, springConfig)
 
   const clipPath = useTransform(
     transformX,
     [1, 0.5],
-    ['polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)', 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'],
+    [
+      textAlign === 'left'
+        ? 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)'
+        : 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+      'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    ],
   )
 
-  const x = !disableX
-    ? useTransform(transformX, [1, 0.5], [animationDirection === 'ltr' ? '40px' : '-40px', '0px'])
-    : undefined
+  const x = useTransform(
+    transformX,
+    [1, 0.5],
+    [!disableX ? (transformDirection === 'ltr' ? '-40px' : '40px') : '0px', '0px'],
+  )
 
   return (
     <motion.div
       className={clsx(styles.titleBox, {
-        [styles.ltr]: animationDirection === 'ltr',
-        [styles.rtl]: animationDirection === 'rtl',
-        [styles.large]: size === 'large',
-        [styles.medium]: size === 'medium',
+        [styles.ltr]: transformDirection === 'ltr',
+        [styles.rtl]: transformDirection === 'rtl',
+        [styles.textAlignLeft]: textAlign === 'left',
+        [styles.textAlignRight]: textAlign === 'right',
+        [styles.sizeLarge]: size === 'large',
+        [styles.sizeMedium]: size === 'medium',
         [styles.fontLowercase]: fontLowercase,
       })}
       style={{ x }}

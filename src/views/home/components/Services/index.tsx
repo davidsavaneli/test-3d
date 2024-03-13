@@ -65,8 +65,8 @@ const Services = () => {
         <div className={styles.headlineSection}>
           <div className='container'>
             <div className={styles.titles}>
-              <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
-              <AnimatedTitle animationDirection='ltr'>Services</AnimatedTitle>
+              <AnimatedTitle transformDirection='ltr'>Our</AnimatedTitle>
+              <AnimatedTitle transformDirection='rtl'>Services</AnimatedTitle>
             </div>
             <AnimatedSubText endY='0px'>
               We are dedicated to delivering exceptional software solutions that drive business success through

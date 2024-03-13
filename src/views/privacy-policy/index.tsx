@@ -8,7 +8,7 @@ const View = () => {
     <div className='container'>
       <ContentPageLayout
         title={
-          <AnimatedTitle animationDirection='ltr' size='medium' disableX>
+          <AnimatedTitle transformDirection='ltr' size='medium' disableX>
             Privacy Policy
           </AnimatedTitle>
         }

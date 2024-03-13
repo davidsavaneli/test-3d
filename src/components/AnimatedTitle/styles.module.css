@@ -4,16 +4,19 @@
   position: relative;
 }
 
-.titleBox.ltr {
+.titleBox.textAlignLeft {
   justify-content: flex-start;
+  text-align: left;
 }
 
-.titleBox.rtl {
+.titleBox.textAlignRight {
   justify-content: flex-end;
+  text-align: right;
 }
 
 .title {
   overflow: hidden;
+  width: min-content;
 }
 
 .title.first {
@@ -47,11 +50,11 @@
   line-height: 1.25;
 }
 
-.titleBox.large .title span {
+.titleBox.sizeLarge .title span {
   font-size: 110px;
 }
 
-.titleBox.medium .title span {
+.titleBox.sizeMedium .title span {
   font-size: 64px;
 }
 

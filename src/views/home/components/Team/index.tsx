@@ -21,8 +21,8 @@ const Team = () => {
         <div className='row align-items-center'>
           <div className='col-8'>
             <div className={styles.titleBox}>
-              <AnimatedTitle animationDirection='rtl'>Our</AnimatedTitle>
-              <AnimatedTitle animationDirection='ltr'>Team</AnimatedTitle>
+              <AnimatedTitle transformDirection='ltr'>Our</AnimatedTitle>
+              <AnimatedTitle transformDirection='rtl'>Team</AnimatedTitle>
             </div>
           </div>
           <div className='col-4'>
