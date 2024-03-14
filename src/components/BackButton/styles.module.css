@@ -71,3 +71,15 @@
     height: 26px;
   }
 }
+
+@media (max-width: 1365.98px) {
+  .backBtn {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .backIcon {
+    width: 24px;
+    height: 24px;
+  }
+}

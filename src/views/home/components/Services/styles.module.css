@@ -187,6 +187,27 @@
   }
 
   .serviceItem {
+    width: 460px;
+    height: 340px;
     margin: 0 30px;
+    padding: 25px 35px 25px 35px;
+  }
+  
+  .serviceItemNumber {
+    font-size: 26px;
+  }
+  
+  .serviceItemTitle {
+    font-size: 22px;
+    margin-top: 24px;
+  }
+  
+  .serviceItemText {
+    margin-top: 18px;
+  }
+  
+  .serviceItemIcon {
+    width: 30px;
+    height: 30px;
   }
 }

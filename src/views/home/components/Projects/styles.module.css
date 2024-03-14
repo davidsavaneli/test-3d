@@ -100,4 +100,12 @@
   .projectItem {
     margin: 160px 0;
   }
+
+  .projectItemDescription {
+    margin-top: 22px;
+  }
+  
+  .projectItemButton {
+    margin-top: 50px;
+  }
 }

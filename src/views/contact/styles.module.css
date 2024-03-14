@@ -74,3 +74,9 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 1439.98px) {
+  .formBox {
+    margin: 50px auto 0 auto;
+  }
+}

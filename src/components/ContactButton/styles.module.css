@@ -112,3 +112,29 @@
     height: 112px;
   }
 }
+
+@media (max-width: 1365.98px) {
+  .button {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .buttonInner {
+    width: 116px;
+    height: 116px;
+  }
+  
+  .innerLine {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .logo {
+    width: 26px;
+  }
+  
+  .roundedBox {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -128,3 +128,13 @@
     margin-top: 28px;
   }
 }
+
+@media (max-width: 1365.98px) {
+  .title {
+    font-size: 60px;
+  }
+  
+  .text {
+    margin-top: 22px;
+  }
+}

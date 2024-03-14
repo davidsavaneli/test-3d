@@ -55,9 +55,8 @@ const ProjectsVideo = () => {
     let width
     let y
     let height
-    let borderRadius
 
-    borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
+    const borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
 
     if (isLg) {
       y = useTransform(scrollYProgress, [0, 1], ['-112px', `112px`])

@@ -94,6 +94,20 @@
   }
   
   .titleBox.sizeMedium .title span {
-    font-size: 44px;
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1365.98px) {
+  .title span {
+    font-size: 70px;
+  }
+  
+  .titleBox.sizeLarge .title span {
+    font-size: 70px;
+  }
+  
+  .titleBox.sizeMedium .title span {
+    font-size: 40px;
   }
 }
