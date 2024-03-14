@@ -43,26 +43,19 @@ const AnimatedTitle = ({
     ],
   )
 
-  const animationValues = () => {
-    let x
+  const AnimationValues = () => {
+    const xValue = isSmallLg ? '30' : '40'
 
-    if (isSmallLg) {
-      x = useTransform(
-        transformX,
-        [1, 0.5],
-        [!disableX ? (transformDirection === 'ltr' ? '-30px' : '30px') : '0px', '0px'],
-      )
-    } else {
-      x = useTransform(
-        transformX,
-        [1, 0.5],
-        [!disableX ? (transformDirection === 'ltr' ? '-40px' : '40px') : '0px', '0px'],
-      )
-    }
+    const x = useTransform(
+      transformX,
+      [1, 0.5],
+      [!disableX ? (transformDirection === 'ltr' ? `-${xValue}px` : `${xValue}px`) : '0px', '0px'],
+    )
+
     return { x }
   }
 
-  const { x } = animationValues()
+  const { x } = AnimationValues()
 
   return (
     <motion.div

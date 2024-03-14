@@ -51,26 +51,27 @@ const ProjectsVideo = () => {
 
   const { scrollYProgress } = useScroll({ target: videoSectionRef, offset: ['start end', 'start start'] })
 
-  const animationValues = () => {
-    let width
-    let y
-    let height
+  const AnimationValues = () => {
+    const yValue = isLg ? '112' : '150'
+    const widthValue = isLg ? '172' : '204'
+    const heightValue = isLg ? '62' : '70'
+    const borderRadiusValueFirst = '160'
+    const borderRadiusValueSecond = '40'
 
-    const borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
+    const borderRadius = useTransform(
+      scrollYProgress,
+      [0, 1],
+      [`${borderRadiusValueFirst}px`, `${borderRadiusValueSecond}px`],
+    )
 
-    if (isLg) {
-      y = useTransform(scrollYProgress, [0, 1], ['-112px', `112px`])
-      width = useTransform(scrollYProgress, [0, 1], ['172px', `${videoFinalWidth}px`])
-      height = useTransform(scrollYProgress, [0, 1], ['62px', `${videoFinalHeight}px`])
-    } else {
-      y = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
-      width = useTransform(scrollYProgress, [0, 1], ['204px', `${videoFinalWidth}px`])
-      height = useTransform(scrollYProgress, [0, 1], ['70px', `${videoFinalHeight}px`])
-    }
+    const y = useTransform(scrollYProgress, [0, 1], [`-${yValue}px`, `${yValue}px`])
+    const width = useTransform(scrollYProgress, [0, 1], [`${widthValue}px`, `${videoFinalWidth}px`])
+    const height = useTransform(scrollYProgress, [0, 1], [`${heightValue}px`, `${videoFinalHeight}px`])
+
     return { width, y, height, borderRadius }
   }
 
-  const { width, y, height, borderRadius } = animationValues()
+  const { width, y, height, borderRadius } = AnimationValues()
 
   return (
     <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>

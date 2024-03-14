@@ -55,30 +55,38 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
-  const animationValues = () => {
-    let InfoY
-    let InfoX
-    let ImageY
-    let ImageX
-    let ImageRotate
+  const AnimationValues = () => {
+    const infoYValue = isSmallLg ? '80' : '100'
+    const infoXValue = isSmallLg ? '30' : '40'
+    const ImageYValue = isSmallLg ? '80' : '100'
+    const ImageXValue = isSmallLg ? '30' : '40'
+    const ImageRotateValue = isSmallLg ? '4' : '5'
 
-    if (isSmallLg) {
-      InfoY = useTransform(scrollYProgress, [0, 1], ['-80px', '80px'])
-      InfoX = useTransform(scrollYProgress, [0, 1], [!even ? '-30px' : '30px', !even ? '30px' : '-30px'])
-      ImageY = useTransform(scrollYProgress, [0, 1], ['80px', '-80px'])
-      ImageX = useTransform(scrollYProgress, [0, 1], [!even ? '30px' : '-30px', !even ? '-30px' : '30px'])
-      ImageRotate = useTransform(scrollYProgress, [0, 1], [!even ? '4deg' : '-4deg', !even ? '-4deg' : '4deg'])
-    } else {
-      InfoY = useTransform(scrollYProgress, [0, 1], ['-100px', '100px'])
-      InfoX = useTransform(scrollYProgress, [0, 1], [!even ? '-40px' : '40px', !even ? '40px' : '-40px'])
-      ImageY = useTransform(scrollYProgress, [0, 1], ['100px', '-100px'])
-      ImageX = useTransform(scrollYProgress, [0, 1], [!even ? '40px' : '-40px', !even ? '-40px' : '40px'])
-      ImageRotate = useTransform(scrollYProgress, [0, 1], [!even ? '5deg' : '-5deg', !even ? '-5deg' : '5deg'])
-    }
+    const InfoY = useTransform(scrollYProgress, [0, 1], [`-${infoYValue}px`, `${infoYValue}px`])
+    const InfoX = useTransform(
+      scrollYProgress,
+      [0, 1],
+      [!even ? `-${infoXValue}px` : `${infoXValue}px`, !even ? `${infoXValue}px` : `-${infoXValue}px`],
+    )
+    const ImageY = useTransform(scrollYProgress, [0, 1], [`${ImageYValue}px`, `-${ImageYValue}px`])
+    const ImageX = useTransform(
+      scrollYProgress,
+      [0, 1],
+      [!even ? `${ImageXValue}px` : `-${ImageXValue}px`, !even ? `-${ImageXValue}px` : `${ImageXValue}px`],
+    )
+    const ImageRotate = useTransform(
+      scrollYProgress,
+      [0, 1],
+      [
+        !even ? `${ImageRotateValue}deg` : `-${ImageRotateValue}deg`,
+        !even ? `-${ImageRotateValue}deg` : `${ImageRotateValue}deg`,
+      ],
+    )
+
     return { InfoY, InfoX, ImageY, ImageX, ImageRotate }
   }
 
-  const { InfoY, InfoX, ImageY, ImageX, ImageRotate } = animationValues()
+  const { InfoY, InfoX, ImageY, ImageX, ImageRotate } = AnimationValues()
 
   return (
     <motion.article className={styles.projectItem} ref={projectItemRef}>
