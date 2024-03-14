@@ -58,20 +58,19 @@ const ProjectsVideo = () => {
     const borderRadiusValueFirst = '160'
     const borderRadiusValueSecond = '40'
 
+    const y = useTransform(scrollYProgress, [0, 1], [`-${yValue}px`, `${yValue}px`])
+    const width = useTransform(scrollYProgress, [0, 1], [`${widthValue}px`, `${videoFinalWidth}px`])
+    const height = useTransform(scrollYProgress, [0, 1], [`${heightValue}px`, `${videoFinalHeight}px`])
     const borderRadius = useTransform(
       scrollYProgress,
       [0, 1],
       [`${borderRadiusValueFirst}px`, `${borderRadiusValueSecond}px`],
     )
 
-    const y = useTransform(scrollYProgress, [0, 1], [`-${yValue}px`, `${yValue}px`])
-    const width = useTransform(scrollYProgress, [0, 1], [`${widthValue}px`, `${videoFinalWidth}px`])
-    const height = useTransform(scrollYProgress, [0, 1], [`${heightValue}px`, `${videoFinalHeight}px`])
-
-    return { width, y, height, borderRadius }
+    return { y, width, height, borderRadius }
   }
 
-  const { width, y, height, borderRadius } = AnimationValues()
+  const { y, width, height, borderRadius } = AnimationValues()
 
   return (
     <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
