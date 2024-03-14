@@ -83,3 +83,17 @@
     font-size: 50px;
   }
 }
+
+@media (max-width: 1439.98px) {
+  .title span {
+    font-size: 74px;
+  }
+  
+  .titleBox.sizeLarge .title span {
+    font-size: 74px;
+  }
+  
+  .titleBox.sizeMedium .title span {
+    font-size: 44px;
+  }
+}

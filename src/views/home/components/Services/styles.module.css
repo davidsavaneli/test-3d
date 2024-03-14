@@ -180,3 +180,13 @@
     height: 34px;
   }
 }
+
+@media (max-width: 1439.98px) {
+  .titles {
+    margin-bottom: 60px;
+  }
+
+  .serviceItem {
+    margin: 0 30px;
+  }
+}

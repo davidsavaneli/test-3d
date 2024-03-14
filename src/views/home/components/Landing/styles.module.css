@@ -116,3 +116,15 @@
     bottom: 50px;
   }
 }
+
+@media (max-width: 1439.98px) {
+  .title {
+    font-size: 70px;
+  }
+  
+  .text {
+    font-size: 16px;
+    max-width: 460px;
+    margin-top: 28px;
+  }
+}

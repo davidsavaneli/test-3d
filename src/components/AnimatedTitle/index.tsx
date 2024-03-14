@@ -2,6 +2,7 @@ import React, { useRef, ReactNode, memo } from 'react'
 import clsx from 'clsx'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { springConfig } from 'animations'
+import { useMediaQuery } from 'hooks'
 
 import styles from './styles.module.css'
 
@@ -24,6 +25,8 @@ const AnimatedTitle = ({
   disableX = false,
   fontLowercase = false,
 }: ComponentProps) => {
+  const isSmallLg = useMediaQuery('(max-width: 1439.98px)')
+
   const titleRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: titleRef, offset: ['end start', 'start end'] })
@@ -40,11 +43,26 @@ const AnimatedTitle = ({
     ],
   )
 
-  const x = useTransform(
-    transformX,
-    [1, 0.5],
-    [!disableX ? (transformDirection === 'ltr' ? '-40px' : '40px') : '0px', '0px'],
-  )
+  const animationValues = () => {
+    let x
+
+    if (isSmallLg) {
+      x = useTransform(
+        transformX,
+        [1, 0.5],
+        [!disableX ? (transformDirection === 'ltr' ? '-30px' : '30px') : '0px', '0px'],
+      )
+    } else {
+      x = useTransform(
+        transformX,
+        [1, 0.5],
+        [!disableX ? (transformDirection === 'ltr' ? '-40px' : '40px') : '0px', '0px'],
+      )
+    }
+    return { x }
+  }
+
+  const { x } = animationValues()
 
   return (
     <motion.div

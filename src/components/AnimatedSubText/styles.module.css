@@ -16,7 +16,7 @@
 
 @media (max-width: 1679.98px) {
   .animatedSubText {
-    font-size: 26px;
+    font-size: 24px;
     max-width: 480px;
   }
   
@@ -28,5 +28,22 @@
   .animatedSubText.medium {
     font-size: 18px;
     max-width: 380px;
+  }
+}
+
+@media (max-width: 1679.98px) {
+  .animatedSubText {
+    font-size: 22px;
+    max-width: 480px;
+  }
+  
+  .animatedSubText.large {
+    font-size: 22px;
+    max-width: 460px;
+  }
+  
+  .animatedSubText.medium {
+    font-size: 16px;
+    max-width: 360px;
   }
 }
