@@ -60,3 +60,29 @@
   font-size: 21px;
   fill: var(--colorPrimary);
 }
+
+@media (max-width: 1679.98px) {
+  .button {
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  .buttonInner {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .innerLine {
+    width: 84px;
+    height: 84px;
+  }
+  
+  .logo {
+    width: 32px;
+  }
+  
+  .roundedBox {
+    width: 120px;
+    height: 120px;
+  }
+}

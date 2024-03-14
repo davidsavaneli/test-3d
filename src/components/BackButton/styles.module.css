@@ -59,3 +59,15 @@
     fill: var(--colorDark);
   }
 }
+
+@media (max-width: 1679.98px) {
+  .backBtn {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .backIcon {
+    width: 26px;
+    height: 26px;
+  }
+}

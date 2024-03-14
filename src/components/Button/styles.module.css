@@ -94,3 +94,19 @@
     border-color: var(--colorDark);
   }
 }
+
+@media (max-width: 1679.98px) {
+  .button {
+    padding: 0 40px;
+    height: 64px;
+  }
+  
+  .label {
+    font-size: 16px;
+  }
+
+  .button.loading:before {
+    width: 24px;
+    height: 24px;
+  }
+}

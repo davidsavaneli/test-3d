@@ -43,3 +43,34 @@
     text-decoration: underline;
   }
 }
+
+@media (max-width: 1679.98px) {
+  .formBox {
+    margin: 60px auto 0 auto;
+  }
+  
+  .leftBox {
+    padding-right: 40px;
+    margin-top: 12px;
+  }
+  
+  .infoBox {
+    margin-top: 60px;
+  }
+  
+  .descriptionBox {
+    margin-top: 35px;
+  }
+  
+  .inputField {
+    margin: 12px 0;
+  }
+  
+  .formBottom {
+    margin-top: 40px;
+  }
+  
+  .tcText {
+    font-size: 14px;
+  }
+}

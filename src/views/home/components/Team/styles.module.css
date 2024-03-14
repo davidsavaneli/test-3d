@@ -58,3 +58,36 @@
   color: var(--colorSecondary);
   margin-top: 8px;
 }
+
+@media (max-width: 1679.98px) {
+  .slider {
+    margin-top: 100px;
+  }
+  
+  .slideSpace {
+    width: 40px;
+    min-width: 40px;
+  }
+  
+  .slide {
+    padding: 0 20px;
+  }
+  
+  .slideImgBox {
+    width: 440px;
+    min-width: 440px;
+    height: 440px;
+  }
+  
+  .slideInfo {
+    padding: 28px 18px 0 18px;
+  }
+  
+  .slideName {
+    font-size: 20px;
+  }
+  
+  .slidePosition {
+    font-size: 16px;
+  }
+}

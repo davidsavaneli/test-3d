@@ -69,3 +69,17 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width: 1679.98px) {
+  .title span {
+    font-size: 86px;
+  }
+  
+  .titleBox.sizeLarge .title span {
+    font-size: 86px;
+  }
+  
+  .titleBox.sizeMedium .title span {
+    font-size: 50px;
+  }
+}

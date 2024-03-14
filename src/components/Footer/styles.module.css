@@ -105,3 +105,53 @@
   text-align: center;
   font-size: 16px;
 }
+
+@media (max-width: 1679.98px) {
+  .top {
+    padding: 25px 0;
+    gap: 20px 140px;
+  }
+  
+  .topItemLabel {
+    font-size: 14px;
+    margin: 2px 0;
+  }
+  
+  .topItemValue {
+    font-size: 16px;
+    margin: 2px 0;
+  }
+  
+  .middle {
+    padding-top: 40px;
+  }
+  
+  .logo {
+    height: 34px;
+  }
+  
+  .links {
+    margin-left: 26px;
+  }
+  
+  .links:before {
+    margin-right: 26px;
+  }
+  
+  .link {
+    font-size: 14px;
+    margin-right: 40px;
+  }
+  
+  .link:before {
+    right: -22px;
+  }
+  
+  .copyright {
+    height: 100px;
+  }
+  
+  .copyrightTitle {
+    font-size: 14px;
+  }
+}

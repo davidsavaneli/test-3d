@@ -70,3 +70,27 @@
   border-radius: var(--primaryBorderRadius);
   overflow: hidden;
 }
+
+@media (max-width: 1679.98px) {
+  .projectsSection {
+    margin: 50px 0 0 0;
+    padding: 60px 0 30px 0;
+  }
+
+  .projectItem {
+    margin: 180px 0;
+  }
+  
+  .projectItemInfo {
+    padding: 0 40px;
+  }
+  
+  .projectItemDescription {
+    font-size: 18px;
+    margin-top: 26px;
+  }
+  
+  .projectItemButton {
+    margin-top: 60px;
+  }
+}

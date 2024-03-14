@@ -1,9 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { motion, useTransform, useScroll } from 'framer-motion'
+import { useMediaQuery } from 'hooks'
 
 import styles from './styles.module.css'
 
 const ProjectsVideo = () => {
+  const isLg = useMediaQuery('(max-width: 1679.98px)')
+
   const [videoInitialWidth, setVideoInitialWidth] = useState<number>(1)
   const [videoInitialHeight, setVideoInitialHeight] = useState<number>(1)
   const [videoFinalWidth, setVideoFinalWidth] = useState<number>(0)
@@ -48,10 +51,27 @@ const ProjectsVideo = () => {
 
   const { scrollYProgress } = useScroll({ target: videoSectionRef, offset: ['start end', 'start start'] })
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
-  const width = useTransform(scrollYProgress, [0, 1], ['204px', `${videoFinalWidth}px`])
-  const height = useTransform(scrollYProgress, [0, 1], ['70px', `${videoFinalHeight}px`])
-  const borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
+  const animationValues = () => {
+    let width
+    let y
+    let height
+    let borderRadius
+
+    borderRadius = useTransform(scrollYProgress, [0, 1], ['160px', `40px`])
+
+    if (isLg) {
+      y = useTransform(scrollYProgress, [0, 1], ['-112px', `112px`])
+      width = useTransform(scrollYProgress, [0, 1], ['172px', `${videoFinalWidth}px`])
+      height = useTransform(scrollYProgress, [0, 1], ['62px', `${videoFinalHeight}px`])
+    } else {
+      y = useTransform(scrollYProgress, [0, 1], ['-150px', `150px`])
+      width = useTransform(scrollYProgress, [0, 1], ['204px', `${videoFinalWidth}px`])
+      height = useTransform(scrollYProgress, [0, 1], ['70px', `${videoFinalHeight}px`])
+    }
+    return { width, y, height, borderRadius }
+  }
+
+  const { width, y, height, borderRadius } = animationValues()
 
   return (
     <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
