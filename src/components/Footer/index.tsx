@@ -26,31 +26,31 @@ const Footer = () => {
         <div className={styles.top}>
           <div className={styles.topItem}>
             <div className={styles.topItemLabel}>Email:</div>
-            <a
+            <Link
               href='mailto:contact@techzy.app'
               target='_blank'
               className={styles.topItemValue}
               {...smallTextCursorProps}
             >
               contact@techzy.app
-            </a>
+            </Link>
           </div>
           <div className={styles.topItem}>
             <div className={styles.topItemLabel}>Phone:</div>
-            <a href='tel:+995551318884' target='_blank' className={styles.topItemValue} {...smallTextCursorProps}>
+            <Link href='tel:+995551318884' target='_blank' className={styles.topItemValue} {...smallTextCursorProps}>
               +995 551 31 88 84
-            </a>
+            </Link>
           </div>
           <div className={styles.topItem}>
             <div className={styles.topItemLabel}>Address:</div>
-            <a
+            <Link
               href='https://maps.app.goo.gl/44VaNYLndFg1wDrWA'
               target='_blank'
               className={styles.topItemValue}
               {...smallTextCursorProps}
             >
               80 Chavchavadze ave, 0162, Tbilisi, Georgia
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.middle}>

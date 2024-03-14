@@ -1,4 +1,4 @@
-import { Variants, spring } from 'framer-motion'
+import { Variants } from 'framer-motion'
 
 type animationTypes = {
   svg: Variants

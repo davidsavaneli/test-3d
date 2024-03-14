@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, ReactNode, memo } from 'react'
-import { useMotionValue, motion, useSpring } from 'framer-motion'
+import { useMotionValue, motion } from 'framer-motion'
 import { useCursorContext } from 'contexts'
 import styles from './styles.module.css'
 
@@ -25,7 +25,6 @@ const HorizontalDragCarousell = ({
   const sliderWrapperRef = useRef<HTMLDivElement>(null)
 
   const transformX = useMotionValue<number>(0)
-  const x = useSpring(transformX, { mass: 0.1, damping: 26, stiffness: 212 })
 
   const [sliderConstraints, setSliderConstraints] = useState<number>(0)
 

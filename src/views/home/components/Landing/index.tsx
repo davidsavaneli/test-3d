@@ -56,7 +56,7 @@ const Landing = () => {
 
   return (
     <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse} ref={landingRef}>
-      <motion.div className={styles.wrapper} style={{scale: wrapperScale, y: wrapperY, opacity: wrapperOpacity}}>
+      <motion.div className={styles.wrapper} style={{ scale: wrapperScale, y: wrapperY, opacity: wrapperOpacity }}>
         <motion.div
           className={styles.inner}
           style={{

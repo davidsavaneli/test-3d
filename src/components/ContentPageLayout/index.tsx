@@ -13,7 +13,7 @@ const ContentPageLayout = ({ title, text }: ContentPageLayoutProps) => {
     <div className={styles.wrapper}>
       <BackButton />
       {title && <div className={styles.title}>{title}</div>}
-      {text && <div className={styles.wysiwyg} dangerouslySetInnerHTML={{__html: text}}></div>}
+      {text && <div className={styles.wysiwyg} dangerouslySetInnerHTML={{ __html: text }}></div>}
     </div>
   )
 }
