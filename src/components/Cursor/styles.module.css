@@ -12,6 +12,7 @@
 }
 
 .cursorWrap.default,
+.cursorWrap.medium,
 .cursorWrap.button,
 .cursorWrap.largeText,
 .cursorWrap.smallText {
@@ -38,6 +39,10 @@
 .cursorWrap.drag .cursor,
 .cursorWrap.smallText .cursor {
   filter: blur(2px);
+}
+
+.cursorWrap.medium .cursor {
+  filter: blur(1px);
 }
 
 .cursorWrap.button .cursor {

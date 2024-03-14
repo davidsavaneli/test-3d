@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
-type CursorStyle = 'none' | 'default' | 'button' | 'largeText' | 'smallText' | 'drag'
+type CursorStyle = 'none' | 'default' | 'medium' | 'button' | 'largeText' | 'smallText' | 'drag'
 
 type CursorContextType = {
   cursorStyle: CursorStyle

@@ -21,10 +21,7 @@ const validationSchema = yup.object({
   CompanyName: yup.string().required('Company Name required'),
   Email: yup.string().email('Invalid email').required('Email required'),
   Tel: yup.string().typeError('Please enter a valid phone number').required('Phone required'),
-  Budget: yup
-    .string()
-    .oneOf(['Under $25,000', '$25,000 - $200,000', '$200,000 - $500,000', 'Over $500,000'])
-    .required('Budget required'),
+  Budget: yup.string().required('Budget required'),
   ProjectDescription: yup.string().required('Project description required'),
 })
 
@@ -33,6 +30,11 @@ const View = () => {
 
   const smallTextCursorProps = {
     onMouseOver: () => setCursorStyle('smallText'),
+    onMouseOut: () => setCursorStyle('none'),
+  }
+
+  const radioButtonCursorProps = {
+    onMouseOver: () => setCursorStyle('medium'),
     onMouseOut: () => setCursorStyle('none'),
   }
 
@@ -49,29 +51,28 @@ const View = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      alert(JSON.stringify(values, null, 2))
-      // setDisableSubmitBtn(true)
-      // await fetch('https://hooks.zapier.com/hooks/catch/17945339/3eo258h', {
-      //   method: 'POST',
-      //   headers: {
-      //     Accept: 'application/json',
-      //   },
-      //   body: JSON.stringify(values, null, 2),
-      // }).then(async (response) => {
-      //   if (response.status === 200) {
-      //     resetForm()
-      //     toast.success(
-      //       'Thank you for sharing your idea! Your message has been successfully sent. We appreciate your interest and will get back to you as soon as possible.',
-      //     )
-      //     setDisableSubmitBtn(false)
-      //   } else {
-      //     resetForm()
-      //     toast.error(
-      //       'Oops! Something went wrong. Please check your entries and try again. If the problem persists, feel free to email us directly at contanct@techzy.app.',
-      //     )
-      //     setDisableSubmitBtn(false)
-      //   }
-      // })
+      setDisableSubmitBtn(true)
+      await fetch('https://hooks.zapier.com/hooks/catch/17945339/3eo258h', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(values, null, 2),
+      }).then(async (response) => {
+        if (response.status === 200) {
+          resetForm()
+          toast.success(
+            'Thank you for sharing your idea! Your message has been successfully sent. We appreciate your interest and will get back to you as soon as possible.',
+          )
+          setDisableSubmitBtn(false)
+        } else {
+          resetForm()
+          toast.error(
+            'Oops! Something went wrong. Please check your entries and try again. If the problem persists, feel free to email us directly at contanct@techzy.app.',
+          )
+          setDisableSubmitBtn(false)
+        }
+      })
     },
   })
 
@@ -153,53 +154,46 @@ const View = () => {
                 <div className='col-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
-                      Est. Budget
-                      <RadioGroup
-                        name='Budget'
-                        onChange={formik.handleChange}
-                      >
-                        <FormControlLabel value={'Under $25,000'} control={<Radio />} label='Under $25,000' />
-                        <FormControlLabel value={'$25,000 - $200,000'} control={<Radio />} label='$25,000 - $200,000' />
+                      <div className='Mui-RadioGroup-label'>Est. Budget</div>
+                      <RadioGroup name='Budget' onChange={formik.handleChange} className='Mui-Radio-group'>
+                        <FormControlLabel
+                          value={'Under $25,000'}
+                          control={<Radio />}
+                          label='Under $25,000'
+                          className={clsx('Mui-Radio-label', {
+                            ['Mui-Radio-error']: formik.touched.Budget && Boolean(formik.errors.Budget),
+                          })}
+                          {...radioButtonCursorProps}
+                        />
+                        <FormControlLabel
+                          value={'$25,000 - $200,000'}
+                          control={<Radio />}
+                          label='$25,000 - $200,000'
+                          className={clsx('Mui-Radio-label', {
+                            ['Mui-Radio-error']: formik.touched.Budget && Boolean(formik.errors.Budget),
+                          })}
+                          {...radioButtonCursorProps}
+                        />
                         <FormControlLabel
                           value={'$200,000 - $500,000'}
                           control={<Radio />}
                           label='$200,000 - $500,000'
+                          className={clsx('Mui-Radio-label', {
+                            ['Mui-Radio-error']: formik.touched.Budget && Boolean(formik.errors.Budget),
+                          })}
+                          {...radioButtonCursorProps}
                         />
-                        <FormControlLabel value={'Over $500,000'} control={<Radio />} label='Over $500,000' />
+                        <FormControlLabel
+                          value={'Over $500,000'}
+                          control={<Radio />}
+                          label='Over $500,000'
+                          className={clsx('Mui-Radio-label', {
+                            ['Mui-Radio-error']: formik.touched.Budget && Boolean(formik.errors.Budget),
+                          })}
+                          {...radioButtonCursorProps}
+                        />
                       </RadioGroup>
                     </FormControl>
-                    {formik.touched.Budget && formik.errors.Budget ? <div>{formik.errors.Budget}</div> : null}
-
-                    {/* <FormControl fullWidth>
-                      <TextField
-                        className='MuiSelect'
-                        select
-                        SelectProps={{
-                          IconComponent: () => (
-                            <div className='MuiSelect-icon'>
-                              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>
-                                <path
-                                  fillRule='evenodd'
-                                  d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'
-                                />
-                              </svg>
-                            </div>
-                          ),
-                          onOpen: () => console.log('onOpen'),
-                          onClose: () => console.log('onClose'),
-                        }}
-                        label='Est. Budget'
-                        name='Budget'
-                        value={formik.values.Budget}
-                        onChange={formik.handleChange}
-                        error={formik.touched.Budget && Boolean(formik.errors.Budget)}
-                      >
-                        <MenuItem value={'Under $25,000'}>{'Under $25,000'}</MenuItem>
-                        <MenuItem value={'$25,000 - $200,000'}>{'$25,000 - $200,000'}</MenuItem>
-                        <MenuItem value={'$200,000 - $500,000'}>{'$200,000 - $500,000'}</MenuItem>
-                        <MenuItem value={'Over $500,000'}>{'Over $500,000'}</MenuItem>
-                      </TextField>
-                    </FormControl> */}
                   </div>
                 </div>
                 <div className='col-12'>
@@ -231,7 +225,7 @@ const View = () => {
                     <div className='col-7 d-flex align-items-center justify-content-end'>
                       <div className={styles.tcText}>
                         By sending, I agree to the{' '}
-                        <Link href='./terms-and-conditions' {...smallTextCursorProps}>
+                        <Link href='./terms-and-conditions' target='_blank' {...smallTextCursorProps}>
                           terms and conditions.
                         </Link>
                       </div>

@@ -25,6 +25,9 @@ const Cursor = ({ text }: CursorType) => {
       case 'default':
         setCursorSize(4)
         break
+      case 'medium':
+        setCursorSize(2)
+        break
       case 'button':
         setCursorSize(6)
         break
@@ -74,6 +77,7 @@ const Cursor = ({ text }: CursorType) => {
         }}
         className={clsx(styles.cursorWrap, {
           [styles.default]: cursorStyle === 'default',
+          [styles.medium]: cursorStyle === 'medium',
           [styles.button]: cursorStyle === 'button',
           [styles.largeText]: cursorStyle === 'largeText',
           [styles.smallText]: cursorStyle === 'smallText',
