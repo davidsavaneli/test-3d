@@ -155,3 +155,18 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .top {
+    padding: 20px 0;
+    gap: 18px 80px;
+  }
+  
+  .topItemLabel {
+    margin: 1px 0;
+  }
+  
+  .topItemValue {
+    margin: 1px 0;
+  }
+}

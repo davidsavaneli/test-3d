@@ -87,7 +87,7 @@ const View = () => {
                 </AnimatedTitle>
 
                 <div className={styles.descriptionBox}>
-                  <AnimatedSubText startY={'0px'} endY={'0px'} size='medium'>
+                  <AnimatedSubText size='medium' disableY>
                     Fill out the form, and a member of our team will reach out to you to discuss how we can help.
                   </AnimatedSubText>
                 </div>

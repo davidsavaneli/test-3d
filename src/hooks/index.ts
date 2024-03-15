@@ -1,5 +1,4 @@
 export { default as useShowPreloader } from './useShowPreloader'
-export { default as useViewportHeight } from './useViewportHeight'
 export { default as useScrollToTop } from './useScrollToTop'
 export { default as useMediaQuery } from './useMediaQuery'
 

@@ -1,5 +1,5 @@
 :root {
-  --fullHeight: calc(var(--vh, 1vh) * 100);
+  --fullHeight: 100svh;
   
   --fontMedium: 'Syne-Medium';
   --fontUppercase: 'MonumentExtended-Regular';
@@ -25,6 +25,6 @@
 
 @media (max-width: 1279.98px) {
   :root {
-    --fullHeight: 100svh;
+    --primaryBorderRadius: 20px;
   }
 }

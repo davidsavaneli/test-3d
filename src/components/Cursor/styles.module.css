@@ -91,3 +91,9 @@
     height: 18px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .cursorWrap {
+    display: none !important;
+  }
+}

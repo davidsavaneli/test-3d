@@ -19,3 +19,10 @@
     margin-bottom: 200px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .videoSection {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}

@@ -39,7 +39,7 @@
   border-radius: var(--secondaryBorderRadius) !important;
   top: 0 !important;
   padding: 0 !important;
-  transition: border-color .3s !important;
+  transition: border-color 0.3s !important;
 }
 
 .Mui-error.MuiTextField-root fieldset,
@@ -123,7 +123,9 @@
   padding: 0 !important;
   background-color: var(--colorDark) !important;
   border: 1px solid transparent !important;
-  transition: background-color 0.3s, border-color 0.3s !important;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s !important;
 }
 
 .MuiRadio-root.Mui-checked {
@@ -145,7 +147,9 @@
   letter-spacing: 0 !important;
   line-height: inherit !important;
   color: var(--colorSecondary) !important;
-  transition: text-indent .3s, color .3s !important;
+  transition:
+    text-indent 0.3s,
+    color 0.3s !important;
 }
 
 .Mui-checked + .MuiFormControlLabel-label {
@@ -158,45 +162,77 @@
   display: none !important;
 }
 
-
 @media (max-width: 1679.98px) {
   .MuiFormLabel-root {
     top: 17px !important;
     left: 30px !important;
     font-size: 16px !important;
   }
-  
+
   .MuiInputMultiline .MuiFormLabel-root {
     top: 19px !important;
   }
-  
+
   .MuiInputBase-input {
     font-size: 16px !important;
     padding: 16px 20px 16px 30px !important;
   }
-  
+
   .MuiInputMultiline textarea {
     height: 180px !important;
     padding: 18px 20px 18px 30px !important;
   }
-  
+
   .Mui-RadioGroup-label {
     font-size: 16px !important;
     margin-bottom: 16px !important;
   }
-  
+
   .Mui-Radio-group {
     margin-bottom: -10px !important;
   }
-  
+
   .Mui-Radio-label {
     padding: 18px 5px !important;
     width: calc(25% - 6px) !important;
     margin-bottom: 10px !important;
     margin-right: 8px !important;
   }
-  
+
   .Mui-Radio-label .MuiFormControlLabel-label {
     font-size: 16px !important;
+  }
+}
+
+@media (max-width: 1279.98px) {
+  .MuiFormLabel-root {
+    font-size: 14px !important;
+  }
+
+  .MuiInputBase-input {
+    font-size: 14px !important;
+  }
+
+  .Mui-RadioGroup-label {
+    font-size: 14px !important;
+  }
+
+  .Mui-Radio-label {
+    padding: 18px 5px !important;
+    width: calc(50% - 15px) !important;
+    margin-bottom: 15px !important;
+    margin-right: 30px !important;
+  }
+
+  .Mui-Radio-label:nth-child(4n + 4) {
+    margin-right: 30px !important;
+  }
+
+  .Mui-Radio-label:nth-child(2n + 2) {
+    margin-right: 0 !important;
+  }
+
+  .Mui-Radio-label .MuiFormControlLabel-label {
+    font-size: 14px !important;
   }
 }

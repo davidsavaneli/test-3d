@@ -50,17 +50,18 @@ type ProjectItemProps = {
 
 const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
   const isSmallLg = useMediaQuery('(max-width: 1439.98px)')
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
 
   const projectItemRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
   const AnimationValues = () => {
-    const infoYValue = isSmallLg ? '80' : '100'
-    const infoXValue = isSmallLg ? '30' : '40'
-    const ImageYValue = isSmallLg ? '80' : '100'
-    const ImageXValue = isSmallLg ? '30' : '40'
-    const ImageRotateValue = isSmallLg ? '4' : '5'
+    const infoYValue = isSmallLg ? (isTouchMode ? '40' : '80') : '100'
+    const infoXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
+    const ImageYValue = isSmallLg ? (isTouchMode ? '40' : '80') : '100'
+    const ImageXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
+    const ImageRotateValue = isSmallLg ? (isTouchMode ? '0' : '4') : isTouchMode ? '0' : '5'
 
     const InfoY = useTransform(scrollYProgress, [0, 1], [`-${infoYValue}px`, `${infoYValue}px`])
     const InfoX = useTransform(

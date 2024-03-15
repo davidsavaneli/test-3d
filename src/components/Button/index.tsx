@@ -23,7 +23,7 @@ const Button = ({ label, href, loading = false, ...props }: ComponentProps) => {
 
   return href ? (
     <MagneticLayout>
-      <motion.div whileTap={{ scale: 0.8 }}>
+      <motion.div whileTap={{ scale: 0.9 }}>
         <Link
           scroll={false}
           href={href}
@@ -39,7 +39,7 @@ const Button = ({ label, href, loading = false, ...props }: ComponentProps) => {
     </MagneticLayout>
   ) : (
     <MagneticLayout>
-      <motion.div whileTap={{ scale: 0.8 }}>
+      <motion.div whileTap={{ scale: 0.9 }}>
         <button
           className={clsx(styles.button, {
             [styles.loading]: loading,

@@ -12,7 +12,7 @@ import {
   Footer,
   SmoothScroller,
 } from 'components'
-import { useShowPreloader, useViewportHeight, useScrollToTop } from 'hooks'
+import { useShowPreloader, useScrollToTop } from 'hooks'
 import { CursorProvider } from 'contexts'
 
 import 'assets/css/styles.css'
@@ -20,7 +20,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
   const { showPreloader } = useShowPreloader(true)
-  useViewportHeight()
   useScrollToTop(router)
 
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />

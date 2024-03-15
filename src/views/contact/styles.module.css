@@ -80,3 +80,34 @@
     margin: 50px auto 0 auto;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .formBox {
+    margin: 20px auto 0 auto;
+  }
+  
+  .leftBox {
+    padding-right: 35px;
+    margin-top:012px;
+  }
+  
+  .infoBox {
+    margin-top: 50px;
+  }
+  
+  .descriptionBox {
+    margin-top: 30px;
+  }
+  
+  .inputField {
+    margin: 10px 0;
+  }
+  
+  .formBottom {
+    margin-top: 30px;
+  }
+  
+  .tcText {
+    font-size: 14px;
+  }
+}

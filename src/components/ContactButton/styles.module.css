@@ -138,3 +138,24 @@
     height: 100px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .buttonInner {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .innerLine {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo {
+    width: 22px;
+  }
+  
+  .roundedBox {
+    width: 86px;
+    height: 86px;
+  }
+}

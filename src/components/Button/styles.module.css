@@ -110,3 +110,15 @@
     height: 24px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .button {
+    padding: 0 35px;
+    height: 58px;
+  }
+
+  .button.loading:before {
+    width: 22px;
+    height: 22px;
+  }
+}

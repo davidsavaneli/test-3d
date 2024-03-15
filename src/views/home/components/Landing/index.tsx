@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion'
 import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
-import { useWindowSize } from 'hooks'
+import { useWindowSize, useMediaQuery } from 'hooks'
 import { springConfig } from 'animations'
 import { ImageSvg, MagneticLayout, Button } from 'components'
 
@@ -11,6 +11,8 @@ import styles from './styles.module.css'
 import arrowDownSrc from 'assets/images/arrow-down.svg'
 
 const Landing = () => {
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
+
   const landingRef = useRef<HTMLDivElement>(null)
   const { setCursorStyle } = useCursorContext()
   const { width = 0, height = 0 } = useWindowSize()
@@ -19,9 +21,6 @@ const Landing = () => {
   const y = useMotionValue(height / 2)
 
   const hoverState = useMotionValue(0)
-
-  const rotateY = useSpring(useTransform(x, [0, width], [8, -8]), springConfig)
-  const rotateX = useSpring(useTransform(y, [0, height], [-8, 8]), springConfig)
 
   function handleMouse(event: any) {
     const rect = event.currentTarget.getBoundingClientRect()
@@ -41,8 +40,9 @@ const Landing = () => {
 
   const scrollDown = () => {
     if (projectsVideoSectionEl) {
-      Scroll.scrollTo(projectsVideoSectionEl.offsetTop, {
-        duration: 1400,
+      const scrollH = isTouchMode ? projectsVideoSectionEl.offsetTop - 100 : projectsVideoSectionEl.offsetTop
+      Scroll.scrollTo(scrollH, {
+        duration: isTouchMode ? 800 : 1200,
         smooth: 'easeOutQuad',
       })
     }
@@ -50,9 +50,41 @@ const Landing = () => {
 
   const { scrollYProgress } = useScroll({ target: landingRef, offset: ['start end', 'end start'] })
 
-  const wrapperScale = useTransform(scrollYProgress, [0, 1], ['2', '0'])
-  const wrapperY = useTransform(scrollYProgress, [0, 1], ['-300px', '300px'])
-  const wrapperOpacity = useTransform(scrollYProgress, [0, 1], ['3', '-1'])
+  const AnimationValues = () => {
+    const wrapperScaleValue = isTouchMode ? ['1', '1'] : ['2', '0']
+    const wrapperYValue = isTouchMode ? ['0', '0'] : ['-300px', '300px']
+    const wrapperOpacityValue = isTouchMode ? ['1', '1'] : ['3', '-1']
+    const rotateValue = isTouchMode ? 0 : 8
+
+    const wrapperScale = useTransform(scrollYProgress, [0, 1], wrapperScaleValue)
+    const wrapperY = useTransform(scrollYProgress, [0, 1], wrapperYValue)
+    const wrapperOpacity = useTransform(scrollYProgress, [0, 1], wrapperOpacityValue)
+
+    const rotateY = useSpring(useTransform(x, [0, width], [rotateValue, -rotateValue]), springConfig)
+    const rotateX = useSpring(useTransform(y, [0, height], [-rotateValue, rotateValue]), springConfig)
+
+    return { wrapperScale, wrapperY, wrapperOpacity, rotateY, rotateX }
+  }
+
+  const { wrapperScale, wrapperY, wrapperOpacity, rotateY, rotateX } = AnimationValues()
+
+  const ScrollDownBtnBox = () => {
+    return (
+      <div className={styles.scrollDownBtnBox}>
+        <MagneticLayout>
+          <motion.div
+            className={styles.scrollDownBtn}
+            onClick={() => scrollDown()}
+            onMouseOver={() => setCursorStyle('default')}
+            onMouseOut={() => setCursorStyle('none')}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
+          </motion.div>
+        </MagneticLayout>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse} ref={landingRef}>
@@ -82,21 +114,10 @@ const Landing = () => {
             We roar with success, delivering the TECHZY through versatile design, branding and the latest tech
             development to companies.
           </motion.div>
+          {isTouchMode && <ScrollDownBtnBox />}
         </motion.div>
       </motion.div>
-      <div className={styles.scrollDownBtnBox}>
-        <MagneticLayout>
-          <motion.div
-            className={styles.scrollDownBtn}
-            onClick={() => scrollDown()}
-            onMouseOver={() => setCursorStyle('default')}
-            onMouseOut={() => setCursorStyle('none')}
-            whileTap={{ scale: 0.8 }}
-          >
-            <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
-          </motion.div>
-        </MagneticLayout>
-      </div>
+      {!isTouchMode && <ScrollDownBtnBox />}
       <div className={styles.contactBtnBox}>
         <Button label='Get in touch' href='./contact' />
       </div>

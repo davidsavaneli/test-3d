@@ -111,3 +111,17 @@
     font-size: 40px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .title span {
+    font-size: 54px;
+  }
+  
+  .titleBox.sizeLarge .title span {
+    font-size: 54px;
+  }
+  
+  .titleBox.sizeMedium .title span {
+    font-size: 34px;
+  }
+}

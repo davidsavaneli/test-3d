@@ -6,6 +6,7 @@ import styles from './styles.module.css'
 
 const ProjectsVideo = () => {
   const isLg = useMediaQuery('(max-width: 1679.98px)')
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
 
   const [videoInitialWidth, setVideoInitialWidth] = useState<number>(1)
   const [videoInitialHeight, setVideoInitialHeight] = useState<number>(1)
@@ -52,11 +53,11 @@ const ProjectsVideo = () => {
   const { scrollYProgress } = useScroll({ target: videoSectionRef, offset: ['start end', 'start start'] })
 
   const AnimationValues = () => {
-    const yValue = isLg ? '112' : '150'
-    const widthValue = isLg ? '172' : '204'
-    const heightValue = isLg ? '62' : '70'
-    const borderRadiusValueFirst = '160'
-    const borderRadiusValueSecond = '40'
+    const yValue = isLg ? (!isTouchMode ? '112' : 0) : '150'
+    const widthValue = isLg ? (!isTouchMode ? '172' : videoFinalWidth) : '204'
+    const heightValue = isLg ? (!isTouchMode ? '62' : videoFinalHeight) : '70'
+    const borderRadiusValueFirst = !isTouchMode ? '160' : '300'
+    const borderRadiusValueSecond = !isTouchMode ? '40' : '20'
 
     const y = useTransform(scrollYProgress, [0, 1], [`-${yValue}px`, `${yValue}px`])
     const width = useTransform(scrollYProgress, [0, 1], [`${widthValue}px`, `${videoFinalWidth}px`])

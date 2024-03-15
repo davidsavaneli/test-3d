@@ -1,6 +1,8 @@
 import React, { useRef, useState, memo } from 'react'
 import { motion } from 'framer-motion'
 import { springConfig } from 'animations'
+import { useMediaQuery } from 'hooks'
+
 import styles from './styles.module.css'
 
 type MagneticLayoutProps = {
@@ -8,6 +10,8 @@ type MagneticLayoutProps = {
 }
 
 const MagneticLayout = ({ children }: MagneticLayoutProps) => {
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
+
   const ref = useRef<HTMLDivElement>(null)
 
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -21,7 +25,7 @@ const MagneticLayout = ({ children }: MagneticLayoutProps) => {
       const middleX = clientX - (left + width / 2)
       const middleY = clientY - (top + height / 2)
 
-      setPosition({ x: middleX, y: middleY })
+      setPosition({ x: !isTouchMode ? middleX : 0, y: !isTouchMode ? middleY : 0 })
     }
   }
 

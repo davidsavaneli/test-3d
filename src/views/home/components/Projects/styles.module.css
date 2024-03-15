@@ -109,3 +109,27 @@
     margin-top: 50px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .projectsSection {
+    margin: 0 0 0 0;
+    padding: 20px 0 20px 0;
+  }
+
+  .projectItem {
+    margin: 140px 0;
+  }
+
+  .projectItemInfo {
+    padding: 0 40px;
+}
+
+  .projectItemDescription {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+  
+  .projectItemButton {
+    margin-top: 40px;
+  }
+}

@@ -16,7 +16,7 @@ const BackButton = () => {
 
   return (
     <MagneticLayout>
-      <motion.div whileTap={{ scale: 0.8 }}>
+      <motion.div whileTap={{ scale: 0.9 }}>
         <Link scroll={false} href='./' className={styles.backBtn} {...backCursorProps}>
           <div className={styles.backBtnBg}></div>
           <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' className={styles.backIcon}>

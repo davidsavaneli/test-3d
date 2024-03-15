@@ -26,6 +26,7 @@ const AnimatedTitle = ({
   fontLowercase = false,
 }: ComponentProps) => {
   const isSmallLg = useMediaQuery('(max-width: 1439.98px)')
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
 
   const titleRef = useRef<HTMLDivElement>(null)
 
@@ -44,7 +45,7 @@ const AnimatedTitle = ({
   )
 
   const AnimationValues = () => {
-    const xValue = isSmallLg ? '30' : '40'
+    const xValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
 
     const x = useTransform(
       transformX,

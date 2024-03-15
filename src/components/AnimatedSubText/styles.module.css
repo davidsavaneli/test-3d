@@ -59,3 +59,15 @@
     max-width: 450px;
   }
 }
+
+@media (max-width: 1279.98px) {
+  .animatedSubText {
+    font-size: 18px;
+    max-width: 420px;
+  }
+  
+  .animatedSubText.large {
+    font-size: 18px;
+    max-width: 420px;
+  }
+}
