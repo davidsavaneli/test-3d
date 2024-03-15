@@ -46,7 +46,7 @@ const App = ({ Component, router, pageProps }: AppProps) => {
         </CursorLayout>
       </CursorProvider>
       <ToastContainer position='bottom-right' />
-      <SmoothScroller />
+      {/* <SmoothScroller /> */}
     </React.Fragment>
   )
 }

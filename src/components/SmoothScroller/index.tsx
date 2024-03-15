@@ -1,7 +1,7 @@
 'use client'
 
-import Lenis from '@studio-freight/lenis'
 import React, { useEffect } from 'react'
+import Lenis from '@studio-freight/lenis'
 
 const SmoothScroller = () => {
   useEffect(() => {
@@ -14,9 +14,13 @@ const SmoothScroller = () => {
 
     requestAnimationFrame(raf)
 
-    window.addEventListener('resize', () => lenis.resize())
+    const handleResize = () => {
+      lenis.resize()
+    }
 
-    return () => window.removeEventListener('resize', () => lenis.resize())
+    window.addEventListener('resize', () => handleResize())
+
+    return () => window.removeEventListener('resize', () => handleResize())
   }, [])
 
   return <></>
