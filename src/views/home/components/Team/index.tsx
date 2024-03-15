@@ -1,13 +1,17 @@
 import React, { useRef, memo } from 'react'
-import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import ScrollContainer from 'react-indiana-drag-scroll'
+import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
 import { teamData } from 'testData'
 import { teamDataTypes } from 'types'
 import { springConfig } from 'animations'
+import { useMediaQuery } from 'hooks'
 
 import styles from './styles.module.css'
 
 const Team = () => {
+  const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
+
   const sliderRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: sliderRef, offset: ['end start', 'start end'] })
@@ -33,17 +37,31 @@ const Team = () => {
         </div>
       </div>
       <motion.div className={styles.slider} ref={sliderRef} style={{ y }}>
-        <HorizontalDragCarousell>
-          <div className={styles.slideSpace}></div>
-          {teamData.map((o: teamDataTypes, index) => {
-            return (
-              <React.Fragment key={index}>
-                <TeamItem data={o} key={o.id} />
-              </React.Fragment>
-            )
-          })}
-          <div className={styles.slideSpace}></div>
-        </HorizontalDragCarousell>
+        {isTouchMode ? (
+          <ScrollContainer className='scroll-container'>
+            <div className={styles.respSlides}>
+              {teamData.map((o: teamDataTypes, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <TeamItem data={o} key={o.id} />
+                  </React.Fragment>
+                )
+              })}
+            </div>
+          </ScrollContainer>
+        ) : (
+          <HorizontalDragCarousell>
+            <div className={styles.slideSpace}></div>
+            {teamData.map((o: teamDataTypes, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <TeamItem data={o} key={o.id} />
+                </React.Fragment>
+              )
+            })}
+            <div className={styles.slideSpace}></div>
+          </HorizontalDragCarousell>
+        )}
       </motion.div>
     </div>
   )

@@ -52,3 +52,7 @@ main {
     padding-bottom: 120px;
   }
 }
+
+.indiana-scroll-container {
+  overflow: auto !important;
+}

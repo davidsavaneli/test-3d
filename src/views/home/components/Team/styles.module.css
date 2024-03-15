@@ -13,6 +13,10 @@
   margin-top: 120px;
 }
 
+.respSlides {
+  display: none;
+}
+
 .slideSpace {
   width: 50px;
   min-width: 50px;
@@ -123,6 +127,18 @@
 @media (max-width: 1279.98px) {
   .slider {
     margin-top: 50px;
+  }
+
+  .respSlides {
+    display: flex;
+  }
+
+  .slide:first-child {
+    padding-left: 40px;
+  }
+
+  .slide:last-child {
+    padding-right: 40px;
   }
   
   .slideImgBox {
