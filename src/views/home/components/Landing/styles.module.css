@@ -1,7 +1,6 @@
 .landing {
   position: relative;
-  /* height: var(--fullHeight); */
-  height: calc(var(--vh, 1vh) * 100);
+  height: var(--fullHeight);
   display: flex;
   align-items: center;
   justify-content: center;

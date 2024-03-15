@@ -1,6 +1,6 @@
 :root {
   /* --fullHeight: calc(var(--vh, 1vh) * 100); */
-  --fullHeight: 100vh;
+  --fullHeight: 100dvh;
   
   --fontMedium: 'Syne-Medium';
   --fontUppercase: 'MonumentExtended-Regular';
@@ -22,4 +22,10 @@
   --secondaryBorderRadius: 12px;
 
   --toastifyBg: #252526;
+}
+
+@media (max-width: 1279.98px) {
+  :root {
+    /* --fullHeight: 100vh; */
+  }
 }
