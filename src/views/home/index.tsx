@@ -18,8 +18,8 @@ const View = () => {
       <Landing />
       <ProjectsVideo />
       {loaded && <Services />} {/* TODO */}
-      {/* <Projects /> */}
-      {/* <Team /> */}
+      <Projects />
+      <Team />
     </div>
   )
 }

@@ -27,12 +27,12 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      {/* <BackgrundOverlay /> */}
+      <BackgrundOverlay />
       <CursorProvider>
         <CursorLayout>
-          {/* <CursorFluidAnimation /> */}
+          <CursorFluidAnimation />
           <Header />
-          {/* <ContactButton /> */}
+          <ContactButton />
           <AnimatePresence mode='wait'>
             {showPreloader ? (
               <Preloader />
