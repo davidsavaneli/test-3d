@@ -1,5 +1,6 @@
 :root {
-  --fullHeight: calc(var(--vh, 1vh) * 100);
+  /* --fullHeight: calc(var(--vh, 1vh) * 100); */
+  --fullHeight: 100vh;
   
   --fontMedium: 'Syne-Medium';
   --fontUppercase: 'MonumentExtended-Regular';
