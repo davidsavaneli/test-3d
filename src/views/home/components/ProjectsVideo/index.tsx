@@ -50,7 +50,10 @@ const ProjectsVideo = () => {
     return () => resizeObserver.disconnect()
   })
 
-  const { scrollYProgress } = useScroll({ target: videoSectionRef, offset: ['start end', 'start start'] })
+  const { scrollYProgress } = useScroll({
+    target: videoSectionRef,
+    offset: isTouchMode ? ['start end', 'start center'] : ['start end', 'start start'],
+  })
 
   const AnimationValues = () => {
     const yValue = isLg ? (!isTouchMode ? '112' : 0) : '150'
