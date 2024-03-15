@@ -27,25 +27,25 @@ const App = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
-      <BackgrundOverlay />
-      <CursorProvider>
-        <CursorLayout>
-          <CursorFluidAnimation />
-          <Header />
-          <ContactButton />
-          <AnimatePresence mode='wait'>
-            {showPreloader ? (
-              <Preloader />
-            ) : (
-              <main key={router.route} id='main'>
-                <Component {...pageProps} />
-              </main>
-            )}
-          </AnimatePresence>
-          <Footer />
-        </CursorLayout>
-      </CursorProvider>
-      <ToastContainer position='bottom-right' />
+      {/* <BackgrundOverlay /> */}
+      {/* <CursorProvider> */}
+      {/* <CursorLayout> */}
+      {/* <CursorFluidAnimation /> */}
+      <Header />
+      {/* <ContactButton /> */}
+      <AnimatePresence mode='wait'>
+        {showPreloader ? (
+          <Preloader />
+        ) : (
+          <main key={router.route} id='main'>
+            <Component {...pageProps} />
+          </main>
+        )}
+      </AnimatePresence>
+      <Footer />
+      {/* </CursorLayout> */}
+      {/* </CursorProvider> */}
+      {/* <ToastContainer position='bottom-right' /> */}
       {/* <SmoothScroller /> */}
     </React.Fragment>
   )
