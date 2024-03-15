@@ -68,24 +68,6 @@ const Landing = () => {
 
   const { wrapperScale, wrapperY, wrapperOpacity, rotateY, rotateX } = AnimationValues()
 
-  const ScrollDownBtnBox = () => {
-    return (
-      <div className={styles.scrollDownBtnBox}>
-        <MagneticLayout>
-          <motion.div
-            className={styles.scrollDownBtn}
-            onClick={() => scrollDown()}
-            onMouseOver={() => setCursorStyle('default')}
-            onMouseOut={() => setCursorStyle('none')}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
-          </motion.div>
-        </MagneticLayout>
-      </div>
-    )
-  }
-
   return (
     <div className={styles.landing} onMouseLeave={mouseLeave} onMouseMove={handleMouse} ref={landingRef}>
       <motion.div className={styles.wrapper} style={{ scale: wrapperScale, y: wrapperY, opacity: wrapperOpacity }}>
@@ -114,10 +96,38 @@ const Landing = () => {
             We roar with success, delivering the TECHZY through versatile design, branding and the latest tech
             development to companies.
           </motion.div>
-          {isTouchMode && <ScrollDownBtnBox />}
+          {isTouchMode && (
+            <div className={styles.scrollDownBtnBox}>
+              <MagneticLayout>
+                <motion.div
+                  className={styles.scrollDownBtn}
+                  onClick={() => scrollDown()}
+                  onMouseOver={() => setCursorStyle('default')}
+                  onMouseOut={() => setCursorStyle('none')}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
+                </motion.div>
+              </MagneticLayout>
+            </div>
+          )}
         </motion.div>
       </motion.div>
-      {!isTouchMode && <ScrollDownBtnBox />}
+      {!isTouchMode && (
+        <div className={styles.scrollDownBtnBox}>
+          <MagneticLayout>
+            <motion.div
+              className={styles.scrollDownBtn}
+              onClick={() => scrollDown()}
+              onMouseOver={() => setCursorStyle('default')}
+              onMouseOut={() => setCursorStyle('none')}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ImageSvg src={arrowDownSrc} alt='Scroll Down' fullWidth />
+            </motion.div>
+          </MagneticLayout>
+        </div>
+      )}
       <div className={styles.contactBtnBox}>
         <Button label='Get in touch' href='./contact' />
       </div>

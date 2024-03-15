@@ -140,6 +140,10 @@
 }
 
 @media (max-width: 1279.98px) {
+  .landing {
+    padding-bottom: 80px;
+  }
+
   .title {
     font-size: 54px;
   }

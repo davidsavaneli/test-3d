@@ -17,7 +17,7 @@ const Team = () => {
   const { scrollYProgress } = useScroll({ target: sliderRef, offset: ['end start', 'start end'] })
   const transformX = useSpring(scrollYProgress, springConfig)
 
-  const y = useTransform(transformX, [1, 0], ['80px', '-80px'])
+  const y = useTransform(transformX, [1, 0], isTouchMode ? ['50px', '-50px'] : ['80px', '-80px'])
 
   return (
     <div className={styles.teamSection}>
