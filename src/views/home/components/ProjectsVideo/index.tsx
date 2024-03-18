@@ -61,7 +61,7 @@ const ProjectsVideo = () => {
     const widthValue = isLg ? (!isTouchMode ? '172' : videoFinalWidth) : '204'
     const heightValue = isLg ? (!isTouchMode ? '62' : videoFinalHeight) : '70'
     const borderRadiusValueFirst = !isTouchMode ? '160' : isSmallTablet ? '150' : '300'
-    const borderRadiusValueSecond = !isTouchMode ? '40' : '20'
+    const borderRadiusValueSecond = !isTouchMode ? '40' : isSmallTablet ? '16' : '20'
 
     const y = useTransform(scrollYProgress, [0, 1], [`-${yValue}px`, `${yValue}px`])
     const width = useTransform(scrollYProgress, [0, 1], [`${widthValue}px`, `${videoFinalWidth}px`])

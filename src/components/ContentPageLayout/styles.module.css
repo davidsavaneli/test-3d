@@ -179,3 +179,38 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 767.98px) {
+  .wrapper {
+    padding-top: 10px;
+  }
+
+  .title {
+    margin-top: 40px;
+  }
+  
+  .wysiwyg {
+    margin-top: 20px;
+  }
+  
+  .wysiwyg h3 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .wysiwyg p {
+    font-size: 13px;
+  }
+  
+  .wysiwyg ul {
+    margin: 10px 0 10px 26px;
+  }
+  
+  .wysiwyg li {
+    font-size: 13px;
+  }
+  
+  .wysiwyg a {
+    font-size: 13px;
+  }
+}

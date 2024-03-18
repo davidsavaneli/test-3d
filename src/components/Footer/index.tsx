@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
         <div className={styles.middle}>
           <div className='row'>
-            <div className='col-6 d-flex align-items-center'>
+            <div className='col-6 col-sm-12 d-flex align-items-center'>
               <Link href='./' className={styles.logo} {...logoCursorProps} scroll={false}>
                 <ImageSvg src={logoSrc} alt='Techzy' fullHeight />
               </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div className='col-6 d-flex align-items-center justify-content-end'>
+            <div className='col-6 col-sm-12 d-flex align-items-center justify-content-end justify-content-sm-center'>
               <div className={styles.socials}>
                 <Link
                   className={styles.link}

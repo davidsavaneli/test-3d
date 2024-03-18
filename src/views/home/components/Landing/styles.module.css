@@ -186,3 +186,27 @@
     margin-top: 18px;
   }
 }
+
+@media (max-width: 767.98px) {
+  .landing {
+    padding-bottom: 10px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+  
+  .scrollDownBtnBox {
+    display: none;
+  }
+  
+  .contactBtnBox {
+    bottom: 10px;
+  }
+  
+  .text {
+    font-size: 13px;
+    max-width: 440px;
+    margin-top: 10px;
+  }
+}

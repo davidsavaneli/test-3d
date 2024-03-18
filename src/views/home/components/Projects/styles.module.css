@@ -141,10 +141,6 @@
 }
 
 @media (max-width: 1023.98px) {
-  .projectsSection {
-    padding: 20px 0 20px 0;
-  }
-
   .projectItem {
     margin: 120px 0;
   }
@@ -176,5 +172,28 @@
 
   .projectItemButton {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .projectItem {
+    margin: 100px 0;
+  }
+
+  .items .projectItem:nth-child(2n + 1) .projectItemImgBox {
+    margin-right: -30px;
+  }
+
+  .items .projectItem:nth-child(2n + 2) .projectItemImgBox {
+    margin-left: -30px;
+  }
+
+  .projectItemDescription {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .projectItemButton {
+    margin-top: 25px;
   }
 }

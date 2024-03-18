@@ -295,3 +295,55 @@
     height: 22px;
   }
 }
+
+@media (max-width: 767.98px) {
+  .titles {
+    margin-bottom: 20px;
+  }
+
+  .slideItemSpaceLarge {
+    width: 60vw;
+  }
+
+  .serviceItem {
+    width: 320px;
+    height: 240px;
+    margin: 0 15px;
+    padding: 20px 28px 22px 28px;
+  }
+
+  .slider .slides > div:nth-child(6n + 2) .serviceItem {
+    top: 0%;
+  }
+  
+  .slider .slides > div:nth-child(6n + 3) .serviceItem {
+    bottom: 0%;
+  }
+  
+  .slider .slides > div:nth-child(6n + 5) .serviceItem {
+    top: 0%;
+  }
+  
+  .slider .slides > div:nth-child(6n + 6) .serviceItem {
+    bottom: 0%;
+  }
+  
+  .serviceItemNumber {
+    font-size: 16px;
+  }
+  
+  .serviceItemTitle {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  
+  .serviceItemText {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  
+  .serviceItemIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
