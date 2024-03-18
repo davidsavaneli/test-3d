@@ -3,6 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
 import { AnimatedSubText, AnimatedTitle, Button, BackButton } from 'components'
+import { useMediaQuery } from 'hooks' 
 import { useCursorContext } from 'contexts'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
@@ -24,6 +25,8 @@ const validationSchema = yup.object({
 })
 
 const View = () => {
+  const isSmallTablet = useMediaQuery('(max-width: 1023.98px)')
+
   const { setCursorStyle } = useCursorContext()
 
   const smallTextCursorProps = {
@@ -78,7 +81,7 @@ const View = () => {
     <div className='container'>
       <div className={styles.formBox}>
         <div className='row'>
-          <div className='col-5'>
+          <div className='col-5 col-md-12'>
             <div className={styles.leftBox}>
               <BackButton />
               <div className={styles.infoBox}>
@@ -94,7 +97,7 @@ const View = () => {
               </div>
             </div>
           </div>
-          <div className='col-7'>
+          <div className='col-7 col-md-12'>
             <form className={styles.form} onSubmit={formik.handleSubmit}>
               <div className='row'>
                 <div className='col-6'>

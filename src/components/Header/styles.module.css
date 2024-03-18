@@ -32,3 +32,13 @@
     width: 150px;
   }
 }
+
+@media (max-width: 1023.98px) {
+  .wrapper {
+    height: 70px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}

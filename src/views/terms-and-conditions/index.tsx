@@ -11,6 +11,7 @@ const View = () => {
           </AnimatedTitle>
         }
         text={`
+          <br />
           <h3>1. Introduction</h3>
           <p>Welcome to Techzy. By accessing our software development services, you agree to these Terms and Conditions, which are designed to ensure a productive and secure experience for all users.</p>
           <br /><br />

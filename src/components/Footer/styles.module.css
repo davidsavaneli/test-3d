@@ -170,3 +170,48 @@
     margin: 1px 0;
   }
 }
+
+@media (max-width: 1023.98px) {
+  .top {
+    padding: 25px 0;
+    gap: 15px 50px;
+  }
+
+  .topItemLabel {
+    margin: 0 0;
+    font-size: 13px;
+  }
+  
+  .topItemValue {
+    margin: 0 0;
+    font-size: 15px;
+  }
+  
+  .middle {
+    padding-top: 40px;
+  }
+  
+  .logo {
+    height: 28px;
+  }
+  
+  .links {
+    margin-left: 20px;
+  }
+  
+  .links:before {
+    margin-right: 20px;
+  }
+  
+  .link {
+    margin-right: 30px;
+  }
+  
+  .link:before {
+    right: -18px;
+  }
+  
+  .copyright {
+    height: 80px;
+  }
+}

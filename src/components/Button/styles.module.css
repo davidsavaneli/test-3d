@@ -122,3 +122,19 @@
     height: 22px;
   }
 }
+
+@media (max-width: 1023.98px) {
+  .button {
+    padding: 0 30px;
+    height: 54px;
+  }
+  
+  .label {
+    font-size: 14px;
+  }
+
+  .button.loading:before {
+    width: 20px;
+    height: 20px;
+  }
+}

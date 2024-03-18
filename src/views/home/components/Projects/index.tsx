@@ -14,17 +14,19 @@ const Projects = () => {
     <div className={styles.projectsSection} ref={projectsRef}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col-8'>
+          <div className='col-7'>
             <div className={styles.titleBox}>
               <AnimatedTitle transformDirection='ltr'>Recent</AnimatedTitle>
               <AnimatedTitle transformDirection='rtl'>Work</AnimatedTitle>
             </div>
           </div>
-          <div className='col-4'>
-            <AnimatedSubText endPositionY={0}>
-              Our software solutions amplify opportunities for venture and private equity firms, regardless of stage or
-              provided timeline.
-            </AnimatedSubText>
+          <div className='col-5'>
+            <div className={styles.textBox}>
+              <AnimatedSubText endPositionY={0}>
+                Our software solutions amplify opportunities for venture and private equity firms, regardless of stage
+                or provided timeline.
+              </AnimatedSubText>
+            </div>
           </div>
         </div>
       </div>

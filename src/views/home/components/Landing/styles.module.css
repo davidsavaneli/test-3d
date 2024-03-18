@@ -162,3 +162,27 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 1023.98px) {
+  .landing {
+    padding-bottom: 70px;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+  
+  .scrollDownBtnBox {
+    margin-top: 50px;
+  }
+  
+  .contactBtnBox {
+    bottom: 40px;
+  }
+  
+  .text {
+    font-size: 14px;
+    max-width: 400px;
+    margin-top: 18px;
+  }
+}

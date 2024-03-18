@@ -48,28 +48,28 @@
   .formBox {
     margin: 60px auto 0 auto;
   }
-  
+
   .leftBox {
     padding-right: 40px;
     margin-top: 12px;
   }
-  
+
   .infoBox {
     margin-top: 60px;
   }
-  
+
   .descriptionBox {
     margin-top: 35px;
   }
-  
+
   .inputField {
     margin: 12px 0;
   }
-  
+
   .formBottom {
     margin-top: 40px;
   }
-  
+
   .tcText {
     font-size: 14px;
   }
@@ -81,32 +81,44 @@
   }
 }
 
-@media (max-width: 1279.98px) {
+@media (max-width: 1023.98px) {
   .formBox {
     margin: 20px auto 0 auto;
   }
-  
+
   .leftBox {
-    padding-right: 35px;
-    margin-top:012px;
+    padding-right: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
-  
+
   .infoBox {
-    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 40px;
+    align-items: flex-end;
   }
-  
+
   .descriptionBox {
-    margin-top: 30px;
+    margin-top: 0;
+    text-align: right;
   }
-  
+
+  .form {
+    margin-top: 40px;
+  }
+
   .inputField {
     margin: 10px 0;
   }
-  
+
   .formBottom {
     margin-top: 30px;
   }
-  
+
   .tcText {
     font-size: 14px;
   }
