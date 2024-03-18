@@ -38,7 +38,7 @@ const Team = () => {
       </div>
       <motion.div className={styles.slider} ref={sliderRef} style={{ y }}>
         {isTouchMode ? (
-          <ScrollContainer className='scroll-container'>
+          <ScrollContainer className='scroll-container' vertical={false}>
             <div className={styles.respSlides}>
               {teamData.map((o: teamDataTypes, index) => {
                 return (
