@@ -14,6 +14,8 @@
 
 .logoWrapper {
   position: relative;
+  width: 942px;
+  min-width: 942px;
   transform: scale(0.4);
 }
 
@@ -75,4 +77,28 @@
   width: auto;
   object-fit: contain;
   object-position: bottom center;
+}
+
+@media (max-width: 1679.98px) {
+  .logoWrapper {
+    transform: scale(0.34);
+  }
+}
+
+@media (max-width: 1365.98px) {
+  .logoWrapper {
+    transform: scale(0.3);
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .logoWrapper {
+    transform: scale(0.24);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logoWrapper {
+    transform: scale(0.18);
+  }
 }

@@ -60,9 +60,9 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
   const AnimationValues = () => {
-    const infoYValue = isSmallLg ? (isTouchMode ? (isMobile ? '-20' : '40') : '80') : '100'
+    const infoYValue = isSmallLg ? (isTouchMode ? (isMobile ? '-10' : '40') : '80') : '100'
     const infoXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
-    const ImageYValue = isSmallLg ? (isTouchMode ? (isMobile ? '30' : '40') : '80') : '100'
+    const ImageYValue = isSmallLg ? (isTouchMode ? (isMobile ? '10' : '40') : '80') : '100'
     const ImageXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
     const ImageRotateValue = isSmallLg ? (isTouchMode ? '0' : '4') : isTouchMode ? '0' : '5'
 
