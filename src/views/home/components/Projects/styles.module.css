@@ -206,7 +206,7 @@
   }
   
   .projectItem {
-    margin: 50px 0;
+    margin: 60px 0;
   }
 
   .projectItemRow {
@@ -228,7 +228,7 @@
   }
 
   .projectItemInfo {
-    padding: 50px 0 0 0!important;
+    padding: 40px 0 0 0!important;
   }
 
   .items .projectItem:nth-child(2n + 2) .projectItemInfo {

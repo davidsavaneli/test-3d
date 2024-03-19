@@ -362,11 +362,11 @@
   }
 
   .slideItemSpaceLarge {
-    width: 100vw;
+    width: 8px;
   }
 
   .slideItemSpaceSmall {
-    width: 30vw;
+    width: 8px;
   }
 
   .serviceItem {
@@ -393,6 +393,6 @@
   }
 
   .slideItem {
-    padding-top: 28%;
+    padding-top: 58%;
   }
 }
