@@ -1,4 +1,5 @@
 import React, { useRef, memo } from 'react'
+import clsx from 'clsx'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import { AnimatedSubText, AnimatedTitle, HorizontalDragCarousell, AnimatedImage } from 'components'
@@ -22,13 +23,15 @@ const Team = () => {
   return (
     <div className={styles.teamSection}>
       <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col-5'>
-            <AnimatedSubText endPositionY={0}>
-              We are a diverse group of digital specialists, building innovative brands and products.
-            </AnimatedSubText>
+        <div className={clsx(styles.headlineRow, 'row', 'align-items-center')}>
+          <div className='col-5 col-xs-12'>
+            <div className={styles.textBox}>
+              <AnimatedSubText endPositionY={0}>
+                We are a diverse group of digital specialists, building innovative brands and products.
+              </AnimatedSubText>
+            </div>
           </div>
-          <div className='col-7'>
+          <div className='col-7 col-xs-12'>
             <div className={styles.titleBox}>
               <AnimatedTitle transformDirection='rtl'>Our</AnimatedTitle>
               <AnimatedTitle transformDirection='ltr'>Team</AnimatedTitle>

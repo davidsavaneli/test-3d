@@ -123,3 +123,26 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 575.98px) {
+  .infoBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .descriptionBox {
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  .formBottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .tcText {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}

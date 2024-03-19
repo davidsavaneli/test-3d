@@ -180,3 +180,24 @@
     height: 70px;
   }
 }
+
+@media (max-width: 575.98px) {
+  .buttonInner {
+    width: 74px;
+    height: 74px;
+  }
+  
+  .innerLine {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .logo {
+    width: 16px;
+  }
+  
+  .roundedBox {
+    width: 63px;
+    height: 63px;
+  }
+}

@@ -52,3 +52,9 @@
     width: 120px;
   }
 }
+
+@media (max-width: 575.98px) {
+  .logo {
+    width: 110px;
+  }
+}

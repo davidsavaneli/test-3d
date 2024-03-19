@@ -92,25 +92,25 @@
   .title {
     font-size: 80px;
   }
-  
+
   .text {
     font-size: 18px;
     max-width: 480px;
     margin-top: 30px;
   }
-  
+
   .scrollDownBtnBox {
     width: 46px;
     height: 46px;
     bottom: 60px;
   }
-  
+
   .scrollDownBtn {
     width: 46px;
     height: 46px;
     padding: 14px;
   }
-  
+
   .contactBtnBox {
     right: 40px;
     bottom: 50px;
@@ -121,7 +121,7 @@
   .title {
     font-size: 70px;
   }
-  
+
   .text {
     font-size: 16px;
     max-width: 460px;
@@ -133,7 +133,7 @@
   .title {
     font-size: 60px;
   }
-  
+
   .text {
     margin-top: 22px;
   }
@@ -147,13 +147,13 @@
   .title {
     font-size: 54px;
   }
-  
+
   .scrollDownBtnBox {
     position: relative;
     bottom: 0;
     margin-top: 60px;
   }
-  
+
   .contactBtnBox {
     right: 0;
     left: 0;
@@ -171,15 +171,15 @@
   .title {
     font-size: 44px;
   }
-  
+
   .scrollDownBtnBox {
     margin-top: 50px;
   }
-  
+
   .contactBtnBox {
     bottom: 40px;
   }
-  
+
   .text {
     font-size: 14px;
     max-width: 400px;
@@ -195,18 +195,45 @@
   .title {
     font-size: 26px;
   }
-  
+
   .scrollDownBtnBox {
     display: none;
   }
-  
+
   .contactBtnBox {
     bottom: 10px;
   }
-  
+
   .text {
     font-size: 13px;
     max-width: 440px;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .inner {
+    max-width: 320px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 14px;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .scrollDownBtnBox {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .scrollDownBtn {
+    width: 40px;
+    height: 40px;
+    padding: 12px;
   }
 }

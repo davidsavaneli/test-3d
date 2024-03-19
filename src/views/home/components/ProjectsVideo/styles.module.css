@@ -33,3 +33,9 @@
     margin-bottom: 50px;
   }
 }
+
+@media (max-width: 575.98px) {
+  .videoSection {
+    margin-bottom: 10px;
+  }
+}

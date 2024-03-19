@@ -59,7 +59,7 @@
 }
 
 .slideItemSpaceSmall {
-  width: 15vw;
+  width: 54vw;
 }
 
 .serviceItem {
@@ -125,7 +125,7 @@
   .titles {
     margin-bottom: 80px;
   }
-  
+
   .serviceItem {
     width: 500px;
     height: 380px;
@@ -136,33 +136,33 @@
   .slider .slides > div:nth-child(6n + 2) .serviceItem {
     top: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 3) .serviceItem {
     bottom: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 5) .serviceItem {
     top: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 6) .serviceItem {
     bottom: -12%;
   }
-  
+
   .serviceItemNumber {
     font-size: 28px;
   }
-  
+
   .serviceItemTitle {
     font-size: 24px;
     margin-top: 26px;
   }
-  
+
   .serviceItemText {
     font-size: 18px;
     margin-top: 20px;
   }
-  
+
   .serviceItemIcon {
     width: 34px;
     height: 34px;
@@ -180,20 +180,20 @@
     margin: 0 30px;
     padding: 25px 35px 25px 35px;
   }
-  
+
   .serviceItemNumber {
     font-size: 26px;
   }
-  
+
   .serviceItemTitle {
     font-size: 22px;
     margin-top: 24px;
   }
-  
+
   .serviceItemText {
     margin-top: 18px;
   }
-  
+
   .serviceItemIcon {
     width: 30px;
     height: 30px;
@@ -215,33 +215,33 @@
   .slider .slides > div:nth-child(6n + 2) .serviceItem {
     top: -14%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 3) .serviceItem {
     bottom: -14%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 5) .serviceItem {
     top: -14%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 6) .serviceItem {
     bottom: -14%;
   }
-  
+
   .serviceItemNumber {
     font-size: 24px;
   }
-  
+
   .serviceItemTitle {
     font-size: 20px;
     margin-top: 24px;
   }
-  
+
   .serviceItemText {
     margin-top: 16px;
     font-size: 16px;
   }
-  
+
   .serviceItemIcon {
     width: 26px;
     height: 26px;
@@ -263,33 +263,33 @@
   .slider .slides > div:nth-child(6n + 2) .serviceItem {
     top: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 3) .serviceItem {
     bottom: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 5) .serviceItem {
     top: -12%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 6) .serviceItem {
     bottom: -12%;
   }
-  
+
   .serviceItemNumber {
     font-size: 20px;
   }
-  
+
   .serviceItemTitle {
     font-size: 18px;
     margin-top: 20px;
   }
-  
+
   .serviceItemText {
     margin-top: 14px;
     font-size: 14px;
   }
-  
+
   .serviceItemIcon {
     width: 22px;
     height: 22px;
@@ -305,6 +305,10 @@
     width: 60vw;
   }
 
+  .slideItemSpaceSmall {
+    width: 60vw;
+  }
+
   .serviceItem {
     width: 320px;
     height: 240px;
@@ -315,35 +319,80 @@
   .slider .slides > div:nth-child(6n + 2) .serviceItem {
     top: 0%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 3) .serviceItem {
     bottom: 0%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 5) .serviceItem {
     top: 0%;
   }
-  
+
   .slider .slides > div:nth-child(6n + 6) .serviceItem {
     bottom: 0%;
   }
-  
+
   .serviceItemNumber {
     font-size: 16px;
   }
-  
+
   .serviceItemTitle {
     font-size: 16px;
     margin-top: 12px;
   }
-  
+
   .serviceItemText {
     margin-top: 10px;
     font-size: 13px;
   }
-  
+
   .serviceItemIcon {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .headlineSection {
+    top: 12%;
+  }
+
+  .headlineInfoBox {
+    width: 100%;
+  }
+
+  .slideItemSpaceLarge {
+    width: 100vw;
+  }
+
+  .slideItemSpaceSmall {
+    width: 30vw;
+  }
+
+  .serviceItem {
+    width: 310px;
+    height: 230px;
+    margin: 0 12px;
+    padding: 18px 25px 20px 25px;
+  }
+
+  .slider .slides > div:nth-child(6n + 2) .serviceItem {
+    top: -10%;
+  }
+
+  .slider .slides > div:nth-child(6n + 3) .serviceItem {
+    bottom: -10%;
+  }
+
+  .slider .slides > div:nth-child(6n + 5) .serviceItem {
+    top: -10%;
+  }
+
+  .slider .slides > div:nth-child(6n + 6) .serviceItem {
+    bottom: -10%;
+  }
+
+  .slideItem {
+    padding-top: 28%;
   }
 }

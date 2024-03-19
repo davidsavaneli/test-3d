@@ -2,12 +2,15 @@ import React, { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, useTransform, useVelocity, MotionValue } from 'framer-motion'
 import { springConfig } from 'animations'
 import { ImageSvg, AnimatedTitle, AnimatedSubText } from 'components'
+import { useMediaQuery } from 'hooks'
 import { servicesData } from 'testData'
 import { servicesDataTypes } from 'types'
 
 import styles from './styles.module.css'
 
 const Services = () => {
+  const isMobile = useMediaQuery('(max-width: 575.98px)')
+
   const [startPos, setStartPos] = useState<number>(0)
   const [endPos, setEndPos] = useState<number>(0)
   const [startTrValue, setStartTrValue] = useState<number>(0)
@@ -59,7 +62,7 @@ const Services = () => {
     clamp: false,
   })
 
-  const titleX = useTransform(transformX, [startPos, endPos], ['0%', '100%'])
+  const titleX = useTransform(transformX, [startPos, endPos], ['0%', isMobile ? '0%' : '100%'])
 
   return (
     <div className={styles.slider} ref={sliderRef}>
@@ -95,7 +98,7 @@ const Services = () => {
               ))}
               <div className={styles.slide}>
                 <div className={styles.slideItem}>
-                  <div className={styles.slideItemSpaceLarge}></div>
+                  <div className={styles.slideItemSpaceSmall}></div>
                 </div>
               </div>
             </motion.div>

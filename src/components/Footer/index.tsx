@@ -6,6 +6,7 @@ import { ImageSvg } from 'components'
 import styles from './styles.module.css'
 
 import logoSrc from 'assets/images/logo-small.svg'
+import clsx from 'clsx'
 
 const Footer = () => {
   const { setCursorStyle } = useCursorContext()
@@ -55,7 +56,7 @@ const Footer = () => {
         </div>
         <div className={styles.middle}>
           <div className='row'>
-            <div className='col-6 col-sm-12 d-flex align-items-center'>
+            <div className={clsx(styles.logoAndLinksCol, 'col-6', 'col-sm-12', 'd-flex', 'align-items-center')}>
               <Link href='./' className={styles.logo} {...logoCursorProps} scroll={false}>
                 <ImageSvg src={logoSrc} alt='Techzy' fullHeight />
               </Link>

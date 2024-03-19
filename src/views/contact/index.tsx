@@ -3,7 +3,6 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
 import { AnimatedSubText, AnimatedTitle, Button, BackButton } from 'components'
-import { useMediaQuery } from 'hooks' 
 import { useCursorContext } from 'contexts'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
@@ -25,8 +24,6 @@ const validationSchema = yup.object({
 })
 
 const View = () => {
-  const isSmallTablet = useMediaQuery('(max-width: 1023.98px)')
-
   const { setCursorStyle } = useCursorContext()
 
   const smallTextCursorProps = {
@@ -100,7 +97,7 @@ const View = () => {
           <div className='col-7 col-md-12'>
             <form className={styles.form} onSubmit={formik.handleSubmit}>
               <div className='row'>
-                <div className='col-6'>
+                <div className='col-6 col-xs-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
                       <TextField
@@ -113,7 +110,7 @@ const View = () => {
                     </FormControl>
                   </div>
                 </div>
-                <div className='col-6'>
+                <div className='col-6 col-xs-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
                       <TextField
@@ -126,7 +123,7 @@ const View = () => {
                     </FormControl>
                   </div>
                 </div>
-                <div className='col-6'>
+                <div className='col-6 col-xs-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
                       <TextField
@@ -139,7 +136,7 @@ const View = () => {
                     </FormControl>
                   </div>
                 </div>
-                <div className='col-6'>
+                <div className='col-6 col-xs-12'>
                   <div className={styles.inputField}>
                     <FormControl fullWidth>
                       <TextField
@@ -215,7 +212,7 @@ const View = () => {
                 </div>
                 <div className='col-12'>
                   <div className={clsx('row', styles.formBottom)}>
-                    <div className='col-5 d-flex align-items-center'>
+                    <div className='col-5 col-xs-12 d-flex align-items-center justify-content-xs-center'>
                       <Button
                         label='Get in touch'
                         type='submit'
@@ -223,7 +220,7 @@ const View = () => {
                         loading={disableSubmitBtn}
                       />
                     </div>
-                    <div className='col-7 d-flex align-items-center justify-content-end'>
+                    <div className='col-7 col-xs-12 d-flex align-items-center justify-content-end justify-content-xs-center'>
                       <div className={styles.tcText}>
                         By sending, I agree to the{' '}
                         <Link href='./terms-and-conditions' target='_blank' {...smallTextCursorProps}>

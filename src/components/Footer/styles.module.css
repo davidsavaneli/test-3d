@@ -230,3 +230,18 @@
     margin-top: 30px;
   }
 }
+
+@media (max-width: 575.98px) {
+  /* .logoAndLinksCol {
+    flex-direction: column;
+  }
+
+  .links {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .links:before {
+    display: none;
+  } */
+}

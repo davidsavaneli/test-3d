@@ -30,7 +30,7 @@
 }
 
 .MuiFormLabel-root.MuiFormLabel-filled {
-  opacity: 0.4 !important;
+  opacity: 0 !important;
 }
 
 .MuiTextField-root fieldset,
@@ -234,5 +234,13 @@
 
   .Mui-Radio-label .MuiFormControlLabel-label {
     font-size: 14px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .Mui-Radio-label {
+    width: calc(50% - 5px) !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
   }
 }

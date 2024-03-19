@@ -74,30 +74,30 @@
   .slider {
     margin-top: 100px;
   }
-  
+
   .slideSpace {
     width: 20px;
     min-width: 20px;
   }
-  
+
   .slide {
     padding: 0 20px;
   }
-  
+
   .slideImgBox {
     width: 440px;
     min-width: 440px;
     height: 440px;
   }
-  
+
   .slideInfo {
     padding: 28px 18px 0 18px;
   }
-  
+
   .slideName {
     font-size: 20px;
   }
-  
+
   .slidePosition {
     font-size: 16px;
   }
@@ -107,16 +107,16 @@
   .slider {
     margin-top: 80px;
   }
-  
+
   .slideSpace {
     width: 25px;
     min-width: 25px;
   }
-  
+
   .slide {
     padding: 0 15px;
   }
-  
+
   .slideImgBox {
     width: 420px;
     min-width: 420px;
@@ -140,21 +140,21 @@
   .slide:last-child {
     padding-right: 40px;
   }
-  
+
   .slideImgBox {
     width: 360px;
     min-width: 360px;
     height: 360px;
   }
-  
+
   .slideInfo {
     padding: 24px 16px 0 16px;
   }
-  
+
   .slideName {
     font-size: 18px;
   }
-  
+
   .slidePosition {
     font-size: 14px;
   }
@@ -172,21 +172,21 @@
   .slide:last-child {
     padding-right: 20px;
   }
-  
+
   .slideImgBox {
     width: 300px;
     min-width: 300px;
     height: 300px;
   }
-  
+
   .slideInfo {
     padding: 22px 12px 0 12px;
   }
-  
+
   .slideName {
     font-size: 15px;
   }
-  
+
   .slidePosition {
     font-size: 13px;
   }
@@ -196,22 +196,36 @@
   .slider {
     margin-top: 30px;
   }
-  
+
   .slideImgBox {
     width: 240px;
     min-width: 240px;
     height: 240px;
   }
-  
+
   .slideInfo {
     padding: 20px 6px 0 6px;
   }
-  
+
   .slideName {
     font-size: 14px;
   }
-  
+
   .slidePosition {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .headlineRow {
+    flex-direction: column-reverse;
+  }
+
+  .titleBox {
+    align-items: flex-start;
+  }
+
+  .textBox {
+    margin-top: 30px;
   }
 }

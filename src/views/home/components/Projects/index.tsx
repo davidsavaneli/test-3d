@@ -14,13 +14,13 @@ const Projects = () => {
     <div className={styles.projectsSection} ref={projectsRef}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col-7'>
+          <div className='col-7 col-xs-12'>
             <div className={styles.titleBox}>
               <AnimatedTitle transformDirection='ltr'>Recent</AnimatedTitle>
               <AnimatedTitle transformDirection='rtl'>Work</AnimatedTitle>
             </div>
           </div>
-          <div className='col-5'>
+          <div className='col-5 col-xs-12'>
             <div className={styles.textBox}>
               <AnimatedSubText endPositionY={0}>
                 Our software solutions amplify opportunities for venture and private equity firms, regardless of stage
@@ -53,15 +53,16 @@ type ProjectItemProps = {
 const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
   const isSmallLg = useMediaQuery('(max-width: 1439.98px)')
   const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
+  const isMobile = useMediaQuery('(max-width: 575.98px)')
 
   const projectItemRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({ target: projectItemRef, offset: ['start end', 'end start'] })
 
   const AnimationValues = () => {
-    const infoYValue = isSmallLg ? (isTouchMode ? '40' : '80') : '100'
+    const infoYValue = isSmallLg ? (isTouchMode ? (isMobile ? '-20' : '40') : '80') : '100'
     const infoXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
-    const ImageYValue = isSmallLg ? (isTouchMode ? '40' : '80') : '100'
+    const ImageYValue = isSmallLg ? (isTouchMode ? (isMobile ? '30' : '40') : '80') : '100'
     const ImageXValue = isSmallLg ? (isTouchMode ? '0' : '30') : isTouchMode ? '0' : '40'
     const ImageRotateValue = isSmallLg ? (isTouchMode ? '0' : '4') : isTouchMode ? '0' : '5'
 
@@ -98,7 +99,13 @@ const ProjectItem = ({ data, even = false }: ProjectItemProps) => {
           <motion.div className={styles.projectItemInfo} style={{ y: InfoY, x: InfoX }}>
             <div className={styles.projectItemTitle}>
               {data.title.split(' ').map((word, index) => (
-                <AnimatedTitle key={index} size='medium' disableX fontLowercase textAlign={!even ? 'left' : 'right'}>
+                <AnimatedTitle
+                  key={index}
+                  size='medium'
+                  disableX
+                  fontLowercase
+                  textAlign={!isMobile ? (!even ? 'left' : 'right') : 'left'}
+                >
                   {word}
                 </AnimatedTitle>
               ))}
