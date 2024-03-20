@@ -9,11 +9,11 @@ type AnimationLayoutProps = {
 }
 
 const AnimationLayout = ({ children }: AnimationLayoutProps) => {
-  const { width = 0, height = 0 } = useWindowSize()
+  const { windowWidth, windowHeight } = useWindowSize()
 
   return (
     <React.Fragment>
-      <SVG width={width} height={height} />
+      <SVG width={windowWidth} height={windowHeight} />
       <motion.div variants={animations.layout} initial='hidden' animate='enter' exit='exit'>
         {children}
       </motion.div>

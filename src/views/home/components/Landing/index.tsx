@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion'
 import { animateScroll as Scroll } from 'react-scroll'
 import { useCursorContext } from 'contexts'
-import { useWindowSize, useMediaQuery } from 'hooks'
+import { useMediaQuery, useWindowSize } from 'hooks'
 import { springConfig } from 'animations'
 import { ImageSvg, MagneticLayout, Button } from 'components'
 
@@ -13,12 +13,13 @@ import arrowDownSrc from 'assets/images/arrow-down.svg'
 const Landing = () => {
   const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
 
+  const { windowWidth, windowHeight } = useWindowSize()
+
   const landingRef = useRef<HTMLDivElement>(null)
   const { setCursorStyle } = useCursorContext()
-  const { width = 0, height = 0 } = useWindowSize()
 
-  const x = useMotionValue(width / 2)
-  const y = useMotionValue(height / 2)
+  const x = useMotionValue(windowWidth / 2)
+  const y = useMotionValue(windowHeight / 2)
 
   const hoverState = useMotionValue(0)
 
@@ -32,8 +33,8 @@ const Landing = () => {
 
   function mouseLeave() {
     hoverState.set(0)
-    x.set(width / 2)
-    y.set(height / 2)
+    x.set(windowWidth / 2)
+    y.set(windowHeight / 2)
   }
 
   const projectsVideoSectionEl = document.getElementById('projects-video-section')
@@ -60,8 +61,8 @@ const Landing = () => {
     const wrapperY = useTransform(scrollYProgress, [0, 1], wrapperYValue)
     const wrapperOpacity = useTransform(scrollYProgress, [0, 1], wrapperOpacityValue)
 
-    const rotateY = useSpring(useTransform(x, [0, width], [rotateValue, -rotateValue]), springConfig)
-    const rotateX = useSpring(useTransform(y, [0, height], [-rotateValue, rotateValue]), springConfig)
+    const rotateY = useSpring(useTransform(x, [0, windowWidth], [rotateValue, -rotateValue]), springConfig)
+    const rotateX = useSpring(useTransform(y, [0, windowHeight], [-rotateValue, rotateValue]), springConfig)
 
     return { wrapperScale, wrapperY, wrapperOpacity, rotateY, rotateX }
   }

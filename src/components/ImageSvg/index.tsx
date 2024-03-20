@@ -13,6 +13,7 @@ const ImageSvg = ({ fullWidth = false, fullHeight = false, ...props }: Component
     <Image
       className={clsx(styles.image, { [styles.fullWidth]: fullWidth, [styles.fullHeight]: fullHeight })}
       {...props}
+      alt={props.alt}
     />
   )
 }

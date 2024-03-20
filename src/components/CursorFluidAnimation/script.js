@@ -1,6 +1,6 @@
 'use strict'
 
-export default function (el, config) {
+function fluidSimulation(el, config) {
   const canvas = el
   resizeCanvas()
 
@@ -1446,3 +1446,5 @@ export default function (el, config) {
     return hash
   }
 }
+
+export default fluidSimulation

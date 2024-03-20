@@ -11,7 +11,7 @@ type ComponentProps = ImageProps & {
 const AnimatedImage = ({ fullWidth, ...props }: ComponentProps) => {
   return (
     <div className={clsx(styles.image, { [styles.fullWidth]: fullWidth })}>
-      <Image {...props} />
+      <Image {...props} alt={props.alt} />
     </div>
   )
 }
