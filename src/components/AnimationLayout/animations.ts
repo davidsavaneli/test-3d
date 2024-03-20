@@ -9,14 +9,14 @@ const animations: animationTypes = {
   layout: {
     hidden: {
       opacity: 0,
-      y: '50px',
+      // y: '50px',
       transition: {
         duration: 0.6,
       },
     },
     enter: {
       opacity: 1,
-      y: '0',
+      // y: '0',
       transition: {
         duration: 1.2,
         delay: 0.4,
@@ -24,7 +24,7 @@ const animations: animationTypes = {
     },
     exit: {
       opacity: 0,
-      y: '-50px',
+      // y: '-50px',
       transition: {
         duration: 0.8,
       },
