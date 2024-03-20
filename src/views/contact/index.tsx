@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact } from 'sections'
+import { Contact } from 'components'
 
 const View = () => {
   return <Contact />
