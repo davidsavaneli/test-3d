@@ -1,5 +1,7 @@
 export { default as CursorLayout } from './CursorLayout'
 
+export { default as Seo } from './Seo'
+
 export { default as AnimationLayout } from './AnimationLayout'
 
 export { default as ContentPageLayout } from './ContentPageLayout'
