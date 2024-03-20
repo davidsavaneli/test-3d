@@ -1,9 +1,7 @@
 import React, { memo } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { ImageSvg } from 'components'
 import { useCursorContext } from 'contexts'
-import animations from './animations'
 
 import styles from './styles.module.css'
 
@@ -22,15 +20,9 @@ const Header = () => {
       <div className='container'>
         <div className={styles.wrapper}>
           <Link href='./' className={styles.logoWrapper} {...cursorProps} scroll={false}>
-            <motion.div
-              className={styles.logo}
-              variants={animations.logoVariant}
-              initial='initial'
-              animate='animate'
-              data-cursor-exclusion
-            >
+            <div className={styles.logo}>
               <ImageSvg src={logo} alt='' fullWidth />
-            </motion.div>
+            </div>
           </Link>
         </div>
       </div>
