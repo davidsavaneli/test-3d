@@ -39,3 +39,13 @@ export { default as ContactButton } from './ContactButton'
 export { default as HorizontalDragCarousell } from './HorizontalDragCarousell'
 
 export { default as Contact } from './sections/Contact'
+
+export { default as Landing } from './sections/Landing'
+
+export { default as Video } from './sections/Video'
+
+export { default as Services } from './sections/Services'
+
+export { default as Projects } from './sections/Projects'
+
+export { default as Team } from './sections/Team'

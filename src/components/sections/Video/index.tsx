@@ -4,7 +4,7 @@ import { useMediaQuery } from 'hooks'
 
 import styles from './styles.module.css'
 
-const ProjectsVideo = () => {
+const Video = () => {
   const isLg = useMediaQuery('(max-width: 1679.98px)')
   const isTouchMode = useMediaQuery('(max-width: 1279.98px)')
   const isSmallTablet = useMediaQuery('(max-width: 1023.98px)')
@@ -78,7 +78,7 @@ const ProjectsVideo = () => {
   const { y, width, height, borderRadius } = AnimationValues()
 
   return (
-    <div className={styles.videoSection} ref={videoSectionRef} id='projects-video-section'>
+    <div className={styles.videoSection} ref={videoSectionRef} id='video-section'>
       <div className='container'>
         <div className={styles.videoBox} ref={videoBoxRef}>
           <motion.video loop muted autoPlay style={{ y, width, height, borderRadius }} ref={videoRef}>
@@ -90,4 +90,4 @@ const ProjectsVideo = () => {
   )
 }
 
-export default ProjectsVideo
+export default Video

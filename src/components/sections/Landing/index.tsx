@@ -37,7 +37,7 @@ const Landing = () => {
     y.set(windowHeight / 2)
   }
 
-  const projectsVideoSectionEl = document.getElementById('projects-video-section')
+  const projectsVideoSectionEl = document.getElementById('video-section')
 
   const scrollDown = () => {
     if (projectsVideoSectionEl) {
