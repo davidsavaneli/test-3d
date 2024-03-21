@@ -4,7 +4,6 @@ import { AnimatePresence } from 'framer-motion'
 import { Header, Footer, SmoothScroller } from 'components'
 
 import 'assets/css/styles.css'
-import 'react-toastify/dist/ReactToastify.css'
 
 const App = ({ Component, router, pageProps }: AppProps) => {
   if (router.route === '/404' || router.route === '/500') return <Component {...pageProps} />
