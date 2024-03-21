@@ -1,22 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Landing, Video, Services, Projects, Team } from 'components'
+import React from 'react'
 
 const View = () => {
-  const [loaded, setLoaded] = useState<boolean>(false)
-
-  useEffect(() => {
-    setTimeout(() => setLoaded(true), 200)
-  })
-
-  return (
-    <>
-      <Landing />
-      <Video />
-      {loaded && <Services />} {/* TODO */}
-      <Projects />
-      <Team />
-    </>
-  )
+  return <>Home</>
 }
 
 export default View

@@ -1,36 +1,5 @@
 :root {
   --fullHeight: 100svh;
-  
   --fontMedium: 'Syne-Medium';
-  --fontUppercase: 'MonumentExtended-Regular';
-
-  --colorBg: #121315;
-
-  --colorPrimary: rgba(255, 255, 255, 1);
-  --colorPrimary-006: rgba(255, 255, 255, 0.06);
-  --colorSecondary: rgba(255, 255, 255, 0.6);
-  --colorDark: #1b1c1d;
-  --colorDarkLight: #2d2e2f;
-  --colorError: #a54242;
-  --colorSuccess: #358536;
-  --colorBrand: #c5fcfc;
-  --colorCardBg: #1b1c1d;
-  --colorLine: rgba(255, 255, 255, 0.2);
-
-  --primaryBorderRadius: 24px;
-  --secondaryBorderRadius: 12px;
-
-  --toastifyBg: #252526;
-}
-
-@media (max-width: 1279.98px) {
-  :root {
-    --primaryBorderRadius: 20px;
-  }
-}
-
-@media (max-width: 1023.98px) {
-  :root {
-    --primaryBorderRadius: 16px;
-  }
+  --colorPrimary: #000;
 }
