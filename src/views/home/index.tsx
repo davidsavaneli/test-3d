@@ -1,7 +1,10 @@
 import React from 'react'
 
 const View = () => {
-  return <>Home</>
+  return (
+    <>
+    </>
+  )
 }
 
 export default View
